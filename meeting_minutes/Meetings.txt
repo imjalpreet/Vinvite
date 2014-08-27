@@ -29,3 +29,14 @@ We all had a meeting online to discuss the important points regarding the  proje
 		  and client gave task to draw flow charts of the app.
 20:10 --> Team meeting for making flow charts for the app
 22:30 --> Showing the flow charts to the client and the next task is to draw approximate screens of the app that we are going to make.
+
+27/08/14
+*******************************************************************************
+Time: 21:00 - 21:30
+Attendees : Jalpreet, Raj, Manas, Vikram
+Topic : App Screens
+
+In this meeting we had a discussion on the different screens we are going to have in our app. We made drawings of how each screen would look like and what each screen would contain. We made the workflow of the app, i.e., which screen shouldcome at what point.
+We have mailed the App Screens to our clients.
+
+Next Meeting: It would be probably on 28/08/14.
