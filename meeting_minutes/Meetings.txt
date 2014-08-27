@@ -1,10 +1,10 @@
 11/08/14
 *******************************************************************************
-15:40  ---> Contacted Mentors
+15:40  --> Contacted Mentors
 
-17:00  ---> First meeting with mentors at CIE(Introduction to the project and android, Got small apps to make in one week time and present them by this Sunday)
+17:00  --> First meeting with mentors at CIE(Introduction to the project and android, Got small apps to make in one week time and present them by this Sunday)
 
-20:30  ---> Mailed our details to mentors and basic information of the app we are going to make
+20:30  --> Mailed our details to mentors and basic information of the app we are going to make
 
 13/08/14
 *******************************************************************************
@@ -18,3 +18,11 @@
 17/08/14
 *******************************************************************************
 17:00 --> Meeting scheduled today was postponed 1 or 2 days after and mentors asked to submit the status of the mini app given
+
+
+26/08/14
+*******************************************************************************
+14:40 --> Meeting with client for discussing the status of the small apps that were given to make. Also we got the brief idea about the project
+		  and client gave task to draw flow charts of the app.
+20:10 --> Team meeting for making flow charts for the app
+22:30 --> Showing the flow charts to the client and the next task is to draw approximate screens of the app that we are going to make.
