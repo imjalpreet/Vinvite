@@ -40,3 +40,15 @@ In this meeting we had a discussion on the different screens we are going to hav
 We have mailed the App Screens to our clients.
 
 Next Meeting: It would be probably on 28/08/14.
+
+31/01/14
+*******************************************************************************
+Time: 17:30 - 18:40
+Attendees : Manas, Vikram, Raj, Jalpreet
+Topic : Project Plan Document
+
+In this meeting we edited the Project Plan Document. Also we discussed about the features that would be included in the app till R1 and what till R2.
+This document was mailed to the client for further changes in the milestones etc.
+
+Next Meeting : 01/09/14
+
