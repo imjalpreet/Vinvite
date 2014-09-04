@@ -41,7 +41,7 @@ We have mailed the App Screens to our clients.
 
 Next Meeting: It would be probably on 28/08/14.
 
-31/01/14
+31/08/14
 *******************************************************************************
 Time: 17:30 - 18:40
 Attendees : Manas, Vikram, Raj, Jalpreet
@@ -51,4 +51,14 @@ In this meeting we edited the Project Plan Document. Also we discussed about the
 This document was mailed to the client for further changes in the milestones etc.
 
 Next Meeting : 01/09/14
+
+03/08/14
+*******************************************************************************
+Time: 23:00 - 23:45
+Attendees : Manas, Vikram, Raj, Jalpreet
+Topic : Discussing design
+
+In this meeting we discussed about the design part of the app like color, number of screens. Also we have to make screens in photoshop sowork was divided for it.
+
+Next Meeting : 04/09/14
 
