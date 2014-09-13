@@ -62,3 +62,23 @@ In this meeting we discussed about the design part of the app like color, number
 
 Next Meeting : 04/09/14
 
+05/09/14
+*******************************************************************************
+Time: 15:00 - 16:00
+Attendees: Jalpreet, Manas
+Topic: UI Designing
+
+We had a short meeting to integrate the screens we both had designed and to get reviews of each other on the screens.
+
+Next Meeting: 12/09/2014
+
+12/09/14
+*******************************************************************************
+Time: 00:00 - 01:00
+Attendees: Jalpreet, Raj, Manas, Vikram
+Topic: UI Designing(Photoshop) and Prototyping(proto.io)
+
+This meeting was dedicated mainly to discuss about the UI designing using Adobe Photoshop and UI prototyping using proto.io. We divided our work into groups of two, i.e, Jalpreet and Manas will do the Photoshop related work and Raj and Vikram will do the prototyping related work.
+
+Next Meeting: 13/09/2014
+
