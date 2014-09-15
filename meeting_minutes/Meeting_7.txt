@@ -1,0 +1,15 @@
+Seventh Meeting 
+Topic: Showed the prototypes of the screen made on proto.io
+Date: 12/09/14
+Time: 16:00-17:00
+Next Meeting: 16/09/14
+Place: CIE, IIIT-H
+Attendees: Jalpreet, Raj, Vikram, Manas,Sarthak
+
+Important Points of Discussion:
+1. Made 8 screens on proto.io and presented them.
+2. Proposed a few changes  to those screens.
+3. Screens to made using Photoshop.
+4. Color schema to be followed properly.
+5. Photoshop implementation of design of app screens to Manas and Jalpreet.
+6. Proto.io final work to VIkram and Raj
