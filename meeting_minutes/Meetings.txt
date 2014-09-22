@@ -82,3 +82,11 @@ This meeting was dedicated mainly to discuss about the UI designing using Adobe 
 
 Next Meeting: 13/09/2014
 
+15/09/14
+*******************************************************************************
+Time: 20:30 - 21:30
+Attendees: Raj, Jalpreet, Manas, Vikram
+Topic: Feedback on screens in Photoshop and proto.io
+
+We discussed progress on Photoshop and proto.io screens and recorded modifications accordingly.
+
