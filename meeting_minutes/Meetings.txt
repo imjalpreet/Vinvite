@@ -90,3 +90,18 @@ Topic: Feedback on screens in Photoshop and proto.io
 
 We discussed progress on Photoshop and proto.io screens and recorded modifications accordingly.
 
+19/09/14
+*******************************************************************************
+Time: 20:15 - 21:20
+Attendees: Raj, Jalpreet, Manas, Vikram
+Topic: Further refinement in screens
+
+Changing screens according to the feedback of the client given in last meeting
+
+22/09/14
+*******************************************************************************
+Time: 20:30 - 22:05
+Attendees: Raj, Manas, Jalpreet, Vikram
+Topic: Changing UI of the screens made in photoshop
+
+Changing UI of some screens and adding some screens in photoshop and then completing the workflow on invision
