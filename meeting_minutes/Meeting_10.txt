@@ -1,14 +1,17 @@
 Tenth Meeting
-Topic: Finalisation of Screens and Demonstration of Parse Apps
-Date: 26/09/14
-Time: 22:00 - 23:30 
-Next Meeting: Not Decided
+Topic: Finalisation of Screens and iscussion about Development Phase.
+Date: 22/09/14
+Time: 12:00 - 15:30 
+Next Meeting: 26/09/14
 Place: CIE, IIIT-H
-Attendees: Jalpreet, Raj, Vikram
+Attendees:  Vikram,Manas
 
 Important Points of Discussion:
-1. We discussed with Sri Harsha sir about the finalisation of the screens.
-2. We were given feedback on what final changes Sri Harsha sir wants in the screens.
-3. We were told to demonstrate the two parse apps that we were given.
-4. Abhilash sir told us to start with the development phase.
-5. We have been told to make the first screen of the app.
+1. Out of total 8 screens we demonstrated 6 screens.
+2. 4 were finalised at that moment and 2 required more enhancement.
+3. We were given 2 more days to finalise the 6 out of the 8 screens.
+4. Sri Harsha sir showed us some inspiritaional screens regarding the apps and asked us to make the necessary changes.
+5. Client told ud that we have to start with the development phase within a week.
+6. They asked us to look at the example apps at parse.com and understand them completely.
+7. Those apps used API's like Facebook,Google Maps and Youtube.
+
