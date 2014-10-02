@@ -1,0 +1,10 @@
+Topic: First Meeting With The Mentors
+Date: 01-10-14
+Time: 21:30 - 22:45
+Place: CIE, IIIT-H
+Attendees: Raj, Jalpreet, Vikram, Manas
+
+Important Points of Discussion:
+1. Invision screens finalized.
+2. Discussion on problems while making select event screen in android
+3. Task given to complete the first screen
