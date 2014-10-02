@@ -1,10 +1,14 @@
-Topic: First Meeting With The Mentors
-Date: 01-10-14
-Time: 21:30 - 22:45
+Tenth Meeting
+Topic: Finalisation of Screens and Demonstration of Parse Apps
+Date: 26/09/14
+Time: 22:00 - 23:30 
+Next Meeting: Not Decided
 Place: CIE, IIIT-H
-Attendees: Raj, Jalpreet, Vikram, Manas
+Attendees: Jalpreet, Raj, Vikram
 
 Important Points of Discussion:
-1. Invision screens finalized.
-2. Discussion on problems while making select event screen in android
-3. Task given to complete the first screen
+1. We discussed with Sri Harsha sir about the finalisation of the screens.
+2. We were given feedback on what final changes Sri Harsha sir wants in the screens.
+3. We were told to demonstrate the two parse apps that we were given.
+4. Abhilash sir told us to start with the development phase.
+5. We have been told to make the first screen of the app.
