@@ -30,6 +30,8 @@ We all had a meeting online to discuss the important points regarding the  proje
 20:10 --> Team meeting for making flow charts for the app
 22:30 --> Showing the flow charts to the client and the next task is to draw approximate screens of the app that we are going to make.
 
+02/08/
+
 27/08/14
 *******************************************************************************
 Time: 21:00 - 21:30
@@ -105,11 +107,27 @@ Attendees: Raj, Manas, Jalpreet, Vikram
 Topic: Changing UI of the screens made in photoshop
 
 Changing UI of some screens and adding some screens in photoshop and then completing the workflow on invision
+
 26/09/14
 *******************************************************************************
-
 Time: 23:45 - 00:15
 Attendees: Jalpreet, Raj, Vikram, Manas
-Topic : Discussion on the Final Screens and the first screen.
+Topic: Discussion on the Final Screens and the first screen.
 
 We mainly discussed on the changes told to us by Sri Harsha sir that are to be done on the Final screens and we also discussed on how to start with the First screen of the app.
+
+01/09/14
+*******************************************************************************
+Time: 23:00 - 00:00
+Attendees: Raj, Jalpreet, Vikram, Manas
+Topic: Planning of tasks in holidays
+
+Deciding the tasks of each person for holidays
+
+09/09/14
+*******************************************************************************
+Time: 21:00 - 02:45
+Attendees: Raj, Jalpreet
+Topic: Integrating cardslib in the app
+
+Integrating cardslib API with the app screen in select event and select script type screens
