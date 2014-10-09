@@ -19,19 +19,20 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.etsy.android.grid.StaggeredGridView;
-public class StaggeredGridActivity extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener, AdapterView.OnItemLongClickListener {
+public class BackgroundScore extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener, AdapterView.OnItemLongClickListener {
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
     private StaggeredGridView mGridView;
     private boolean mHasRequestedMore;
-    private SampleAdapter mAdapter;
+    private BackgroundAdapter mAdapter;
     private ArrayList<String> mData;
-    public final static String EXTRA_MESSAGE = "com.yourevent.mobilevideoinvitation";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sgv);
-        setTitle("          Select Your Script");
+        setContentView(R.layout.background_score);
+        Bundle extras = getIntent().getExtras();
+        String event = extras.getString(StaggeredGridActivity.EXTRA_MESSAGE);
+        setTitle("Background Score - "+event);
         mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
         LayoutInflater layoutInflater = getLayoutInflater();
         //View header = layoutInflater.inflate(R.layout.list_item_header_footer, null);
@@ -42,13 +43,13 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         //txtFooterTitle.setText("THE FOOTER!");
         //mGridView.addHeaderView(header);
         //mGridView.addFooterView(footer);
-        mAdapter = new SampleAdapter(this, R.id.txt_line1);
+        mAdapter = new BackgroundAdapter(this, R.id.txt_line1);
 // do we have saved data?
         if (savedInstanceState != null) {
             mData = savedInstanceState.getStringArrayList(SAVED_DATA_KEY);
         }
         if (mData == null) {
-            mData = SampleData.generateSampleData();
+            mData = BackgroundData.generateSampleData();
         }
         for (String data : mData) {
             mAdapter.add(data);
@@ -96,35 +97,20 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         if (!mHasRequestedMore) {
             int lastInScreen = firstVisibleItem + visibleItemCount;
             if (lastInScreen >= totalItemCount) {
+                Log.d(TAG, "onScroll lastInScreen - so load more");
                 mHasRequestedMore = true;
                 //onLoadMoreItems();
             }
         }
     }
-    private void onLoadMoreItems() {
-        final ArrayList<String> sampleData = SampleData.generateSampleData();
-        for (String data : sampleData) {
-            mAdapter.add(data);
-        }
-// stash all the data in our backing store
-        mData.addAll(sampleData);
-// notify the adapter that we can update now
-        mAdapter.notifyDataSetChanged();
-        mHasRequestedMore = false;
-    }
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-        //Toast.makeText(this, "Item Clicked: " + position, Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this, BackgroundScore.class);
-        final ArrayList<String> sampleData = SampleData.generateSampleData();
-        mData.addAll(sampleData);
-        i.putExtra(EXTRA_MESSAGE, mData.get(position));
-        startActivity(i);
+        Toast.makeText(this, "Item Clicked: " + position, Toast.LENGTH_SHORT).show();
     }
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
     {
-        //Toast.makeText(this, "Item Long Clicked: " + position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Item Long Clicked: " + position, Toast.LENGTH_SHORT).show();
         return true;
     }
 }
