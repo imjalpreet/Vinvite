@@ -12,7 +12,7 @@ import com.etsy.android.grid.StaggeredGridView;
 import java.util.ArrayList;
 public class StaggeredGridActivityFragment extends FragmentActivity {
 
-    public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+    public final static String EXTRA_MESSAGE = "";
     private static final String TAG = "StaggeredGridActivityFragment";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
