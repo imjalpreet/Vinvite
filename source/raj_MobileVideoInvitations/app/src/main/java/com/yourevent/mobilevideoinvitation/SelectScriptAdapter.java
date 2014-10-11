@@ -1,27 +1,23 @@
 package com.yourevent.mobilevideoinvitation;
 
-/**
- * Created by raj on 11/10/14.
- */
-import java.util.ArrayList;
-import java.util.Random;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Toast;
+
 import com.etsy.android.grid.util.DynamicHeightTextView;
 
-/***
- * ADAPTER
+import java.util.ArrayList;
+import java.util.Random;
+
+/**
+ * Created by imjalpreet on 11-10-2014.
  */
-public class BackgroundAdapter extends ArrayAdapter<String> {
-    private static final String TAG = "BackgroundAdapter";
+public class SelectScriptAdapter extends ArrayAdapter<String> {
+    private static final String TAG = "SelectScriptAdapter";
     static class ViewHolder {
         DynamicHeightTextView txtLineOne;
     }
@@ -29,7 +25,7 @@ public class BackgroundAdapter extends ArrayAdapter<String> {
     private final Random mRandom;
     private final ArrayList<Integer> mBackgroundColors;
     private static final SparseArray<Double> sPositionHeightRatios = new SparseArray<Double>();
-    public BackgroundAdapter(final Context context, final int textViewResourceId) {
+    public SelectScriptAdapter(final Context context, final int textViewResourceId) {
         super(context, textViewResourceId);
         mLayoutInflater = LayoutInflater.from(context);
         mRandom = new Random();
@@ -55,7 +51,7 @@ public class BackgroundAdapter extends ArrayAdapter<String> {
         int backgroundIndex = position >= mBackgroundColors.size() ?
                 position % mBackgroundColors.size() : position;
         convertView.setBackgroundResource(mBackgroundColors.get(backgroundIndex));
-        vh.txtLineOne.setHeightRatio(1.05);
+        vh.txtLineOne.setHeightRatio(0.6481);
         vh.txtLineOne.setText(getItem(position));
         return convertView;
     }
