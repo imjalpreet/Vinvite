@@ -25,7 +25,6 @@ public class EnterEventDetails extends Activity {
         TextView t = (TextView)findViewById(R.id.eventName);
         t.setText(events[Integer.parseInt(message)]);
         contButton = (Button)findViewById(R.id.continueEventDetails);
-        //contButton.setOnClickListener();
         contButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

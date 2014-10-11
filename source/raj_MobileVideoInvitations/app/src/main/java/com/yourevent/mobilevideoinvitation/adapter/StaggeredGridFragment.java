@@ -19,12 +19,9 @@ import java.util.ArrayList;
 /**
  * Created by raj on 9/10/14.
  */
-/*public class StaggeredGridFragment {
-}*/
 class StaggeredGridFragment extends Fragment implements
-        AbsListView.OnScrollListener, AbsListView.OnItemClickListener {
+         AbsListView.OnItemClickListener {
     private StaggeredGridView mGridView;
-    private boolean mHasRequestedMore;
     private SampleAdapter mAdapter;
     private ArrayList<String> mData;
     @Override
@@ -53,39 +50,7 @@ class StaggeredGridFragment extends Fragment implements
             mAdapter.add(data);
         }
         mGridView.setAdapter(mAdapter);
-        mGridView.setOnScrollListener(this);
         mGridView.setOnItemClickListener(this);
-    }
-    @Override
-    public void onScrollStateChanged(final AbsListView view, final int scrollState) {
-//        Log.d(TAG, "onScrollStateChanged:" + scrollState);
-    }
-    @Override
-    public void onScroll(final AbsListView view, final int firstVisibleItem, final int visibleItemCount, final int totalItemCount) {
-        //      Log.d(TAG, "onScroll firstVisibleItem:" + firstVisibleItem +
-        //       " visibleItemCount:" + visibleItemCount +
-        //     " totalItemCount:" + totalItemCount);
-// our handling
-       /* if (!mHasRequestedMore) {
-            int lastInScreen = firstVisibleItem + visibleItemCount;
-            if (lastInScreen >= totalItemCount) {
-                //            Log.d(TAG, "onScroll lastInScreen - so load more");
-                mHasRequestedMore = true;
-                //onLoadMoreItems();
-            }
-        }*/
-    }
-
-    private void onLoadMoreItems() {
-        final ArrayList<String> sampleData = SampleData.generateSampleData();
-        for (String data : sampleData) {
-            mAdapter.add(data);
-        }
-// stash all the data in our backing store
-        mData.addAll(sampleData);
-// notify the adapter that we can update now
-        mAdapter.notifyDataSetChanged();
-        mHasRequestedMore = false;
     }
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
