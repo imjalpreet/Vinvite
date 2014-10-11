@@ -16,37 +16,20 @@ import com.etsy.android.grid.StaggeredGridView;
 import java.util.ArrayList;
 
 /**
- * Created by raj on 10/10/14.
+ * Created by imjalpreet on 9/10/14.
  */
-
-import java.util.ArrayList;
-
-        import android.app.ActionBar;
-        import android.app.Activity;
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.util.Log;
-        import android.view.LayoutInflater;
-        import android.view.Menu;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.widget.AbsListView;
-        import android.widget.AdapterView;
-        import android.widget.TextView;
-        import android.widget.Toast;
-        import com.etsy.android.grid.StaggeredGridView;
 public class StaggeredGridActivity extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener, AdapterView.OnItemLongClickListener {
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
     private StaggeredGridView mGridView;
     private boolean mHasRequestedMore;
-    private SampleAdapter mAdapter;
+    private SelectScriptAdapter mAdapter;
     private ArrayList<String> mData;
     public final static String EXTRA_MESSAGE = "com.yourevent.mobilevideoinvitation";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sgv);
+        setContentView(R.layout.activity_select_script);
         setTitle("          Select Your Script");
         mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
         LayoutInflater layoutInflater = getLayoutInflater();
@@ -58,13 +41,13 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         //txtFooterTitle.setText("THE FOOTER!");
         //mGridView.addHeaderView(header);
         //mGridView.addFooterView(footer);
-        mAdapter = new SampleAdapter(this, R.id.txt_line1);
+        mAdapter = new SelectScriptAdapter(this, R.id.txt_line1);
 // do we have saved data?
         if (savedInstanceState != null) {
             mData = savedInstanceState.getStringArrayList(SAVED_DATA_KEY);
         }
         if (mData == null) {
-            mData = SampleData.generateSampleData();
+            mData = SelectScriptData.generateSampleData();
         }
         for (String data : mData) {
             mAdapter.add(data);
@@ -118,7 +101,7 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         }
     }
     private void onLoadMoreItems() {
-        final ArrayList<String> sampleData = SampleData.generateSampleData();
+        final ArrayList<String> sampleData = SelectScriptData.generateSampleData();
         for (String data : sampleData) {
             mAdapter.add(data);
         }
@@ -132,7 +115,7 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         //Toast.makeText(this, "Item Clicked: " + position, Toast.LENGTH_SHORT).show();
         Intent i = new Intent(this, BackgroundScore.class);
-        final ArrayList<String> sampleData = SampleData.generateSampleData();
+        final ArrayList<String> sampleData = SelectScriptData.generateSampleData();
         mData.addAll(sampleData);
         i.putExtra(EXTRA_MESSAGE, mData.get(position));
         startActivity(i);
