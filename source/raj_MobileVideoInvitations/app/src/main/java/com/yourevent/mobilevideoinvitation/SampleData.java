@@ -6,7 +6,7 @@ package com.yourevent.mobilevideoinvitation;
 import java.util.ArrayList;
 import java.util.List;
 public class SampleData {
-    public static final int SAMPLE_DATA_ITEM_COUNT = 30;
+    public static final int SAMPLE_DATA_ITEM_COUNT = 6;
 
     public static ArrayList<String> generateSampleData() {
         String[] events = {"Birthday", "Wedding", "Engagement", "Reception", "House Warming", "Anniversary"};
