@@ -19,7 +19,7 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.etsy.android.grid.StaggeredGridView;
-public class BackgroundScore extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener, AdapterView.OnItemLongClickListener {
+public class BackgroundScore extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener {
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
     private StaggeredGridView mGridView;
@@ -57,7 +57,7 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
         mGridView.setAdapter(mAdapter);
         mGridView.setOnScrollListener(this);
         mGridView.setOnItemClickListener(this);
-        mGridView.setOnItemLongClickListener(this);
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -106,11 +106,5 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         Toast.makeText(this, "Item Clicked: " + position, Toast.LENGTH_SHORT).show();
-    }
-    @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
-    {
-        Toast.makeText(this, "Item Long Clicked: " + position, Toast.LENGTH_SHORT).show();
-        return true;
     }
 }
