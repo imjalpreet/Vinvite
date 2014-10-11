@@ -131,3 +131,12 @@ Attendees: Raj, Jalpreet
 Topic: Integrating cardslib in the app
 
 Integrating cardslib API with the app screen in select event and select script type screens
+
+10/09/14
+*******************************************************************************
+Time: 22:00 - 22:55
+Attendees: Raj, Jalpreet
+Topic: Completing documentation and merging code
+
+Modifying SRS, Status tracker etc and merging raj_MobileVideoInvitations and MobileVideoInvitations_jalpreet
+
