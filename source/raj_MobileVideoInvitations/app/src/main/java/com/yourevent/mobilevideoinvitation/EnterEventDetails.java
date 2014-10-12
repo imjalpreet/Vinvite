@@ -1,17 +1,16 @@
 package com.yourevent.mobilevideoinvitation;
 
+/**
+ * Created by raj on 9/10/14.
+ */
+
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-/**
- * Created by raj on 9/10/14.
- */
 public class EnterEventDetails extends Activity {
     String[] events = {"Birthday", "Wedding", "Engagement", "Reception", "House Warming", "Anniversary"};
     Button contButton;
