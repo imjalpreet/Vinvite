@@ -23,7 +23,6 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
     private StaggeredGridView mGridView;
-    private boolean mHasRequestedMore;
     private BackgroundAdapter mAdapter;
     private ArrayList<String> mData;
     @Override
@@ -34,15 +33,6 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
         String event = extras.getString(StaggeredGridActivity.EXTRA_MESSAGE);
         setTitle("Background Score - "+event);
         mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
-        LayoutInflater layoutInflater = getLayoutInflater();
-        //View header = layoutInflater.inflate(R.layout.list_item_header_footer, null);
-        //View footer = layoutInflater.inflate(R.layout.list_item_header_footer, null);
-        //TextView txtHeaderTitle = (TextView) header.findViewById(R.id.txt_title);
-        //TextView txtFooterTitle = (TextView) footer.findViewById(R.id.txt_title);
-        //txtHeaderTitle.setText("Select Your Script");
-        //txtFooterTitle.setText("THE FOOTER!");
-        //mGridView.addHeaderView(header);
-        //mGridView.addFooterView(footer);
         mAdapter = new BackgroundAdapter(this, R.id.txt_line1);
 // do we have saved data?
         if (savedInstanceState != null) {
@@ -65,17 +55,6 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        /*switch (item.getItemId()) {
-            case R.id.col1:
-                mGridView.setColumnCount(1);
-                break;
-            case R.id.col2:
-                mGridView.setColumnCount(2);
-                break;
-            case R.id.col3:
-                mGridView.setColumnCount(3);
-                break;
-        }*/
         return true;
     }
     @Override
@@ -92,15 +71,6 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
         Log.d(TAG, "onScroll firstVisibleItem:" + firstVisibleItem +
                 " visibleItemCount:" + visibleItemCount +
                 " totalItemCount:" + totalItemCount);
-// our handling
-        if (!mHasRequestedMore) {
-            int lastInScreen = firstVisibleItem + visibleItemCount;
-            if (lastInScreen >= totalItemCount) {
-                Log.d(TAG, "onScroll lastInScreen - so load more");
-                mHasRequestedMore = true;
-                //onLoadMoreItems();
-            }
-        }
     }
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
