@@ -57,7 +57,6 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
         mGridView.setAdapter(mAdapter);
         mGridView.setOnScrollListener(this);
         mGridView.setOnItemClickListener(this);
-
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

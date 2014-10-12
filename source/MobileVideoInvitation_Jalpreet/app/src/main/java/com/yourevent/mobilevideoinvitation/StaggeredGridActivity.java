@@ -13,11 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-
 import com.etsy.android.grid.StaggeredGridView;
 
 import java.util.ArrayList;
-public class StaggeredGridActivity extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener, AdapterView.OnItemLongClickListener {
+public class StaggeredGridActivity extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener {
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
     private StaggeredGridView mGridView;
@@ -31,15 +30,6 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         setContentView(R.layout.activity_sgv);
         setTitle("          Select Your Script");
         mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
-        LayoutInflater layoutInflater = getLayoutInflater();
-        //View header = layoutInflater.inflate(R.layout.list_item_header_footer, null);
-        //View footer = layoutInflater.inflate(R.layout.list_item_header_footer, null);
-        //TextView txtHeaderTitle = (TextView) header.findViewById(R.id.txt_title);
-        //TextView txtFooterTitle = (TextView) footer.findViewById(R.id.txt_title);
-        //txtHeaderTitle.setText("Select Your Script");
-        //txtFooterTitle.setText("THE FOOTER!");
-        //mGridView.addHeaderView(header);
-        //mGridView.addFooterView(footer);
         mAdapter = new SampleAdapter(this, R.id.txt_line1);
 // do we have saved data?
         if (savedInstanceState != null) {
@@ -54,7 +44,6 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         mGridView.setAdapter(mAdapter);
         mGridView.setOnScrollListener(this);
         mGridView.setOnItemClickListener(this);
-        mGridView.setOnItemLongClickListener(this);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,17 +52,6 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        /*switch (item.getItemId()) {
-            case R.id.col1:
-                mGridView.setColumnCount(1);
-                break;
-            case R.id.col2:
-                mGridView.setColumnCount(2);
-                break;
-            case R.id.col3:
-                mGridView.setColumnCount(3);
-                break;
-        }*/
         return true;
     }
     @Override
@@ -95,20 +73,8 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
             int lastInScreen = firstVisibleItem + visibleItemCount;
             if (lastInScreen >= totalItemCount) {
                 mHasRequestedMore = true;
-                //onLoadMoreItems();
             }
         }
-    }
-    private void onLoadMoreItems() {
-        final ArrayList<String> sampleData = SampleData.generateSampleData();
-        for (String data : sampleData) {
-            mAdapter.add(data);
-        }
-// stash all the data in our backing store
-        mData.addAll(sampleData);
-// notify the adapter that we can update now
-        mAdapter.notifyDataSetChanged();
-        mHasRequestedMore = false;
     }
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -118,11 +84,5 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         mData.addAll(sampleData);
         i.putExtra(EXTRA_MESSAGE, mData.get(position));
         startActivity(i);
-    }
-    @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
-    {
-        //Toast.makeText(this, "Item Long Clicked: " + position, Toast.LENGTH_SHORT).show();
-        return true;
     }
 }
