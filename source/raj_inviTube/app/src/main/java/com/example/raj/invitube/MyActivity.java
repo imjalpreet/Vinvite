@@ -1,3 +1,4 @@
+
 package com.example.raj.invitube;
 
 import android.annotation.TargetApi;
@@ -12,9 +13,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.widget.MediaController;
-import android.widget.VideoView;
 
 public class MyActivity extends FragmentActivity implements ActionBar.TabListener {
     ActionBar actionbar;
@@ -45,16 +43,11 @@ public class MyActivity extends FragmentActivity implements ActionBar.TabListene
         viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
-//                actionbar.setSelectedNavigationItem(i);
-
             }
 
             @Override
             public void onPageSelected(int i) {
                 actionbar.setSelectedNavigationItem(i);
-                if(i==1){
-
-                }
             }
 
             @Override
@@ -77,18 +70,12 @@ public class MyActivity extends FragmentActivity implements ActionBar.TabListene
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        /*int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-    */    return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         viewpager.setCurrentItem(tab.getPosition());
-        if(tab.getPosition() == 1) {
-        }
     }
 
     @Override
@@ -97,6 +84,5 @@ public class MyActivity extends FragmentActivity implements ActionBar.TabListene
 
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-    //    viewpager.setCurrentItem(tab.getPosition());
     }
 }

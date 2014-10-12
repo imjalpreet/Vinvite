@@ -3,12 +3,8 @@ package com.yourevent.mobilevideoinvitation;
 /**
  * Created by raj on 10/10/14.
  */
-import android.renderscript.Script;
-import android.widget.ArrayAdapter;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
+
 public class BackgroundData{
     public static final int SAMPLE_DATA_ITEM_COUNT = 6;
     public static ArrayList<String> generateSampleData() {
