@@ -5,6 +5,7 @@ import java.io.IOException;
 import android.R.string;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Camera;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
@@ -100,8 +101,12 @@ public class AndroidVideoCapture extends Activity{
                 mediaRecorder.stop();  // stop the recording
                 releaseMediaRecorder(); // release the MediaRecorder object
                 
+                Intent openinvite = new Intent("com.exercise.AndroidVideoCapture.INVITE");
+        		
+    			startActivity(openinvite);
+                
                 //Exit after saved
-                finish();
+               // finish();
 			}else{
 				
 				

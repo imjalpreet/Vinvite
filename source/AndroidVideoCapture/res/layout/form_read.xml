@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:id="@+id/imageView"
+        android:src="#ff04010c"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+         />
+
+   
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Continue"
+        android:id="@+id/continueEventDetails"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+      
+        android:layout_alignParentRight="true"
+      
+        android:background="#ff06d826"
+        android:textColor="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event"
+        android:id="@+id/eventName"
+        android:layout_marginTop="51dp"
+        
+        android:textColor="#ffffffff"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
