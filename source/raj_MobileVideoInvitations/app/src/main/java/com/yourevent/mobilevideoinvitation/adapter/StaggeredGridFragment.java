@@ -8,12 +8,10 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Toast;
-
 import com.etsy.android.grid.StaggeredGridView;
 import com.yourevent.mobilevideoinvitation.R;
 import com.yourevent.mobilevideoinvitation.SampleAdapter;
 import com.yourevent.mobilevideoinvitation.SampleData;
-
 import java.util.ArrayList;
 
 /**
@@ -37,9 +35,6 @@ class StaggeredGridFragment extends Fragment implements
     public void onActivityCreated(final Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mGridView = (StaggeredGridView) getView().findViewById(R.id.grid_view);
-        if (savedInstanceState == null) {
-            final LayoutInflater layoutInflater = getActivity().getLayoutInflater();
-        }
         if (mAdapter == null) {
             mAdapter = new SampleAdapter(getActivity(), R.id.txt_line1);
         }

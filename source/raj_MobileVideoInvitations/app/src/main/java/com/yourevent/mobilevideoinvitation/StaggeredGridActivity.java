@@ -4,25 +4,22 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-
 import com.etsy.android.grid.StaggeredGridView;
-
 import java.util.ArrayList;
 
 /**
  * Created by imjalpreet on 9/10/14.
  */
+
 public class StaggeredGridActivity extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener {
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
     private StaggeredGridView mGridView;
-    private boolean mHasRequestedMore;
     private SelectScriptAdapter mAdapter;
     private ArrayList<String> mData;
     public final static String EXTRA_MESSAGE = "com.yourevent.mobilevideoinvitation";
@@ -32,7 +29,6 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         setContentView(R.layout.activity_select_script);
         setTitle("          Select Your Script");
         mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
-        LayoutInflater layoutInflater = getLayoutInflater();
         mAdapter = new SelectScriptAdapter(this, R.id.txt_line1);
 // do we have saved data?
         if (savedInstanceState != null) {
@@ -70,25 +66,6 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         Log.d(TAG, "onScroll firstVisibleItem:" + firstVisibleItem +
                 " visibleItemCount:" + visibleItemCount +
                 " totalItemCount:" + totalItemCount);
-// our handling
-        if (!mHasRequestedMore) {
-            int lastInScreen = firstVisibleItem + visibleItemCount;
-            if (lastInScreen >= totalItemCount) {
-                mHasRequestedMore = true;
-                //onLoadMoreItems();
-            }
-        }
-    }
-    private void onLoadMoreItems() {
-        final ArrayList<String> sampleData = SelectScriptData.generateSampleData();
-        for (String data : sampleData) {
-            mAdapter.add(data);
-        }
-// stash all the data in our backing store
-        mData.addAll(sampleData);
-// notify the adapter that we can update now
-        mAdapter.notifyDataSetChanged();
-        mHasRequestedMore = false;
     }
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {

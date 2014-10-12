@@ -1,5 +1,9 @@
 package com.yourevent.mobilevideoinvitation;
 
+/**
+ * Created by raj on 12-10-2014.
+ */
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,10 +14,11 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import com.etsy.android.grid.StaggeredGridView;
 import java.util.ArrayList;
+
 public class StaggeredGridActivityFragment extends FragmentActivity {
 
     public final static String EXTRA_MESSAGE = "";
-    private static final String TAG = "StaggeredGridActivityFragment";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +32,6 @@ public class StaggeredGridActivityFragment extends FragmentActivity {
     public class StaggeredGridFragment extends Fragment implements
              AbsListView.OnItemClickListener {
         private StaggeredGridView mGridView;
-        private boolean mHasRequestedMore;
         private SampleAdapter mAdapter;
         private ArrayList<String> mData;
         @Override
