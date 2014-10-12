@@ -2,6 +2,7 @@ package com.exercise.AndroidVideoCapture;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -24,8 +25,10 @@ public class Invite extends Activity{
         mc.setAnchorView(videoView);
         mc.setMediaPlayer(videoView);
         videoView.setMediaController(mc);
-
-        videoView.setVideoPath("storage/sdcard0/myvideo.mp4");
+        String s;
+	    
+ 	   s=Environment.getExternalStorageDirectory()+"/Downloads/" ;
+        videoView.setVideoPath(s);
         videoView.seekTo(100);           //
         
         videoView.requestFocus();

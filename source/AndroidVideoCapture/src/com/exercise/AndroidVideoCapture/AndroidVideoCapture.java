@@ -1,5 +1,6 @@
 package com.exercise.AndroidVideoCapture;
 
+import java.io.File;
 import java.io.IOException;
 
 import android.R.string;
@@ -192,13 +193,13 @@ public class AndroidVideoCapture extends Activity{
 
 //	    mediaRecorder.setOutputFile("storage/sdcard0/myvideo.mp4");
 	   String s;
-	    s=Environment.getExternalStorageState();
 	    
-	    mediaRecorder.setOutputFile("storage/sdcard0/myvideo.mp4");
+	   s=Environment.getExternalStorageDirectory()+"/Downloads/" ;
+	    mediaRecorder.setOutputFile(s);
 
-	//    Toast.makeText(AndroidVideoCapture.this, 
-	  //  		s, 
-    	//		Toast.LENGTH_LONG).show();
+	    Toast.makeText(AndroidVideoCapture.this, 
+	    		s, 
+    			Toast.LENGTH_LONG).show();
 	    
         mediaRecorder.setMaxDuration(30000); // Set max duration 30 sec.
         mediaRecorder.setMaxFileSize(500000000); // Set max file size 500M
