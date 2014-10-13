@@ -4,10 +4,8 @@ package com.example.raj.invitube;
  * Created by raj on 7/10/14.
  */
 import android.support.v4.app.Fragment;
-        import com.example.raj.invitube.SelectEventFragment;
-        import com.example.raj.invitube.PreviousInvitesFragment;
-        import android.support.v4.app.FragmentManager;
-        import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 
 /**
  * Created by raj on 3/10/14.

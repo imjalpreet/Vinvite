@@ -1,7 +1,6 @@
 package com.yourevent.mobilevideoinvitation;
 
 import android.support.v4.app.Fragment;
-import com.yourevent.mobilevideoinvitation.R;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

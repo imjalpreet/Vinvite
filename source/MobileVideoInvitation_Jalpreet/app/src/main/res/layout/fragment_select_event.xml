@@ -8,9 +8,8 @@
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Select Event Screen"
-        android:textSize="20dp"
+        android:text="@string/select_event"
+        android:textSize="20sp"
         android:layout_centerInParent="true"
         android:id="@+id/SelectEvent"/>
-
 </RelativeLayout>

@@ -12,9 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import com.etsy.android.grid.StaggeredGridView;
-
 import java.util.ArrayList;
-
 
 public class SelectEventFragment extends FragmentActivity {
     public static final String TAG = "StaggeredGridActivityFragment";
@@ -33,7 +31,6 @@ public class SelectEventFragment extends FragmentActivity {
     private class StaggeredGridFragment extends Fragment implements
             AbsListView.OnScrollListener, AbsListView.OnItemClickListener {
         private StaggeredGridView mGridView;
-        private boolean mHasRequestedMore;
         private SampleAdapter mAdapter;
         private ArrayList<String> mData;
         @Override
@@ -49,17 +46,6 @@ public class SelectEventFragment extends FragmentActivity {
         public void onActivityCreated(final Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
             mGridView = (StaggeredGridView) getView().findViewById(R.id.grid_view);
-            if (savedInstanceState == null) {
-                final LayoutInflater layoutInflater = getActivity().getLayoutInflater();
-      /*          View header = layoutInflater.inflate(R.layout.list_item_header_footer, null);
-                View footer = layoutInflater.inflate(R.layout.list_item_header_footer, null);
-                TextView txtHeaderTitle = (TextView) header.findViewById(R.id.txt_title);
-                TextView txtFooterTitle = (TextView) footer.findViewById(R.id.txt_title);
-                txtHeaderTitle.setText("THE HEADER!");
-                txtFooterTitle.setText("THE FOOTER!");
-                mGridView.addHeaderView(header);
-                mGridView.addFooterView(footer);
-        */    }
             if (mAdapter == null) {
                 mAdapter = new SampleAdapter(getActivity(), R.id.txt_line1);
             }
@@ -82,35 +68,10 @@ public class SelectEventFragment extends FragmentActivity {
             Log.d(TAG, "onScroll firstVisibleItem:" + firstVisibleItem +
                     " visibleItemCount:" + visibleItemCount +
                     " totalItemCount:" + totalItemCount);
-// our handling
-            if (!mHasRequestedMore) {
-                int lastInScreen = firstVisibleItem + visibleItemCount;
-                if (lastInScreen >= totalItemCount) {
-                    Log.d(TAG, "onScroll lastInScreen - so load more");
-                    mHasRequestedMore = true;
-                    onLoadMoreItems();
-                }
-            }
-        }
-        private void onLoadMoreItems() {
-            final ArrayList<String> sampleData = SampleData.generateSampleData();
-            int i=0;
-            for (String data : sampleData) {
-                i+=1;
-                mAdapter.add(data);
-                if(i==6){
-                    break;
-                }
-            }
+       }
 // stash all the data in our backing store
-            mData.addAll(sampleData);
-// notify the adapter that we can update now
-            mAdapter.notifyDataSetChanged();
-            mHasRequestedMore = false;
-        }
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-            //Toast.makeText(getActivity(), "Item Clicked: " + position, Toast.LENGTH_SHORT).show();
             Intent i;
             i = new Intent("android.intent.action.ENTEREVENTDETAILS");
             i.putExtra(EXTRA_MESSAGE, Integer.toString(position));

@@ -55,12 +55,6 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
             public void onPageScrollStateChanged(int arg0) {
             }
         });
-
-        /*if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }*/
     }
 
 
@@ -97,20 +91,4 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
     public void onTabReselected(Tab tab, FragmentTransaction fragmentTransaction) {
 
     }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    /*public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-            return rootView;
-        }
-    }*/
 }
