@@ -27,13 +27,10 @@ public class AndroidVideoCapture extends Activity{
     private MediaRecorder mediaRecorder;
     TextView rec;
     boolean visible = true;
-   // TextView rec=(TextView)findViewById(R.id.RecButton);
-
 	Button myButton;
 	SurfaceHolder surfaceHolder;
 	boolean recording;
 	
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,41 +40,8 @@ public class AndroidVideoCapture extends Activity{
         setContentView(R.layout.main);
         TextView rec=(TextView)findViewById(R.id.RecButton);
         
-        /*
-        
-        int cameraCount = 0;
-	    int waste=0;
-	    //Camera cam = null;
-	    Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
-	    cameraCount = Camera.getNumberOfCameras();
-	    for (int camIdx = 0; camIdx < cameraCount; camIdx++) {
-	        Camera.getCameraInfo(camIdx, cameraInfo);
-	        if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-	         //   try {
-	                myCamera = Camera.open(camIdx);
-	                myCamera.setDisplayOrientation(90);
-	                
-	         //   } catch (Exception e) {
-	           //    waste++;
-	             //  waste=0;
-	            //Log.e(TAG, "Camera failed to open: " + e.getLocalizedMessage());
-	           // }
-	        }
-	    }*/
        myCamera = getCameraInstance();
-        
-        
-        
-      /*  
-        //Get Camera for preview
-        myCamera = getCameraInstance();
-        if(myCamera == null){
-        	Toast.makeText(AndroidVideoCapture.this, 
-        			"Fail to get Camera", 
-        			Toast.LENGTH_LONG).show();
-        }
-*/
-      // TextView rec=(TextView)findViewById(R.id.RecButton);
+    
         myCameraSurfaceView = new MyCameraSurfaceView(this, myCamera);
         FrameLayout myCameraPreview = (FrameLayout)findViewById(R.id.videoview);
         myCameraPreview.addView(myCameraSurfaceView);
@@ -101,44 +65,26 @@ public class AndroidVideoCapture extends Activity{
                 // stop recording and release camera
                 mediaRecorder.stop();  // stop the recording
                 releaseMediaRecorder(); // release the MediaRecorder object
-                
                 Intent openinvite = new Intent("com.exercise.AndroidVideoCapture.INVITE");
-        		
     			startActivity(openinvite);
                 
-                //Exit after saved
-               // finish();
 			}else{
-				
-				
-				//Release Camera before MediaRecorder start
 				releaseCamera();
-			
-			
-				
-				
-		        if(!prepareMediaRecorder()){
+				if(!prepareMediaRecorder()){
 		        	Toast.makeText(AndroidVideoCapture.this, 
 		        			"Fail in prepareMediaRecorder()!\n - Ended -", 
 		        			Toast.LENGTH_LONG).show();
 		        	finish();
 		        }
-				
-		        
-			mediaRecorder.start();
-			//rec.setVisibility(View.VISIBLE);
+					        
+			    mediaRecorder.start();
 				recording = true;
 				myButton.setText("STOP");
 				
 			}
 		}};
     
-    private Camera getCameraInstance(){
-		// TODO Auto-generated method stub
-    	
-    	
-    	
-    	
+    private Camera getCameraInstance(){	
     	int cameraCount = 0;
   	    int waste=0;
   	    Camera cam = null;
@@ -147,42 +93,17 @@ public class AndroidVideoCapture extends Activity{
   	    for (int camIdx = 0; camIdx < cameraCount; camIdx++) {
   	        Camera.getCameraInfo(camIdx, cameraInfo);
   	        if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-  	         //   try {
   	                cam = Camera.open(camIdx);
   	                cam.setDisplayOrientation(90);
-  	                
-  	         //   } catch (Exception e) {
-  	           //    waste++;
-  	             //  waste=0;
-  	            //Log.e(TAG, "Camera failed to open: " + e.getLocalizedMessage());
-  	           // }
   	        }
   	    }
   	    return cam;
     	
-    	/*
-    	
-        Camera c = null;
-        try {
-            c = Camera.open(); // attempt to get a Camera instance
-        }
-        catch (Exception e){
-            // Camera is not available (in use or does not exist)
-        }
-        return c; // returns null if camera is unavailable
-        */
 	}
 	
 	private boolean prepareMediaRecorder(){
-		
-
-		
-		
 	    myCamera = getCameraInstance();
 	    mediaRecorder = new MediaRecorder();
-	    
-
-
 	    myCamera.unlock();
 	    mediaRecorder.setCamera(myCamera);
 
@@ -190,22 +111,18 @@ public class AndroidVideoCapture extends Activity{
 	    mediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
 
 	    mediaRecorder.setProfile(CamcorderProfile.get(1,CamcorderProfile.QUALITY_HIGH));
-
-//	    mediaRecorder.setOutputFile("storage/sdcard0/myvideo.mp4");
 	   String s;
 	    
 	   s=Environment.getExternalStorageDirectory()+"/Downloads/" ;
 	    mediaRecorder.setOutputFile(s);
-
+/*
 	    Toast.makeText(AndroidVideoCapture.this, 
 	    		s, 
     			Toast.LENGTH_LONG).show();
-	    
+	*/    
         mediaRecorder.setMaxDuration(30000); // Set max duration 30 sec.
-        mediaRecorder.setMaxFileSize(500000000); // Set max file size 500M
+        mediaRecorder.setMaxFileSize(16000000); // Set max file size 16M
 
-	 //   mediaRecorder.setPreviewDisplay(myCameraSurfaceView.getHolder().getSurface());
-	//    mediaRecorder.prepare();
 
 	    try {
 	    	mediaRecorder.setPreviewDisplay(myCameraSurfaceView.getHolder().getSurface());
