@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 import android.R.string;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -38,7 +39,8 @@ public class AndroidVideoCapture extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        ActionBar actionBar = getActionBar();
+        actionBar.hide();
         recording = false;
 
         setContentView(R.layout.main);
@@ -83,7 +85,7 @@ public class AndroidVideoCapture extends Activity{
                 mediaRecorder.start();
                 recording = true;
                 myButton.setText("STOP");
-
+                myButton.setBackgroundResource(R.drawable.round_button_stop);
             }
         }};
 
