@@ -26,8 +26,8 @@ public class Invite extends Activity{
         videoView.setMediaController(mc);
         String s;
  	    s=Environment.getExternalStorageDirectory()+"/Downloads/" ;
-        videoView.setVideoPath(s);
-        videoView.seekTo(100);       
+        videoView.setVideoPath(s); // setting the video path
+        videoView.seekTo(100);     // setting the video thumbnail  
         videoView.requestFocus();
         videoView.setOnTouchListener(new OnTouchListener() {		
 			@Override

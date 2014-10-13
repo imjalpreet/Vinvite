@@ -22,7 +22,9 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
     private StaggeredGridView mGridView;
     private SelectScriptAdapter mAdapter;
     private ArrayList<String> mData;
-    public final static String EXTRA_MESSAGE = "com.yourevent.mobilevideoinvitation";
+    public String eventName;
+    public final static String EXTRA_MESSAGE = "";
+    public final static String EVENT_NAME = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,10 +71,16 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
     }
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-        Intent i = new Intent(this, BackgroundScore.class);
+        Intent i = new Intent(this, ShowScript.class);
         final ArrayList<String> sampleData = SelectScriptData.generateSampleData();
         mData.addAll(sampleData);
-        i.putExtra(EXTRA_MESSAGE, mData.get(position));
+        Intent intent = getIntent();
+        eventName = intent.getStringExtra(EnterEventDetails.EXTRA);
+        Log.d(TAG, eventName+" "+mData.get(position));
+        Bundle extras = new Bundle();
+        //extras.putString(EXTRA_MESSAGE, mData.get(position));
+        extras.putString(EVENT_NAME, eventName+" "+mData.get(position));
+        i.putExtras(extras);
         startActivity(i);
     }
 }
