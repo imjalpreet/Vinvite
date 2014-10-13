@@ -25,9 +25,9 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.background_score);
-        Bundle extras = getIntent().getExtras();
-        String event = extras.getString(StaggeredGridActivity.EXTRA_MESSAGE);
-        setTitle("Background Score - "+event);
+        //Bundle extras = getIntent().getExtras();
+        //String event = extras.getString(StaggeredGridActivity.EXTRA_MESSAGE);
+        //setTitle("Background Score - "+event);
         mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
         mAdapter = new BackgroundAdapter(this, R.id.txt_line1);
 // do we have saved data?

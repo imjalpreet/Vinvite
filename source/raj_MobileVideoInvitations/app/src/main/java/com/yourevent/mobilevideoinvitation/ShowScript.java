@@ -2,7 +2,10 @@ package com.yourevent.mobilevideoinvitation;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -22,7 +25,6 @@ public class ShowScript extends Activity {
         setTitle(Data[1]);
         ActionBar actionBar = getActionBar();
         actionBar.hide();
-        //String scriptType = extras.getString(StaggeredGridActivity.EXTRA_MESSAGE);
         ScriptType.setText(Data[0]);
         Script = (EditText) findViewById(R.id.tvFinalScript);
         String script = "Come and join us for some Birthday fun. \n" +
@@ -34,5 +36,13 @@ public class ShowScript extends Activity {
                 "\n" +
                 "Do Join us for some family time!!";
         Script.setText(script);
+        Button contBut = (Button)findViewById(R.id.continueFinalScript);
+        contBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent("android.intent.action.ANDROIDVIDEOCAPTURE");
+                startActivity(i);
+            }
+        });
     }
 }
