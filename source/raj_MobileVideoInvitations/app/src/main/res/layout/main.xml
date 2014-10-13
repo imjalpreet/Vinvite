@@ -21,19 +21,22 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="#99000000"
-        android:text="Some Text"
-        android:textSize="50dp"
+        android:text="Hello there, I happily invite you to my birthday!"
+        android:textSize="28dp"
         android:gravity="center"
         android:textColor="#FFFFFF"
         />
     <Button
         android:id="@+id/mybutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="REC"
+        android:background="@drawable/round_button"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:textSize="12dp"/>
+        android:textSize="15dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/RecButton"
@@ -44,7 +47,8 @@
         android:text="REC"
         android:layout_marginLeft="20dp"
         android:visibility = "gone"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp" />
+        android:textColor="#FF0000"
+        android:textSize="25dp"
+        android:layout_marginBottom="20dp" />
 
 </RelativeLayout>
