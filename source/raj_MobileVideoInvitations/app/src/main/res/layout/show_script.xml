@@ -36,7 +36,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Final Script"
@@ -47,6 +47,6 @@
         android:layout_above="@+id/continueFinalScript"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
 </RelativeLayout>
