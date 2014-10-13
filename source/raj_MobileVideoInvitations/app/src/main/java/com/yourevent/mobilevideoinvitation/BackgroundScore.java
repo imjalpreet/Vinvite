@@ -5,6 +5,7 @@ package com.yourevent.mobilevideoinvitation;
  */
 import java.util.ArrayList;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -72,5 +73,7 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         Toast.makeText(this, "Item Clicked: " + Integer.toString(position + 1), Toast.LENGTH_SHORT).show();
+        Intent openinvite = new Intent("android.intent.action.INVITE");
+        startActivity(openinvite);
     }
 }
