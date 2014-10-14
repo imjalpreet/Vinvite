@@ -7,6 +7,8 @@ package com.yourevent.mobilevideoinvitation.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import com.yourevent.mobilevideoinvitation.PreviousInvitesFragment;
+import com.yourevent.mobilevideoinvitation.SelectEventFragment;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter{
 
@@ -19,10 +21,10 @@ public class TabsPagerAdapter extends FragmentPagerAdapter{
         switch (index){
             case 0:
                 //Select Event Fragment
-                //return new SelectEventFragment();
+                return new SelectEventFragment();
             case 1:
                 //Previous Events Fragment
-                //return new PreviousInvitesFragment();
+                return new PreviousInvitesFragment();
         }
         return null;
     }
