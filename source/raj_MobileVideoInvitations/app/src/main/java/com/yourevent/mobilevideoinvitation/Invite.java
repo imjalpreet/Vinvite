@@ -2,10 +2,14 @@ package com.yourevent.mobilevideoinvitation;
 
 
         import android.app.Activity;
+        import android.content.Intent;
         import android.media.MediaPlayer;
         import android.media.MediaPlayer.OnCompletionListener;
+        import android.net.Uri;
         import android.os.Bundle;
         import android.os.Environment;
+        import android.view.Menu;
+        import android.view.MenuItem;
         import android.view.MotionEvent;
         import android.view.View;
         import android.view.View.OnTouchListener;
@@ -14,8 +18,10 @@ package com.yourevent.mobilevideoinvitation;
         import android.widget.Toast;
         import android.widget.VideoView;
 
+        import java.io.File;
+
 public class Invite extends Activity{
-    VideoView videoView;
+    File file;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +33,7 @@ public class Invite extends Activity{
         videoView.setMediaController(mc);
         String s;
         s = Environment.getExternalStorageDirectory() + "/newinvitation.mp4";
+        file = new File(s);
         videoView.setVideoPath(s); // setting the video path
         videoView.seekTo(100);     // setting the video thumbnail
         videoView.requestFocus();
@@ -41,5 +48,30 @@ public class Invite extends Activity{
                 }
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.share, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        else if(id == R.id.Share){
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+            shareIntent.setType("video/mp4");
+            startActivity(Intent.createChooser(shareIntent, "Send Invitation"));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

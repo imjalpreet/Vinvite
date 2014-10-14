@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EnterEventDetails extends Activity {
     String[] events = {"Birthday", "Wedding", "Engagement", "Reception", "House Warming", "Anniversary"};
@@ -42,8 +43,13 @@ public class EnterEventDetails extends Activity {
             @Override
             public void onClick(View v) {
             Intent i = new Intent("android.intent.action.STAGGEREDGRIDACTIVITY");
-            i.putExtra(EXTRA, events[Integer.parseInt(event)] + " " + name.getText() + " " + description.getText() + " " + venue.getText() + " " + date.getText() + " " + time.getText());
-            startActivity(i);
+            if (name.getText().toString().trim().length() == 0||description.getText().toString().trim().length() == 0||venue.getText().toString().trim().length() == 0||date.getText().toString().trim().length() == 0||time.getText().toString().trim().length() == 0) {
+                Toast.makeText(EnterEventDetails.this, "Field cannot be Empty", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                i.putExtra(EXTRA, events[Integer.parseInt(event)] + " " + name.getText() + " " + description.getText() + " " + venue.getText() + " " + date.getText() + " " + time.getText());
+                startActivity(i);
+            }
             }
         });
     }

@@ -111,23 +111,15 @@ public class AndroidVideoCapture extends Activity{
         mediaRecorder = new MediaRecorder();
         myCamera.unlock();
         mediaRecorder.setCamera(myCamera);
-
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
         mediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
-
+        mediaRecorder.setOrientationHint(270);
         mediaRecorder.setProfile(CamcorderProfile.get(1,CamcorderProfile.QUALITY_HIGH));
         String s;
-
         s=Environment.getExternalStorageDirectory()+"/newinvitation.mp4" ;
         mediaRecorder.setOutputFile(s);
-/*
-	    Toast.makeText(AndroidVideoCapture.this,
-	    		s,
-    			Toast.LENGTH_LONG).show();
-	*/
         mediaRecorder.setMaxDuration(30000); // Set max duration 30 sec.
         mediaRecorder.setMaxFileSize(16000000); // Set max file size 16M
-
 
         try {
             mediaRecorder.setPreviewDisplay(myCameraSurfaceView.getHolder().getSurface());
