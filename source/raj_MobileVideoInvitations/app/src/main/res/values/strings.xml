@@ -10,5 +10,13 @@
     <string name="event_details_date">Date</string>
     <string name="event_details_time">Time</string>
     <string name="action_skip">Skip</string>
+    <string name="login">Log In</string>
+    <string name="logout">Log Out</string>
+    <string name="login_intro">Log In to check the App</string>
+    <string name="facebook_app_id">1514145385491579</string>
+    <string name="location">Location</string>
+    <string name="gender">Gender</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="relationship">Relationship</string>
 
 </resources>
