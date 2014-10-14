@@ -24,16 +24,11 @@
             </intent-filter>
         </activity>
         <activity
-<<<<<<< HEAD
             android:name=".LoginPage"
-=======
-            android:name=".Home"
             android:screenOrientation="portrait"
->>>>>>> 56ca6fd391eddbff3261cfeb3bf859c73ae44d1b
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -48,13 +43,22 @@
 
         <activity
             android:name=".Home"
+            android:label="@string/app_name"/>
+        <activity android:name="com.facebook.HomePage"
+            android:label="@string/app_name" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+<!--
+        <activity
+            android:name=".Home"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.HOME" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
+        </activity> -->
         <activity
             android:name=".EnterEventDetails"
             android:screenOrientation="portrait"

@@ -96,7 +96,7 @@ public class LoginPage extends Activity {
     }
 
     private void showUserDetailsActivity() {
-        Intent intent = new Intent(this, UserDetails.class);
+        Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
 }
