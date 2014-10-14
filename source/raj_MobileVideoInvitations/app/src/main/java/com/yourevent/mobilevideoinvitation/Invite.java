@@ -20,27 +20,25 @@ public class Invite extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.invite);
-        final VideoView videoView = (VideoView)this.findViewById(R.id.videoview);
+        final VideoView videoView = (VideoView) this.findViewById(R.id.showVideo);
         MediaController mc = new MediaController(this);
         mc.setAnchorView(videoView);
         mc.setMediaPlayer(videoView);
         videoView.setMediaController(mc);
         String s;
-        s=Environment.getExternalStorageDirectory()+"/Downloads/" ;
+        s = Environment.getExternalStorageDirectory() + "/newinvitation.mp4";
         videoView.setVideoPath(s); // setting the video path
         videoView.seekTo(100);     // setting the video thumbnail
         videoView.requestFocus();
-        videoView.setOnTouchListener(new OnTouchListener() {
+        videoView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(!videoView.isPlaying())
-                {
+            public void onClick(View v) {
+                if (!videoView.isPlaying()) {
                     videoView.seekTo(0);
                     videoView.start();
-
+                } else {
+                    videoView.pause();
                 }
-                return true;
-
             }
         });
     }

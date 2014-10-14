@@ -118,7 +118,7 @@ public class AndroidVideoCapture extends Activity{
         mediaRecorder.setProfile(CamcorderProfile.get(1,CamcorderProfile.QUALITY_HIGH));
         String s;
 
-        s=Environment.getExternalStorageDirectory()+"/Downloads/" ;
+        s=Environment.getExternalStorageDirectory()+"/newinvitation.mp4" ;
         mediaRecorder.setOutputFile(s);
 /*
 	    Toast.makeText(AndroidVideoCapture.this,

@@ -15,17 +15,18 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Toast;
 import com.etsy.android.grid.StaggeredGridView;
-
 public class BackgroundScore extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener {
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
     private StaggeredGridView mGridView;
     private BackgroundAdapter mAdapter;
     private ArrayList<String> mData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.background_score);
+        //Next 3 lines will be used
         //Bundle extras = getIntent().getExtras();
         //String event = extras.getString(StaggeredGridActivity.EXTRA_MESSAGE);
         //setTitle("Background Score - "+event);
@@ -52,7 +53,11 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return true;
+        int id=item.getItemId();
+        //if(id == R.id.action_skip) {
+            Log.d(TAG, "Skip clicked:" + Integer.toString(id));
+        //}
+        return super.onOptionsItemSelected(item);
     }
     @Override
     protected void onSaveInstanceState(final Bundle outState) {

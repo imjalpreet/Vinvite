@@ -41,11 +41,10 @@ public class EnterEventDetails extends Activity {
         contButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent("android.intent.action.STAGGEREDGRIDACTIVITY");
-                i.putExtra(EXTRA, events[Integer.parseInt(event)]+" "+name.getText()+" "+description.getText()+" "+venue.getText()+" "+date.getText()+" "+time.getText());
-                startActivity(i);
+            Intent i = new Intent("android.intent.action.STAGGEREDGRIDACTIVITY");
+            i.putExtra(EXTRA, events[Integer.parseInt(event)] + " " + name.getText() + " " + description.getText() + " " + venue.getText() + " " + date.getText() + " " + time.getText());
+            startActivity(i);
             }
         });
     }
-
 }
