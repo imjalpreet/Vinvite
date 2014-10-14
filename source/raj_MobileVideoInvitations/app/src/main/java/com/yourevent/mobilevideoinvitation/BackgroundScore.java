@@ -32,7 +32,7 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
         //setTitle("Background Score - "+event);
         mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
         mAdapter = new BackgroundAdapter(this, R.id.txt_line1);
-// do we have saved data?
+//  do we have saved data?
         if (savedInstanceState != null) {
             mData = savedInstanceState.getStringArrayList(SAVED_DATA_KEY);
         }
@@ -46,19 +46,23 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
         mGridView.setOnScrollListener(this);
         mGridView.setOnItemClickListener(this);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //getMenuInflater().inflate(R.menu.menu_sgv_dynamic, menu);
+        getMenuInflater().inflate(R.menu.menu_bscore, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id=item.getItemId();
-        //if(id == R.id.action_skip) {
-            Log.d(TAG, "Skip clicked:" + Integer.toString(id));
-        //}
+        int id = item.getItemId();
+        if(id == R.id.action_skip) {
+            Intent openinvite = new Intent("android.intent.action.INVITE");
+            startActivity(openinvite);
+        }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     protected void onSaveInstanceState(final Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -78,7 +82,5 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         Toast.makeText(this, "Item Clicked: " + Integer.toString(position + 1), Toast.LENGTH_SHORT).show();
-        Intent openinvite = new Intent("android.intent.action.INVITE");
-        startActivity(openinvite);
     }
 }
