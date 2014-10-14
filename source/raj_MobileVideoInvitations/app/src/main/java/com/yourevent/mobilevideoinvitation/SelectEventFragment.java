@@ -14,23 +14,10 @@ import android.widget.AdapterView;
 import com.etsy.android.grid.StaggeredGridView;
 import java.util.ArrayList;
 
-public class SelectEventFragment extends FragmentActivity {
-    public static final String TAG = "StaggeredGridActivityFragment";
-    public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        final FragmentManager fm = getSupportFragmentManager();
-// Create the list fragment and add it as our sole content.
-        if (fm.findFragmentById(android.R.id.content) == null) {
-            final StaggeredGridFragment fragment = new StaggeredGridFragment();
-            fm.beginTransaction().add(android.R.id.content, fragment).commit();
-        }
-    }
-    private class StaggeredGridFragment extends Fragment implements
-            AbsListView.OnScrollListener, AbsListView.OnItemClickListener {
+public class SelectEventFragment extends Fragment implements
+            AbsListView.OnItemClickListener {
         private StaggeredGridView mGridView;
+        public final static String EXTRA_MESSAGE = "";
         private SampleAdapter mAdapter;
         private ArrayList<String> mData;
         @Override
@@ -46,6 +33,8 @@ public class SelectEventFragment extends FragmentActivity {
         public void onActivityCreated(final Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
             mGridView = (StaggeredGridView) getView().findViewById(R.id.grid_view);
+            if (savedInstanceState == null) {
+            }
             if (mAdapter == null) {
                 mAdapter = new SampleAdapter(getActivity(), R.id.txt_line1);
             }
@@ -56,20 +45,9 @@ public class SelectEventFragment extends FragmentActivity {
                 mAdapter.add(data);
             }
             mGridView.setAdapter(mAdapter);
-            mGridView.setOnScrollListener(this);
             mGridView.setOnItemClickListener(this);
         }
-        @Override
-        public void onScrollStateChanged(final AbsListView view, final int scrollState) {
-            Log.d(TAG, "onScrollStateChanged:" + scrollState);
-        }
-        @Override
-        public void onScroll(final AbsListView view, final int firstVisibleItem, final int visibleItemCount, final int totalItemCount) {
-            Log.d(TAG, "onScroll firstVisibleItem:" + firstVisibleItem +
-                    " visibleItemCount:" + visibleItemCount +
-                    " totalItemCount:" + totalItemCount);
-       }
-// stash all the data in our backing store
+
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
             Intent i;
@@ -77,5 +55,5 @@ public class SelectEventFragment extends FragmentActivity {
             i.putExtra(EXTRA_MESSAGE, Integer.toString(position));
             startActivity(i);
         }
-    }
 }
+
