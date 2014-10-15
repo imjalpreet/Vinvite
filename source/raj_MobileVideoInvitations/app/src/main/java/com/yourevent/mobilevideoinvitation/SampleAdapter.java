@@ -50,7 +50,9 @@ public class SampleAdapter extends ArrayAdapter<String> {
         int backgroundIndex = position >= mBackgroundColors.size() ?
                 position % mBackgroundColors.size() : position;
         convertView.setBackgroundResource(mBackgroundColors.get(backgroundIndex));
-        vh.txtLineOne.setHeightRatio(1.04);
+        vh.txtLineOne.setHeightRatio(1.05);
+        vh.txtLineOne.setTextSize(22);
+        vh.txtLineOne.setTextColor(Color.parseColor("#FFFFFF"));
         vh.txtLineOne.setText(getItem(position));
         return convertView;
     }
