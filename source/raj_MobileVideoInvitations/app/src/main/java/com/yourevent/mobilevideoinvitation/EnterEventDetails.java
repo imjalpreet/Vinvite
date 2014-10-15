@@ -73,7 +73,7 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
                 Toast.makeText(EnterEventDetails.this, "Date Field cannot be Empty", Toast.LENGTH_SHORT).show();
             }
             else if (time.getText().toString().trim().length() == 0) {
-                name.setTextColor(getResources().getColor(R.color.red));
+                time.setHintTextColor(getResources().getColor(R.color.red));
                 Toast.makeText(EnterEventDetails.this, "Time Field cannot be Empty", Toast.LENGTH_SHORT).show();
             }
             else {
