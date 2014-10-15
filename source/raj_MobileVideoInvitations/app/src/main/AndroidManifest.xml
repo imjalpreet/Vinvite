@@ -5,13 +5,16 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
     <uses-permission android:name="android.permission.CAMERA"></uses-permission>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <activity
+            android:screenOrientation="portrait"
             android:name=".StaggeredGridActivityFragment"
             android:label="@string/app_name" >
             <intent-filter>
@@ -21,16 +24,44 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Home"
+            android:name=".LoginPage"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".UserDetails"
+            android:label="@string/app_name"/>
+        <activity android:name="com.facebook.LoginActivity"
+            android:label="@string/app_name" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+        <activity
+            android:name=".Home"
+            android:label="@string/app_name"/>
+        <activity android:name="com.facebook.HomePage"
+            android:label="@string/app_name" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+<!--
+        <activity
+            android:name=".Home"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.HOME" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> -->
         <activity
             android:name=".EnterEventDetails"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.ENTEREVENTDETAILS" />
@@ -40,6 +71,7 @@
         </activity>
         <activity
             android:name=".StaggeredGridActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.STAGGEREDGRIDACTIVITY" />
@@ -49,6 +81,7 @@
         </activity>
         <activity
             android:name=".ShowScript"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.SHOWSCRIPT" />
@@ -58,6 +91,7 @@
         </activity>
         <activity
             android:name=".AndroidVideoCapture"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.ANDROIDVIDEOCAPTURE" />
@@ -67,6 +101,7 @@
         </activity>
         <activity
             android:name=".BackgroundScore"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.BACKGROUNDSCORE" />
@@ -76,6 +111,7 @@
         </activity>
         <activity
             android:name=".Invite"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.INVITE" />
