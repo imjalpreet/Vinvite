@@ -6,23 +6,9 @@ import android.support.v4.view.ViewPager;
 import android.app.FragmentTransaction;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import android.widget.Toast;
-
-import com.facebook.FacebookRequestError;
-import com.facebook.Request;
-import com.facebook.Response;
-import com.facebook.Session;
-import com.facebook.model.GraphUser;
-import com.parse.ParseFacebookUtils;
-import com.parse.ParseUser;
 import com.yourevent.mobilevideoinvitation.adapter.TabsPagerAdapter;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 
 public class Home extends FragmentActivity implements ActionBar.TabListener {
@@ -38,14 +24,11 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         setContentView(R.layout.activity_home);
         //Initialization
         actionBar = getActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowHomeEnabled(false);
         viewPager = (ViewPager) findViewById(R.id.pager);
         mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
-
-//        Session session = ParseFacebookUtils.getSession();
-//        if (session != null && session.isOpened()) {
-//            makeMeRequest();
- //       }
-
 
         viewPager.setAdapter(mAdapter);
         actionBar.setHomeButtonEnabled(false);
@@ -111,95 +94,4 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
     public void onTabReselected(Tab tab, FragmentTransaction fragmentTransaction) {
 
     }
-/*
-
-
-    private void makeMeRequest() {
-        Request request = Request.newMeRequest(ParseFacebookUtils.getSession(),
-                new Request.GraphUserCallback() {
-                    @Override
-                    public void onCompleted(GraphUser user, Response response) {
-                        if (user != null) {
-                            // Create a JSON object to hold the profile info
-                            JSONObject userProfile = new JSONObject();
-                            try {
-                                // Populate the JSON object
-                                userProfile.put("facebookId", user.getId());
-                                userProfile.put("name", user.getName());
-
-
-                                // Save the user profile info in a user property
-                                ParseUser currentUser = ParseUser
-                                        .getCurrentUser();
-                                currentUser.put("profile", userProfile);
-                                currentUser.saveInBackground();
-
-                                // Show the user info
-                                updateViewsWithProfileInfo();
-                            } catch (JSONException e) {
-                                Log.d(IntegratingFacebook.TAG,
-                                        "Error parsing returned user data.");
-                            }
-
-                        } else if (response.getError() != null) {
-                            if ((response.getError().getCategory() == FacebookRequestError.Category.AUTHENTICATION_RETRY)
-                                    || (response.getError().getCategory() == FacebookRequestError.Category.AUTHENTICATION_REOPEN_SESSION)) {
-                                Log.d(IntegratingFacebook.TAG,
-                                        "The facebook session was invalidated.");
-                                onLogoutButtonClicked();
-                            } else {
-                                Log.d(IntegratingFacebook.TAG,
-                                        "Some other error: "
-                                                + response.getError()
-                                                .getErrorMessage());
-                            }
-                        }
-                    }
-                });
-        request.executeAsync();
-
-    }
-
-
-    private void updateViewsWithProfileInfo() {
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        if (currentUser.get("profile") != null) {
-            JSONObject userProfile = currentUser.getJSONObject("profile");
-            try {
-
-                if (userProfile.getString("name") != null) {
-                //   userNameView.setText(userProfile.getString("name"));
-                    Toast.makeText(Home.this,
-                            "Hello " + userProfile.getString("name"), Toast.LENGTH_LONG).show();
-
-               //     Toast.makeText(AndroidVideoCapture.this,
-                 //           "Fail in prepareMediaRecorder()!\n - Ended -",
-                } else {
-                 //   userNameView.setText("");
-                }
-
-            } catch (JSONException e) {
-                Log.d(IntegratingFacebook.TAG,
-                        "Error parsing saved user data.");
-            }
-
-        }
-    }
-
-
-    private void onLogoutButtonClicked() {
-        // Log the user out
-        ParseUser.logOut();
-
-        // Go to the login view
-       // startLoginActivity();
-    }
-/*
-    private void startLoginActivity() {
-        Intent intent = new Intent(this, LoginPage.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
-*/
 }

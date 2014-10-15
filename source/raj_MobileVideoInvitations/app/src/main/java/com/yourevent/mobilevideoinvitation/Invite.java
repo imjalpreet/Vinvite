@@ -1,6 +1,7 @@
 package com.yourevent.mobilevideoinvitation;
 
 
+        import android.app.ActionBar;
         import android.app.Activity;
         import android.content.Intent;
         import android.media.MediaPlayer;
@@ -25,6 +26,9 @@ public class Invite extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.invite);
         final VideoView videoView = (VideoView) this.findViewById(R.id.showVideo);
         MediaController mc = new MediaController(this);
