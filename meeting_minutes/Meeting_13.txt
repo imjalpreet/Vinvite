@@ -1,0 +1,13 @@
+Thirteenth Meeting
+Topic: Presenting the progress of the app and discussions about R1 presentations
+Date: 14-10-14
+Time: 21:30 - 22:20
+Place: CIE, IIIT-H
+Attendees: Raj, Jalpreet, Vikram, Manas
+Next Meeting: 15-10-14
+
+Important Points of Discussion:
+1. Discussed enhancements on the screens made
+2. Changes suggested by the client
+3. Task given to apply these changes
+4. Also we have to give mock presentation to the clients before R1
