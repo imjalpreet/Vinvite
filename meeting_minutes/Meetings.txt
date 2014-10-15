@@ -30,8 +30,6 @@ We all had a meeting online to discuss the important points regarding the  proje
 20:10 --> Team meeting for making flow charts for the app
 22:30 --> Showing the flow charts to the client and the next task is to draw approximate screens of the app that we are going to make.
 
-02/08/
-
 27/08/14
 *******************************************************************************
 Time: 21:00 - 21:30
@@ -116,7 +114,7 @@ Topic: Discussion on the Final Screens and the first screen.
 
 We mainly discussed on the changes told to us by Sri Harsha sir that are to be done on the Final screens and we also discussed on how to start with the First screen of the app.
 
-01/09/14
+01/10/14
 *******************************************************************************
 Time: 23:00 - 00:00
 Attendees: Raj, Jalpreet, Vikram, Manas
@@ -124,7 +122,7 @@ Topic: Planning of tasks in holidays
 
 Deciding the tasks of each person for holidays
 
-09/09/14
+09/10/14
 *******************************************************************************
 Time: 21:00 - 02:45
 Attendees: Raj, Jalpreet
@@ -132,7 +130,7 @@ Topic: Integrating cardslib in the app
 
 Integrating cardslib API with the app screen in select event and select script type screens
 
-10/09/14
+10/10/14
 *******************************************************************************
 Time: 22:00 - 22:55
 Attendees: Raj, Jalpreet
@@ -140,7 +138,7 @@ Topic: Completing documentation and merging code
 
 Modifying SRS, Status tracker etc and merging raj_MobileVideoInvitations and MobileVideoInvitations_jalpreet
 
-15/09/14
+14/10/14
 *******************************************************************************
 Time: 22:45 - 01:00
 Attendees: Raj, Jalpreet, Manas, Vikram
