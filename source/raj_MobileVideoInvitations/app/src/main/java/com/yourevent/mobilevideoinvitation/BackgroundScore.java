@@ -4,6 +4,8 @@ package com.yourevent.mobilevideoinvitation;
  * Created by raj on 10/10/14.
  */
 import java.util.ArrayList;
+
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +28,9 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.background_score);
+        ActionBar actionBar = getActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
         //Next 3 lines will be used
         //Bundle extras = getIntent().getExtras();
         //String event = extras.getString(StaggeredGridActivity.EXTRA_MESSAGE);

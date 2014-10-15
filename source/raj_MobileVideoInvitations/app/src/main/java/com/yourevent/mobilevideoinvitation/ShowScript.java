@@ -24,6 +24,8 @@ public class ShowScript extends Activity {
         String[] Data = eventName.split(" ");
         setTitle(Data[1]);
         ActionBar actionBar = getActionBar();
+        assert actionBar != null;
+        //actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.hide();
         ScriptType.setText(Data[0]);
         Script = (EditText) findViewById(R.id.tvFinalScript);
