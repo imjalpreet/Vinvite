@@ -4,6 +4,7 @@ package com.yourevent.mobilevideoinvitation;
  * Created by imjalpreet on 13/10/14.
  */
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -36,10 +37,13 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_details);
+        ActionBar actionBar = getActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
         setTitle("Event Details");
         Intent intent = getIntent();
-        String message = intent.getStringExtra(StaggeredGridActivityFragment.EXTRA_MESSAGE);
-        event = intent.getStringExtra(StaggeredGridActivityFragment.EXTRA_MESSAGE);
+        String message = intent.getStringExtra(SelectEventFragment.EXTRA_MESSAGE);
+        event = intent.getStringExtra(SelectEventFragment.EXTRA_MESSAGE);
         TextView t = (TextView)findViewById(R.id.eventName);
         t.setText(events[Integer.parseInt(message)]);
         contButton = (Button)findViewById(R.id.continueEventDetails);
@@ -58,15 +62,19 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
             Intent i = new Intent("android.intent.action.STAGGEREDGRIDACTIVITY");
             if (name.getText().toString().trim().length() == 0) {
                 Toast.makeText(EnterEventDetails.this, "Name Field cannot be Empty", Toast.LENGTH_SHORT).show();
+                name.setHintTextColor(getResources().getColor(R.color.red));
             }
             else if (venue.getText().toString().trim().length() == 0) {
-                    Toast.makeText(EnterEventDetails.this, "Venue Field cannot be Empty", Toast.LENGTH_SHORT).show();
+                venue.setHintTextColor(getResources().getColor(R.color.red));
+                Toast.makeText(EnterEventDetails.this, "Venue Field cannot be Empty", Toast.LENGTH_SHORT).show();
             }
             else if (date.getText().toString().trim().length() == 0) {
-                    Toast.makeText(EnterEventDetails.this, "Date Field cannot be Empty", Toast.LENGTH_SHORT).show();
+                date.setHintTextColor(getResources().getColor(R.color.red));
+                Toast.makeText(EnterEventDetails.this, "Date Field cannot be Empty", Toast.LENGTH_SHORT).show();
             }
             else if (time.getText().toString().trim().length() == 0) {
-                    Toast.makeText(EnterEventDetails.this, "Time Field cannot be Empty", Toast.LENGTH_SHORT).show();
+                name.setTextColor(getResources().getColor(R.color.red));
+                Toast.makeText(EnterEventDetails.this, "Time Field cannot be Empty", Toast.LENGTH_SHORT).show();
             }
             else {
                 i.putExtra(EXTRA, events[Integer.parseInt(event)] + " " + name.getText() + " " + description.getText() + " " + venue.getText() + " " + date.getText() + " " + time.getText());

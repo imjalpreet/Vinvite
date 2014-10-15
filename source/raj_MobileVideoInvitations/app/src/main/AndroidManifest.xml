@@ -2,12 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yourevent.mobilevideoinvitation" >
     <uses-sdk android:minSdkVersion="14" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
-    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -23,35 +20,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-       <!-- <activity
-            android:name=".LoginPage"
+        <activity
+            android:name=".Home"
             android:screenOrientation="portrait"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".UserDetails"
-            android:label="@string/app_name"/>
-        <activity android:name="com.facebook.LoginActivity"
-            android:label="@string/app_name" />
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
-
-        <activity
-            android:name=".Home"
-            android:label="@string/app_name"/>
-        <activity android:name="com.facebook.HomePage"
-            android:label="@string/app_name" />
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
--->
-
-        <activity
-            android:name=".Home"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,6 +33,7 @@
         <activity
             android:name=".EnterEventDetails"
             android:screenOrientation="portrait"
+            android:parentActivityName=".Home"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.ENTEREVENTDETAILS" />
@@ -82,6 +54,7 @@
         <activity
             android:name=".ShowScript"
             android:screenOrientation="portrait"
+            android:parentActivityName=".StaggeredGridActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.SHOWSCRIPT" />
@@ -92,6 +65,7 @@
         <activity
             android:name=".AndroidVideoCapture"
             android:screenOrientation="portrait"
+            android:parentActivityName=".ShowScript"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.ANDROIDVIDEOCAPTURE" />
@@ -102,6 +76,7 @@
         <activity
             android:name=".BackgroundScore"
             android:screenOrientation="portrait"
+            android:parentActivityName=".AndroidVideoCapture"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.BACKGROUNDSCORE" />
@@ -112,6 +87,7 @@
         <activity
             android:name=".Invite"
             android:screenOrientation="portrait"
+            android:parentActivityName=".BackgroundScore"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.INVITE" />
