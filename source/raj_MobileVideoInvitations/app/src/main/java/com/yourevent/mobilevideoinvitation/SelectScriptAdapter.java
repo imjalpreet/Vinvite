@@ -56,8 +56,7 @@ public class SelectScriptAdapter extends ArrayAdapter<String> {
         vh.txtLineOne.setText(getItem(position));
         vh.txtLineOne.setTextSize(30);
         vh.txtLineOne.setTextColor(Color.parseColor("#FFFFFF"));
-        int myGravity = 0;
-        //vh.txtLineOne.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);
+        vh.txtLineOne.setPadding(50,0,0,50);
         vh.txtLineOne.setGravity(Gravity.LEFT | Gravity.BOTTOM);
         return convertView;
     }
