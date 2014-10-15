@@ -7,8 +7,11 @@ package com.yourevent.mobilevideoinvitation;
 
 import java.util.Arrays;
 import java.util.List;
+import java.security.Signature;
+import java.security.MessageDigest;
 
 import android.app.Activity;
+import android.content.Context;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -17,6 +20,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 
 import com.parse.LogInCallback;
 import com.parse.Parse;
@@ -95,8 +100,26 @@ public class LoginPage extends Activity {
         });
     }
 
+
+
+
     private void showUserDetailsActivity() {
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, UserDetails.class);
         startActivity(intent);
     }
+/*
+    public static void showHashKey(Context context) {
+        try {
+            PackageInfo info = context.getPackageManager().getPackageInfo(
+                    "com.example.project", PackageManager.GET_SIGNATURES); //Your package name here
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+            //    md.update(signature.toByteArray());
+           //     Log.v("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (NameNotFoundException e) {
+        } catch (NoSuchAlgorithmException e) {
+        }
+    }
+*/
 }
