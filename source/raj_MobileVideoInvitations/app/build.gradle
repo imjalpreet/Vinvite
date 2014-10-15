@@ -2,20 +2,21 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "20.0.0"
-
+    buildToolsVersion '20.0.0'
     defaultConfig {
-        applicationId "com.yourevent.mobilevideoinvitation"
+        applicationId 'com.yourevent.mobilevideoinvitation'
         minSdkVersion 14
         targetSdkVersion 19
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
     }
     buildTypes {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    productFlavors {
     }
 }
 
@@ -24,6 +25,8 @@ dependencies {
     compile 'com.github.gabrielemariotti.cards:library:1.9.1'
     compile 'com.etsy.android.grid:library:1.0.5'
     compile 'com.android.support:support-v4:19.+'
+    compile files('libs/Parse-1.3.1.jar')
+    compile project(':facebook')
 }
 
 repositories {

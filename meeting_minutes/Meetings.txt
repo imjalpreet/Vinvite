@@ -140,3 +140,11 @@ Topic: Completing documentation and merging code
 
 Modifying SRS, Status tracker etc and merging raj_MobileVideoInvitations and MobileVideoInvitations_jalpreet
 
+15/09/14
+*******************************************************************************
+Time: 22:45 - 01:00
+Attendees: Raj, Jalpreet, Manas, Vikram
+Topic: Assigning work to everybody
+
+1. Enhancements in some activities
+2. Discussion on who is doing what as per the changes mentioned by client
