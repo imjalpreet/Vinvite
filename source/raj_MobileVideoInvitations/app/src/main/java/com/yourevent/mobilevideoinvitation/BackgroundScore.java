@@ -23,7 +23,8 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     private StaggeredGridView mGridView;
     private BackgroundAdapter mAdapter;
     private ArrayList<String> mData;
-
+    private String videoFileName;
+    public static String VIDEOFILENAME="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +33,9 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Next 3 lines will be used
-        //Bundle extras = getIntent().getExtras();
-        //String event = extras.getString(StaggeredGridActivity.EXTRA_MESSAGE);
-        //setTitle("Background Score - "+event);
+        Bundle extras = getIntent().getExtras();
+        videoFileName = extras.getString(AndroidVideoCapture.FILENAME);
+        setTitle("Background Score");
         mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
         mAdapter = new BackgroundAdapter(this, R.id.txt_line1);
 //  do we have saved data?
@@ -62,7 +63,8 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.action_skip) {
-            Intent openinvite = new Intent("android.intent.action.INVITE");
+            Intent openinvite = new Intent("android.intent.action.SHARESCREEN");
+            openinvite.putExtra(VIDEOFILENAME, videoFileName);
             startActivity(openinvite);
         }
         return super.onOptionsItemSelected(item);
