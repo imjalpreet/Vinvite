@@ -22,17 +22,13 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 public class EnterEventDetails extends Activity implements View.OnClickListener{
-    String[] events = {"Birthday", "Wedding", "Engagement", "Reception", "House Warming", "Anniversary"};
-    Button contButton;
+    private String[] events = {"Birthday", "Wedding", "Engagement", "Reception", "House Warming", "Anniversary"};
+    private Button contButton;
     public String event;
     public final static String EXTRA = "";
-    EditText name;
-    EditText description;
-    EditText venue;
-    EditText date;
-    EditText time;
+    private EditText name, description, venue, date, time;
     private int mYear, mMonth, mDay, mHour, mMinute;
-    ImageButton btnTime, btnDate;
+    private ImageButton btnTime, btnDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,8 +57,8 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
             public void onClick(View v) {
             Intent i = new Intent("android.intent.action.STAGGEREDGRIDACTIVITY");
             if (name.getText().toString().trim().length() == 0) {
-                Toast.makeText(EnterEventDetails.this, "Name Field cannot be Empty", Toast.LENGTH_SHORT).show();
                 name.setHintTextColor(getResources().getColor(R.color.red));
+                Toast.makeText(EnterEventDetails.this, "Name Field cannot be Empty", Toast.LENGTH_SHORT).show();
             }
             else if (venue.getText().toString().trim().length() == 0) {
                 venue.setHintTextColor(getResources().getColor(R.color.red));
@@ -72,9 +68,15 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
                 date.setHintTextColor(getResources().getColor(R.color.red));
                 Toast.makeText(EnterEventDetails.this, "Date Field cannot be Empty", Toast.LENGTH_SHORT).show();
             }
+            else if (date.getText().toString().trim().length() != 10) {
+                Toast.makeText(EnterEventDetails.this, "Invalid Date", Toast.LENGTH_SHORT).show();
+            }
             else if (time.getText().toString().trim().length() == 0) {
-                name.setTextColor(getResources().getColor(R.color.red));
+                time.setHintTextColor(getResources().getColor(R.color.red));
                 Toast.makeText(EnterEventDetails.this, "Time Field cannot be Empty", Toast.LENGTH_SHORT).show();
+            }
+            else if (time.getText().toString().trim().length() != 5) {
+                Toast.makeText(EnterEventDetails.this, "Invalid Time", Toast.LENGTH_SHORT).show();
             }
             else {
                 i.putExtra(EXTRA, events[Integer.parseInt(event)] + " " + name.getText() + " " + description.getText() + " " + venue.getText() + " " + date.getText() + " " + time.getText());
@@ -100,7 +102,7 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
                         public void onTimeSet(TimePicker view, int hourOfDay,
                                               int minute) {
                             // Display Selected time in textbox
-                            time.setText(hourOfDay + ":" + minute);
+                            time.setText(getAppropriateString(hourOfDay) + ":" + getAppropriateString(minute));
                         }
                     }, mHour, mMinute, false);
             tpd.show();
@@ -120,11 +122,22 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
                         public void onDateSet(DatePicker view, int year,
                                               int monthOfYear, int dayOfMonth) {
                             // Display Selected date in textbox
-                            date.setText(dayOfMonth + "-"
-                                    + (monthOfYear + 1) + "-" + year);
+                            date.setText(getAppropriateString(dayOfMonth) + "-"
+                                    + getAppropriateString(monthOfYear + 1) + "-" + getAppropriateString(year));
                         }
                     }, mYear, mMonth, mDay);
             dpd.show();
         }
+    }
+    // Converts a single digit integer to a double digit integer by appending 0 in front
+    // and then converting this number to a string
+    public String getAppropriateString(int input){
+        String tmp = "0";
+        String str = Integer.toString(input);
+        if (str.length() == 1)
+            tmp += str;
+        else
+            tmp = str;
+        return tmp;
     }
 }

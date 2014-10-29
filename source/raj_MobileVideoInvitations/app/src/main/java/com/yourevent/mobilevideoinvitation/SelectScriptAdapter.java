@@ -4,10 +4,11 @@ import android.content.Context;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-
+import android.graphics.Color;
 import com.etsy.android.grid.util.DynamicHeightTextView;
 
 import java.util.ArrayList;
@@ -53,6 +54,10 @@ public class SelectScriptAdapter extends ArrayAdapter<String> {
         convertView.setBackgroundResource(mBackgroundColors.get(backgroundIndex));
         vh.txtLineOne.setHeightRatio(0.6481);
         vh.txtLineOne.setText(getItem(position));
+        vh.txtLineOne.setTextSize(30);
+        vh.txtLineOne.setTextColor(Color.parseColor("#FFFFFF"));
+        vh.txtLineOne.setPadding(50,0,0,50);
+        vh.txtLineOne.setGravity(Gravity.LEFT | Gravity.BOTTOM);
         return convertView;
     }
 }
