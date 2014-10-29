@@ -70,11 +70,13 @@ public class Invite extends Activity{
             return true;
         }
         else if(id == R.id.Share){
-            Intent shareIntent = new Intent();
+            /*Intent shareIntent = new Intent();
             shareIntent.setAction(Intent.ACTION_SEND);
             shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
             shareIntent.setType("video/mp4");
             startActivity(Intent.createChooser(shareIntent, "Send Invitation"));
+        */
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

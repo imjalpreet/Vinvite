@@ -6,6 +6,7 @@ package com.yourevent.mobilevideoinvitation;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
 
 import android.R.string;
 import android.app.ActionBar;
@@ -26,7 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AndroidVideoCapture extends Activity{
-
+    public String filename;
+    public static String FILENAME = "";
     private Camera myCamera;
     private MyCameraSurfaceView myCameraSurfaceView;
     private MediaRecorder mediaRecorder;
@@ -35,6 +37,8 @@ public class AndroidVideoCapture extends Activity{
     Button myButton;
     SurfaceHolder surfaceHolder;
     boolean recording;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +76,7 @@ public class AndroidVideoCapture extends Activity{
                 mediaRecorder.stop();  // stop the recording
                 releaseMediaRecorder(); // release the MediaRecorder object
                 Intent openinvite = new Intent("android.intent.action.BACKGROUNDSCORE");
+                openinvite.putExtra(FILENAME,filename);
                 startActivity(openinvite);
             }else{
                 releaseCamera();
@@ -116,7 +121,9 @@ public class AndroidVideoCapture extends Activity{
         mediaRecorder.setOrientationHint(270);
         mediaRecorder.setProfile(CamcorderProfile.get(1,CamcorderProfile.QUALITY_HIGH));
         String s;
-        s=Environment.getExternalStorageDirectory()+"/newinvitation.mp4" ;
+        Calendar c = Calendar.getInstance();
+        filename = getAppropriateString(c.get(Calendar.YEAR))+getAppropriateString(c.get(Calendar.MONTH)+1)+getAppropriateString(c.get(Calendar.DATE))+"_"+getAppropriateString(c.get(Calendar.HOUR))+getAppropriateString(c.get(Calendar.MINUTE))+getAppropriateString(c.get(Calendar.SECOND));//Integer.toString(c.get(Calendar.YEAR))+Integer.toString(c.get(Calendar.MONTH)+1)+Integer.toString(c.get(Calendar.DATE))+Integer.toString(c.get(Calendar.HOUR))+Integer.toString(c.get(Calendar.MINUTE))+Integer.toString(c.get(Calendar.SECOND));
+        s=Environment.getExternalStorageDirectory() + "/" + filename + ".mp4" ;
         mediaRecorder.setOutputFile(s);
         mediaRecorder.setMaxDuration(30000); // Set max duration 30 sec.
         mediaRecorder.setMaxFileSize(16000000); // Set max file size 16M
@@ -134,6 +141,18 @@ public class AndroidVideoCapture extends Activity{
         }
         return true;
 
+    }
+
+    // Converts a single digit integer to a double digit integer by appending 0 in front
+    // and then converting this number to a string
+    public String getAppropriateString(int input){
+        String tmp = "0";
+        String str = Integer.toString(input);
+        if (str.length() == 1)
+            tmp += str;
+        else
+            tmp = str;
+        return tmp;
     }
 
     @Override
@@ -221,5 +240,6 @@ public class AndroidVideoCapture extends Activity{
             // TODO Auto-generated method stub
 
         }
-    }
+
+ }
 }

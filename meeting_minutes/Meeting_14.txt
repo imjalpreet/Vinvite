@@ -1,0 +1,11 @@
+Fourteenth Meeting
+Topic: Understanding code of both the teams(ssad25)
+Date: 28/10/14
+Time: 21:50 - 23:30
+Place: CIE, IIIT-H
+Attendees: Raj, Jalpreet, Vikram, Manas
+
+Important Points of Discussion:
+1. Discussed the code of TEAM ssad25
+2. Considered if something is in common in the code of both the teams
+3. Task given to divide the remaining work amongst us
