@@ -27,6 +27,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import java.security.NoSuchAlgorithmException;
 
+import com.facebook.AppEventsLogger;
+import com.facebook.widget.LoginButton;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -35,7 +37,7 @@ import com.parse.ParseUser;
 
 public class LoginPage extends Activity {
 
-    private Button loginButton;
+    private LoginButton loginButton;
     private Dialog progressDialog;
 
     @Override
@@ -43,13 +45,13 @@ public class LoginPage extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.login);
-        Parse.initialize(this, "D3jgbFBGfMIqdAgwORRBPfPzGRwdSl572cs1DiQt",
-                "2A6ICrbaGWaEo98b4j5xZfcHxuWbJgLXOhQ0LKPt");
+        Parse.initialize(this, "asO83QNQyAB3hYyJuphIWLfKjqYNrhHct9q4H28f",
+                "KwrM3iFmVFgIsBwaq1HEC7MTwNCJX5hWjkszmQ94");
 
         // Set your Facebook App Id in strings.xml
         ParseFacebookUtils.initialize(getString(R.string.facebook_app_id));
 
-        loginButton = (Button) findViewById(R.id.loginButton);
+        loginButton = (LoginButton) findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,11 +124,23 @@ public class LoginPage extends Activity {
     }
 
 
-
-
     private void showUserDetailsActivity() {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Logs 'install' and 'app activate' App Events.
+        AppEventsLogger.activateApp(this);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // Logs 'app deactivate' App Event.
+        AppEventsLogger.deactivateApp(this);
     }
 /*
     public static void showHashKey(Context context) {
