@@ -71,6 +71,13 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     }
 
     @Override
+    public void onBackPressed() {
+        // Write your code here
+        Toast.makeText(this, "Back button pressed", Toast.LENGTH_SHORT).show();
+        //super.onBackPressed();
+    }
+
+    @Override
     protected void onSaveInstanceState(final Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putStringArrayList(SAVED_DATA_KEY, mData);
