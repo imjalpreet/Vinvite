@@ -83,7 +83,7 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         Log.d(TAG, mData.get(position)+" "+eventName);
         Bundle extras = new Bundle();
         //extras.putString(EXTRA_MESSAGE, mData.get(position));
-        extras.putString(EVENT_NAME, mData.get(position)+" "+eventName);
+        extras.putString(EVENT_NAME, mData.get(position)+"_"+eventName);
         i.putExtras(extras);
         startActivity(i);
     }
