@@ -16,8 +16,8 @@ public class IntegratingFacebook extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Parse.initialize(this, "D3jgbFBGfMIqdAgwORRBPfPzGRwdSl572cs1DiQt",
-                "2A6ICrbaGWaEo98b4j5xZfcHxuWbJgLXOhQ0LKPt");
+        Parse.initialize(this, "asO83QNQyAB3hYyJuphIWLfKjqYNrhHct9q4H28f",
+                "KwrM3iFmVFgIsBwaq1HEC7MTwNCJX5hWjkszmQ94");
 
         // Set your Facebook App Id in strings.xml
         ParseFacebookUtils.initialize(getString(R.string.facebook_app_id));
