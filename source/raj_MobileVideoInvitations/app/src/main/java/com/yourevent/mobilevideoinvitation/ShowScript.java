@@ -21,7 +21,7 @@ public class ShowScript extends Activity {
         ScriptType = (TextView) findViewById(R.id.ScriptType);
         Bundle extras = getIntent().getExtras();
         String eventName = extras.getString(StaggeredGridActivity.EVENT_NAME);
-        String[] Data = eventName.split(" ");
+        String[] Data = eventName.split("_");
         setTitle(Data[1]);
         ActionBar actionBar = getActionBar();
         assert actionBar != null;
