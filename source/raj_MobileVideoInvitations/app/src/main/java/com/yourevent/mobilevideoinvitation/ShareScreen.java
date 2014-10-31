@@ -13,7 +13,14 @@ import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 
 /**
@@ -21,6 +28,7 @@ import java.io.File;
  */
 public class ShareScreen extends Activity {
 
+    ParseFile mVideo;
     private File file;
     private String s;
     private VideoView videoView;
@@ -113,6 +121,30 @@ public class ShareScreen extends Activity {
                 shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
                 shareIntent.setType("video/mp4");
                 shareIntent.setPackage(uri);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                FileInputStream fis = null;
+                try {
+                    fis = new FileInputStream(file);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                byte[] buf = new byte[1024];
+                int n;
+                assert fis != null;
+                try {
+                    while (-1 != (n = fis.read(buf)))
+                        baos.write(buf, 0, n);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                byte[] videoBytes = baos.toByteArray(); //this is the video in bytes.
+                mVideo = new ParseFile(videoFileName, videoBytes);
+                mVideo.saveInBackground();
+                ParseObject videoUpload = new ParseObject("Videos");
+                videoUpload.put("VideoName", videoFileName);
+                videoUpload.put("VideoFile", mVideo);
+                videoUpload.saveInBackground();
                 startActivity(shareIntent);
             }
         });
