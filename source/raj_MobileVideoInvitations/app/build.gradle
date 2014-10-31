@@ -24,6 +24,8 @@ dependencies {
     compile 'com.github.gabrielemariotti.cards:library:1.9.1'
     compile 'com.etsy.android.grid:library:1.0.5'
     compile 'com.android.support:support-v4:19.+'
+    compile 'com.parse.bolts:bolts-android:1.1.2'
+    compile fileTree(dir: 'libs', include: 'Parse-*.jar')
 }
 
 repositories {
