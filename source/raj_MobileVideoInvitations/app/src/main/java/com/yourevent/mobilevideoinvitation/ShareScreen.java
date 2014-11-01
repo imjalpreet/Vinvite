@@ -7,6 +7,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -22,10 +24,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-
 /**
  * Created by raj on 29/10/14.
  */
+
 public class ShareScreen extends Activity {
 
     ParseFile mVideo;
@@ -163,5 +165,42 @@ public class ShareScreen extends Activity {
             app_installed = false;
         }
         return app_installed ;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.share, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.Save) {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            FileInputStream fis = null;
+            try {
+                fis = new FileInputStream(file);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            byte[] buf = new byte[1024];
+            int n;
+            assert fis != null;
+            try {
+                while (-1 != (n = fis.read(buf)))
+                    baos.write(buf, 0, n);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            byte[] videoBytes = baos.toByteArray(); //this is the video in bytes.
+            mVideo = new ParseFile(videoFileName, videoBytes);
+            mVideo.saveInBackground();
+            ParseObject videoUpload = new ParseObject("Videos");
+            videoUpload.put("VideoName", videoFileName);
+            videoUpload.put("VideoFile", mVideo);
+            videoUpload.saveInBackground();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

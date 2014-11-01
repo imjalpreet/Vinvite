@@ -79,7 +79,7 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
                 Toast.makeText(EnterEventDetails.this, "Invalid Time", Toast.LENGTH_SHORT).show();
             }
             else {
-                i.putExtra(EXTRA, events[Integer.parseInt(event)] + " " + name.getText() + " " + description.getText() + " " + venue.getText() + " " + date.getText() + " " + time.getText());
+                i.putExtra(EXTRA, events[Integer.parseInt(event)] + "_" + name.getText() + "_" + description.getText() + "_" + venue.getText() + "_" + date.getText() + "_" + time.getText());
                 startActivity(i);
             }
             }

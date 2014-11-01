@@ -9,9 +9,9 @@
         android:showAsAction="never"/>
 
     <item
-        android:id="@+id/Share"
-        android:title="Share"
-        android:showAsAction="always"
+        android:id="@+id/Save"
+        android:title="Save"
+        android:showAsAction="ifRoom"
         ></item>
 
 </menu>
