@@ -15,6 +15,7 @@ import android.widget.VideoView;
 
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -142,6 +143,8 @@ public class ShareScreen extends Activity {
                 mVideo = new ParseFile(videoFileName, videoBytes);
                 mVideo.saveInBackground();
                 ParseObject videoUpload = new ParseObject("Videos");
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                videoUpload.put("created_by", currentUser);
                 videoUpload.put("VideoName", videoFileName);
                 videoUpload.put("VideoFile", mVideo);
                 videoUpload.saveInBackground();
