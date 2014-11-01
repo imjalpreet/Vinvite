@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffffff" >
+    android:background="#ffffff"
+    android:id="@+id/layout">
 
-    <TextView android:layout_width="fill_parent"
+    <!--TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Previous Invitations screen"
         android:textSize="20dp"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"/-->
 
 </RelativeLayout>
