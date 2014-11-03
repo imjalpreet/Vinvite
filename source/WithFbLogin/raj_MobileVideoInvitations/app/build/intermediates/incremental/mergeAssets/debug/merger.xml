@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="unspecified" >
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/raj_MobileVideoInvitations/facebook/unspecified/assets" />
+    </dataSet>
+    <dataSet config="1.0.5" >
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.etsy.android.grid/library/1.0.5/assets" />
+    </dataSet>
+    <dataSet config="1.9.1" >
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/debug/assets" />
+    </dataSet>
+
+</merger>
