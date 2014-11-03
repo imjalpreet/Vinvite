@@ -73,8 +73,8 @@ public class PreviousInvitesFragment extends Fragment {
             if(direct3.mkdir()); //directory is created;
         }
 
-
-      /*  Log.d("User:",User);
+//ONly one video is shown at present
+        Log.d("User:",User);
         String n=Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Saved/";
         Log.d("n:",n);
         RelativeLayout rl=(RelativeLayout)rootView.findViewById(R.id.layout);
@@ -87,11 +87,12 @@ public class PreviousInvitesFragment extends Fragment {
             val.setVideoPath(h);
             val.seekTo(100);
 
-            ((RelativeLayout) rl).addView(val);
 
+            ((RelativeLayout) rl).addView(val);
+               break;
             // do whatever you want with filename
         }
-*/
+
 
 
 
