@@ -57,30 +57,7 @@ public class LoginPage extends Activity {
         // Set your Facebook App Id in strings.xml
         ParseFacebookUtils.initialize(getString(R.string.facebook_app_id));
 
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        String User=currentUser.getObjectId();
 
-        File direct = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" );
-
-        if(!direct.exists()) {
-            if(direct.mkdir()); //directory is created;
-        }
-
-        File direct1 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User);
-
-        if(!direct1.exists()) {
-            if(direct1.mkdir()); //directory is created;
-        }
-        File direct2 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Saved");
-
-        if(!direct2.exists()) {
-            if(direct2.mkdir()); //directory is created;
-        }
-        File direct3 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/UnSaved");
-
-        if(!direct3.exists()) {
-            if(direct3.mkdir()); //directory is created;
-        }
 
 
 
@@ -108,11 +85,37 @@ public class LoginPage extends Activity {
 
         }
 
-
+        ParseUser currentUser = ParseUser.getCurrentUser();
         // Check if there is a currently logged in user
         // and they are linked to a Facebook account.
 
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
+
+            String User=currentUser.getObjectId();
+
+            File direct = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" );
+
+            if(!direct.exists()) {
+                if(direct.mkdir()); //directory is created;
+            }
+
+            File direct1 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User);
+
+            if(!direct1.exists()) {
+                if(direct1.mkdir()); //directory is created;
+            }
+            File direct2 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Saved");
+
+            if(!direct2.exists()) {
+                if(direct2.mkdir()); //directory is created;
+            }
+            File direct3 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/UnSaved");
+
+            if(!direct3.exists()) {
+                if(direct3.mkdir()); //directory is created;
+            }
+
+
 //             Go to the user info activity
             showUserDetailsActivity();
         }
