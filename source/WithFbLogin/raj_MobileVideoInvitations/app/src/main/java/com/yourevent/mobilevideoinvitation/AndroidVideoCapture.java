@@ -18,6 +18,7 @@ import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -28,6 +29,7 @@ import android.widget.Toast;
 
 public class AndroidVideoCapture extends Activity{
     public String filename;
+    public String User;
     public static String FILENAME = "";
     private Camera myCamera;
     private MyCameraSurfaceView myCameraSurfaceView;
@@ -49,6 +51,15 @@ public class AndroidVideoCapture extends Activity{
 
         setContentView(R.layout.main);
         TextView rec=(TextView)findViewById(R.id.RecButton);
+
+        Bundle b = getIntent().getExtras();
+        User=b.getString("user");
+
+
+
+
+        Toast.makeText(AndroidVideoCapture.this,
+                "Hello " + User, Toast.LENGTH_LONG).show();
 
         myCamera = getCameraInstance();
 
@@ -123,7 +134,7 @@ public class AndroidVideoCapture extends Activity{
         String s;
         Calendar c = Calendar.getInstance();
         filename = getAppropriateString(c.get(Calendar.YEAR))+getAppropriateString(c.get(Calendar.MONTH)+1)+getAppropriateString(c.get(Calendar.DATE))+"_"+getAppropriateString(c.get(Calendar.HOUR))+getAppropriateString(c.get(Calendar.MINUTE))+getAppropriateString(c.get(Calendar.SECOND));//Integer.toString(c.get(Calendar.YEAR))+Integer.toString(c.get(Calendar.MONTH)+1)+Integer.toString(c.get(Calendar.DATE))+Integer.toString(c.get(Calendar.HOUR))+Integer.toString(c.get(Calendar.MINUTE))+Integer.toString(c.get(Calendar.SECOND));
-        s=Environment.getExternalStorageDirectory() + "/" + filename + ".mp4" ;
+        s=Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/UnSaved/"+ filename + ".mp4" ;
         mediaRecorder.setOutputFile(s);
         mediaRecorder.setMaxDuration(30000); // Set max duration 30 sec.
         mediaRecorder.setMaxFileSize(16000000); // Set max file size 16M

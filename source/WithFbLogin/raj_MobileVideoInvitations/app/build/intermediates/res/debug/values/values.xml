@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="blue">#ff82e0ff</color>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <color name="card_activated">#CFE9F3</color>
+    <color name="card_activated_kitkat">#ADE1F4</color>
+    <color name="card_background">#FFF</color>
+    <color name="card_backgroundExpand">#515254</color>
+    <color name="card_background_header">#FFF</color>
+    <color name="card_base_cardwithlist_background_list_color">#10000000</color>
+    <color name="card_base_cardwithlist_divider_color">#E5E5E5</color>
+    <color name="card_expand_title_color">#B3B2B2</color>
+    <color name="card_foreground_activated">#99CFE9F3</color>
+    <color name="card_foreground_activated_kitkat">#99ADE1F4</color>
+    <color name="card_pressed">#7E0099CC</color>
+    <color name="card_pressed_kitkat">#10000000</color>
+    <color name="card_section_container_color">@android:color/transparent</color>
+    <color name="card_section_title_color">@android:color/black</color>
+    <color name="card_text_color_header">#000</color>
+    <color name="card_undobar_material_background_color">#323232</color>
+    <color name="card_undobar_material_text_color">#4CAF50</color>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/raj_MobileVideoInvitations/facebook/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <color name="com_facebook_blue">#3B5998</color>
+    <color name="com_facebook_likeboxcountview_border_color">#6a7180</color>
+    <color name="com_facebook_likeboxcountview_text_color">#6a7180</color>
+    <color name="com_facebook_likebutton_text_color">#FFFFFF</color>
+    <color name="com_facebook_likeview_text_color">#6a7180</color>
+    <color name="com_facebook_loginview_text_color">#FFFFFF</color>
+    <color name="com_facebook_picker_search_bar_background">#f5f5f7</color>
+    <color name="com_facebook_picker_search_bar_text">#bcbdc2</color>
+    <color name="com_facebook_usersettingsfragment_connected_shadow_color">#000000</color>
+    <color name="com_facebook_usersettingsfragment_connected_text_color">#FFFFFF</color>
+    <color name="com_facebook_usersettingsfragment_not_connected_text_color">#A6AED7</color>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="green">#ff8dd304</color>
+    <color name="grey">#ffd3d3d3</color>
+    <color name="list_item_pressed">#1A000000</color>
+    <color name="orange">#ffffdc7e</color>
+    <color name="red">#fff10800</color>
+    <color name="yellow">#fffffbae</color>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <declare-styleable name="ForegroundLinearLayout">
+        <attr name="android:foreground" />
+        <attr name="android:foregroundInsidePadding" />
+        <attr name="android:foregroundGravity" />
+    </declare-styleable>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.etsy.android.grid/library/1.0.5/res/values/values.xml -->
+    <eat-comment />
+
+    <declare-styleable name="StaggeredGridView">
+        <attr name="column_count" format="integer" />
+        <attr name="column_count_portrait" format="integer" />
+        <attr name="column_count_landscape" format="integer" />
+        <attr name="item_margin" format="dimension" />
+        <attr name="grid_paddingLeft" format="dimension" />
+        <attr name="grid_paddingRight" format="dimension" />
+        <attr name="grid_paddingTop" format="dimension" />
+        <attr name="grid_paddingBottom" format="dimension" />
+    </declare-styleable>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <declare-styleable name="card_listItem">
+
+        <!-- Height of divider used in the list -->
+        <attr name="card_list_item_dividerHeight" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="card_options">
+
+        <!-- Layout to build a card. Default value is  @layout/card_base_layout -->
+        <attr name="card_layout_resourceID" format="reference" />
+
+        <!-- Layout to build a shadow. Default value is @layout/base_shadow_layout -->
+        <attr name="card_shadow_layout_resourceID" format="reference" />
+
+        <!-- Layout to build a Header. Default value is @layout/base_header_layout -->
+        <attr name="card_header_layout_resourceID" format="reference" />
+
+        <!-- Layout to build a Thumbnail. Default value is @layout/base_thumbnail_layout -->
+        <attr name="card_thumbnail_layout_resourceID" format="reference" />
+
+        <!-- Layout used by card in a ListView. Default value is  @layout/list_card_layout -->
+        <attr name="list_card_layout_resourceID" format="reference" />
+    </declare-styleable>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/raj_MobileVideoInvitations/facebook/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <declare-styleable name="com_facebook_friend_picker_fragment">
+        <attr name="multi_select" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="com_facebook_like_view">
+        <attr name="foreground_color" format="color" />
+        <attr name="object_id" format="string" />
+        <attr name="style">
+
+            <!-- Keep in sync with Enums in LikeView -->
+            <enum name="standard" value="0" />
+            <enum name="button" value="1" />
+            <enum name="box_count" value="2" />
+        </attr>
+        <attr name="auxiliary_view_position">
+
+            <!-- Keep in sync with Enums in LikeView -->
+            <enum name="bottom" value="0" />
+            <enum name="inline" value="1" />
+            <enum name="top" value="2" />
+        </attr>
+        <attr name="horizontal_alignment">
+
+            <!-- Keep in sync with Enums in LikeView -->
+            <enum name="center" value="0" />
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="com_facebook_login_view">
+        <attr name="confirm_logout" format="boolean" />
+        <attr name="fetch_user_info" format="boolean" />
+        <attr name="login_text" format="string" />
+        <attr name="logout_text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="com_facebook_picker_fragment">
+        <attr name="show_pictures" format="boolean" />
+        <attr name="extra_fields" format="string" />
+        <attr name="show_title_bar" format="boolean" />
+        <attr name="title_text" format="string" />
+        <attr name="done_button_text" format="string" />
+        <attr name="title_bar_background" format="reference" />
+        <attr name="done_button_background" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="com_facebook_place_picker_fragment">
+        <attr name="radius_in_meters" format="integer" />
+        <attr name="results_limit" format="integer" />
+        <attr name="search_text" format="string" />
+        <attr name="show_search_box" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="com_facebook_profile_picture_view">
+        <attr name="preset_size">
+
+            <!-- Keep in sync with constants in ProfilePictureView -->
+            <enum name="small" value="-2" />
+            <enum name="normal" value="-3" />
+            <enum name="large" value="-4" />
+        </attr>
+        <attr name="is_cropped" format="boolean" />
+    </declare-styleable>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/main/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <dimen name="card_background_default_radius">2dip</dimen>
+    <dimen name="card_base_cardwithlist_dividerHeight">1dp</dimen>
+    <dimen name="card_base_cardwithlist_layout_leftmargin">0dp</dimen>
+    <dimen name="card_base_cardwithlist_layout_rightmargin">0dp</dimen>
+    <dimen name="card_base_cardwithlist_list_margin_left">0dp</dimen>
+    <dimen name="card_base_cardwithlist_list_margin_top">10dp</dimen>
+    <dimen name="card_base_empty_height">96dp</dimen>
+    <dimen name="card_content_outer_view_margin_bottom">0dp</dimen>
+    <dimen name="card_content_outer_view_margin_left">0dp</dimen>
+    <dimen name="card_content_outer_view_margin_right">0dp</dimen>
+    <dimen name="card_content_outer_view_margin_top">0dp</dimen>
+    <dimen name="card_expand_layout_padding">2dp</dimen>
+    <dimen name="card_expand_simple_title_paddingLeft">10dp</dimen>
+    <dimen name="card_expand_simple_title_paddingRight">10dp</dimen>
+    <dimen name="card_expand_simple_title_text_size">14sp</dimen>
+    <dimen name="card_header_button_margin_right">2dp</dimen>
+    <dimen name="card_header_button_overflow_margin_right">3dp</dimen>
+    <dimen name="card_header_button_padding_bottom">0dp</dimen>
+    <dimen name="card_header_button_padding_left">10dp</dimen>
+    <dimen name="card_header_button_padding_right">0dp</dimen>
+    <dimen name="card_header_button_padding_top">0dp</dimen>
+    <dimen name="card_header_outer_view_margin_bottom">0dp</dimen>
+    <dimen name="card_header_outer_view_margin_left">0dp</dimen>
+    <dimen name="card_header_outer_view_margin_right">0dp</dimen>
+    <dimen name="card_header_outer_view_margin_top">0dp</dimen>
+    <dimen name="card_header_simple_title_margin_bottom">0dp</dimen>
+    <dimen name="card_header_simple_title_margin_left">10dp</dimen>
+    <dimen name="card_header_simple_title_margin_right">20dp</dimen>
+    <dimen name="card_header_simple_title_margin_top">5dp</dimen>
+    <dimen name="card_header_simple_title_text_size">20sp</dimen>
+    <dimen name="card_main_layout_view_margin_bottom">0dp</dimen>
+    <dimen name="card_main_layout_view_margin_left">0dp</dimen>
+    <dimen name="card_main_layout_view_margin_right">0dp</dimen>
+    <dimen name="card_main_layout_view_margin_top">0dp</dimen>
+    <dimen name="card_main_simple_title_margin_left">5dp</dimen>
+    <dimen name="card_main_simple_title_margin_top">0dp</dimen>
+    <dimen name="card_section_container_padding_left">15dp</dimen>
+    <dimen name="card_section_container_padding_right">15dp</dimen>
+    <dimen name="card_section_title">18sp</dimen>
+    <dimen name="card_section_title_margin_top">10dp</dimen>
+    <dimen name="card_shadow_height">3dp</dimen>
+    <dimen name="card_shadow_view_margin_bottom">0dp</dimen>
+    <dimen name="card_shadow_view_margin_left">@dimen/card_background_default_radius</dimen>
+    <dimen name="card_shadow_view_margin_right">@dimen/card_background_default_radius</dimen>
+    <dimen name="card_shadow_view_margin_top">0dp</dimen>
+    <dimen name="card_thumbnail_height">72dp</dimen>
+    <dimen name="card_thumbnail_width">72dp</dimen>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/raj_MobileVideoInvitations/facebook/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <dimen name="com_facebook_likeboxcountview_border_radius">3dp</dimen>
+    <dimen name="com_facebook_likeboxcountview_border_width">1dp</dimen>
+    <dimen name="com_facebook_likeboxcountview_caret_height">3dp</dimen>
+    <dimen name="com_facebook_likeboxcountview_caret_width">6dp</dimen>
+    <dimen name="com_facebook_likeboxcountview_text_padding">6dp</dimen>
+    <dimen name="com_facebook_likeboxcountview_text_size">11.0sp</dimen>
+    <dimen name="com_facebook_likebutton_compound_drawable_padding">8dp</dimen>
+    <dimen name="com_facebook_likebutton_padding_bottom">0dp</dimen>
+    <dimen name="com_facebook_likebutton_padding_left">8dp</dimen>
+    <dimen name="com_facebook_likebutton_padding_right">8dp</dimen>
+    <dimen name="com_facebook_likebutton_padding_top">0dp</dimen>
+    <dimen name="com_facebook_likebutton_text_size">13.0sp</dimen>
+    <dimen name="com_facebook_likeview_edge_padding">2dp</dimen>
+    <dimen name="com_facebook_likeview_internal_padding">6dp</dimen>
+    <dimen name="com_facebook_likeview_text_size">11.0sp</dimen>
+    <dimen name="com_facebook_loginview_compound_drawable_padding">12dp</dimen>
+    <dimen name="com_facebook_loginview_padding_bottom">12dp</dimen>
+    <dimen name="com_facebook_loginview_padding_left">12dip</dimen>
+    <dimen name="com_facebook_loginview_padding_right">16dp</dimen>
+    <dimen name="com_facebook_loginview_padding_top">12dp</dimen>
+    <dimen name="com_facebook_loginview_text_size">16.0sp</dimen>
+    <dimen name="com_facebook_picker_place_image_size">64dp</dimen>
+    <dimen name="com_facebook_profilepictureview_preset_size_large">180dp</dimen>
+    <dimen name="com_facebook_profilepictureview_preset_size_normal">100dp</dimen>
+    <dimen name="com_facebook_profilepictureview_preset_size_small">50dp</dimen>
+    <dimen name="com_facebook_tooltip_horizontal_padding">10dp</dimen>
+    <dimen name="com_facebook_usersettingsfragment_profile_picture_height">64dp</dimen>
+    <dimen name="com_facebook_usersettingsfragment_profile_picture_width">64dp</dimen>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <dimen name="grid_card_padding_bottom">2dp</dimen>
+    <dimen name="grid_card_padding_left">2dp</dimen>
+    <dimen name="grid_card_padding_right">2dp</dimen>
+    <dimen name="grid_card_padding_top">2dp</dimen>
+    <dimen name="list_card_padding_bottom">6dp</dimen>
+    <dimen name="list_card_padding_left">8dp</dimen>
+    <dimen name="list_card_padding_right">8dp</dimen>
+    <dimen name="list_card_padding_top">2dp</dimen>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/raj_MobileVideoInvitations/facebook/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <drawable name="com_facebook_picker_default_separator_color">#33464c59</drawable>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/main/res/values/integers.xml -->
+    <eat-comment />
+
+    <integer name="grid_column">1</integer>
+    <integer name="grid_column_count">2</integer>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <integer name="list_card_swipe_distance_divisor">2</integer>
+    <integer name="list_card_undobar_hide_delay">5000</integer>
+
+    <plurals name="card_selected_items">
+        <item quantity="one">1 item selected</item>
+        <item quantity="other">%d items selected</item>
+    </plurals>
+    <plurals name="list_card_undo_items">
+        <item quantity="one">1 card removed</item>
+        <item quantity="other">%d cards removed</item>
+    </plurals>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="action_settings">Settings</string>
+    <string name="action_skip">Skip</string>
+    <string name="app_name">inviTube</string>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="card_empty_cardwithlist_text">No data....</string>
+    <string name="card_progressbar_cardwithlist_text">Loading data...</string>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/raj_MobileVideoInvitations/facebook/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="com_facebook_choose_friends">Choose Friends</string>
+    <string name="com_facebook_dialogloginactivity_ok_button">OK</string>
+    <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
+    <string name="com_facebook_internet_permission_error_title">AndroidManifest Error</string>
+    <string name="com_facebook_like_button_liked">Liked</string>
+    <string name="com_facebook_like_button_not_liked">Like</string>
+    <string name="com_facebook_loading">Loading...</string>
+    <string name="com_facebook_loginview_cancel_action">Cancel</string>
+    <string name="com_facebook_loginview_log_in_button">Log in with Facebook</string>
+    <string name="com_facebook_loginview_log_out_action">Log out</string>
+    <string name="com_facebook_loginview_log_out_button">Log out</string>
+    <string name="com_facebook_loginview_logged_in_as">Logged in as: %1$s</string>
+    <string name="com_facebook_loginview_logged_in_using_facebook">Logged in using Facebook</string>
+    <string name="com_facebook_logo_content_description">Facebook Logo</string>
+    <string name="com_facebook_nearby">Nearby</string>
+    <string name="com_facebook_picker_done_button_text">Done</string>
+    <string name="com_facebook_placepicker_subtitle_catetory_only_format">%1$s</string>
+    <string name="com_facebook_placepicker_subtitle_format">%1$s • %2$,d were here</string>
+    <string name="com_facebook_placepicker_subtitle_were_here_only_format">%1$,d were here</string>
+    <string name="com_facebook_requesterror_password_changed">Your Facebook password has changed. Please log into this app again to reconnect your Facebook account.</string>
+    <string name="com_facebook_requesterror_permissions">This app doesn’t have permission to do this. To change permissions, try logging into the app again.</string>
+    <string name="com_facebook_requesterror_reconnect">Please log into this app again to reconnect your Facebook account.</string>
+    <string name="com_facebook_requesterror_relogin">Please log into this app again to reconnect your Facebook account.</string>
+    <string name="com_facebook_requesterror_web_login">Your Facebook account is locked. Please log into www.facebook.com to continue.</string>
+    <string name="com_facebook_tooltip_default">New! You\'re in control - choose what info you want to share with apps.</string>
+    <string name="com_facebook_usersettingsfragment_log_in_button">Log in…</string>
+    <string name="com_facebook_usersettingsfragment_logged_in">Logged in</string>
+    <string name="com_facebook_usersettingsfragment_not_logged_in">Not logged in</string>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="event_details_date">Date</string>
+    <string name="event_details_desc">Description(Optional)</string>
+    <string name="event_details_name">Name</string>
+    <string name="event_details_time">Time</string>
+    <string name="event_details_venue">Venue</string>
+    <string name="facebook_app_id">628260750624241</string>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="font_fontFamily_medium">sans-serif</string>
+    <string name="font_fontFamily_regular">sans-serif</string>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="gender">Gender</string>
+    <string name="hello_world">Hello world!</string>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="list_card_undo_title">Undo</string>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="location">Location</string>
+    <string name="login">Log In</string>
+    <string name="login_intro">Log In to check the App</string>
+    <string name="logout">Log Out</string>
+    <string name="relationship">Relationship</string>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/src/main/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarTabTextStyle">@style/MyText</item>
+        <item name="android:actionBarTabStyle">@style/MyTab</item>
+        <!-- <item name="android:actionBarItemBackground">@drawable/ab_stacked_solid</item> -->
+    </style>
+
+    <style name="MyActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">#eb460f</item>
+        <item name="android:backgroundStacked">#eb460f</item>
+        <item name="android:titleTextStyle">@style/MyTitle</item>
+    </style>
+
+    <style name="MyTab" parent="android:Widget.Holo.ActionBar.TabView">
+        <item name="android:background">@drawable/actionbar_tab_indicator</item>
+    </style>
+
+    <style name="MyText" parent="android:Widget.Holo.ActionBar.TabText">
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="MyTitle" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#ffffff</item>
+    </style>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <style name="card" />
+
+    <style name="card.base_simple_title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/card_main_simple_title_margin_left</item>
+        <item name="android:layout_marginTop">@dimen/card_main_simple_title_margin_top</item>
+    </style>
+
+    <style name="card.content_outer_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:minHeight">@dimen/card_base_empty_height</item>
+        <item name="android:layout_marginTop">@dimen/card_content_outer_view_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/card_content_outer_view_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/card_content_outer_view_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/card_content_outer_view_margin_right</item>
+    </style>
+
+    <style name="card.expand_simple_title">
+        <item name="android:layout_gravity">left|center_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/card_expand_simple_title_text_size</item>
+        <item name="android:paddingLeft">@dimen/card_expand_simple_title_paddingLeft</item>
+        <item name="android:paddingRight">@dimen/card_expand_simple_title_paddingRight</item>
+        <item name="android:textColor">@color/card_expand_title_color</item>
+    </style>
+
+    <style name="card.header_button_base">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:paddingLeft">@dimen/card_header_button_padding_left</item>
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">@dimen/card_header_button_margin_right</item>
+    </style>
+
+    <style name="card.header_button_base.expand">
+        <item name="android:background">@drawable/card_menu_button_expand</item>
+    </style>
+
+    <style name="card.header_button_base.other" />
+
+    <style name="card.header_button_base.overflow">
+        <item name="android:background">@drawable/card_menu_button_rounded_overflow</item>
+        <item name="android:layout_marginRight">@dimen/card_header_button_overflow_margin_right</item>
+    </style>
+
+    <style name="card.header_button_frame" />
+
+    <style name="card.header_compound_view" />
+
+    <style name="card.header_outer_layout">
+        <item name="android:layout_marginTop">@dimen/card_header_outer_view_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/card_header_outer_view_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/card_header_outer_view_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/card_header_outer_view_margin_right</item>
+    </style>
+
+    <style name="card.header_simple_title">
+        <item name="android:textSize">@dimen/card_header_simple_title_text_size</item>
+        <item name="android:textColor">@color/card_text_color_header</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/card_header_simple_title_margin_left</item>
+        <item name="android:layout_marginTop">@dimen/card_header_simple_title_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/card_header_simple_title_margin_right</item>
+        <item name="android:layout_marginBottom">@dimen/card_header_simple_title_margin_bottom</item>
+    </style>
+
+    <style name="card.main_contentExpand">
+        <item name="android:background">@color/card_backgroundExpand</item>
+        <item name="android:padding">@dimen/card_expand_layout_padding</item>
+    </style>
+
+    <style name="card.main_layout">
+        <item name="android:background">@drawable/card_selector</item>
+        <item name="android:layout_marginTop">@dimen/card_main_layout_view_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/card_main_layout_view_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/card_main_layout_view_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/card_main_layout_view_margin_right</item>
+    </style>
+
+    <style name="card.main_layout.kitkat">
+        <item name="android:background">@drawable/card_kitkat_selector</item>
+    </style>
+
+    <style name="card.main_layout_foreground">
+        <item name="android:background">@drawable/card_background</item>
+        <item name="android:foreground">@drawable/card_foreground_selector</item>
+        <item name="android:layout_marginTop">@dimen/card_main_layout_view_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/card_main_layout_view_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/card_main_layout_view_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/card_main_layout_view_margin_right</item>
+    </style>
+
+    <style name="card.main_layout_foreground.kitkat">
+        <item name="android:foreground">@drawable/card_foreground_kitkat_selector</item>
+    </style>
+
+    <style name="card.shadow_image">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/card_shadow_height</item>
+        <item name="android:src">@drawable/card_shadow</item>
+        <item name="android:layout_below">@+id/card_main_content_layout</item>
+    </style>
+
+    <style name="card.shadow_outer_layout">
+        <item name="android:layout_marginTop">@dimen/card_shadow_view_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/card_shadow_view_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/card_shadow_view_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/card_shadow_view_margin_right</item>
+    </style>
+
+    <style name="card.thumbnail_compound_view" />
+
+    <style name="card_section_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/card_section_container_padding_left</item>
+        <item name="android:paddingRight">@dimen/card_section_container_padding_right</item>
+        <item name="android:background">@color/card_section_container_color</item>
+    </style>
+
+    <style name="card_section_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:textSize">@dimen/card_section_title</item>
+        <item name="android:textColor">@color/card_section_title_color</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginTop">@dimen/card_section_title_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/card_section_title_margin_top</item>
+    </style>
+
+    <style name="card_thumbnail_image">
+        <item name="android:layout_width">@dimen/card_thumbnail_width</item>
+        <item name="android:layout_height">@dimen/card_thumbnail_height</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="card_thumbnail_outer_layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="cardwithlist">
+        <item name="android:layout_marginTop">@dimen/card_base_cardwithlist_list_margin_top</item>
+        <item name="android:layout_marginLeft">@dimen/card_base_cardwithlist_list_margin_left</item>
+        <item name="android:divider">@color/card_base_cardwithlist_divider_color</item>
+        <item name="android:showDividers">middle|beginning</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/card_base_cardwithlist_background_list_color</item>
+    </style>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/raj_MobileVideoInvitations/facebook/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <style name="com_facebook_loginview_default_style" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/com_facebook_button_blue</item>
+        <item name="android:textColor">@color/com_facebook_loginview_text_color</item>
+        <item name="android:textSize">@dimen/com_facebook_loginview_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">@dimen/com_facebook_loginview_padding_left</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="com_facebook_loginview_silver_style" parent="@android:style/Widget.Button">
+        <item name="android:width">205dp</item>
+        <item name="android:height">44dp</item>
+        <item name="android:background">@drawable/com_facebook_loginbutton_silver</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#4B5164</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/res/values/values.xml -->
+    <eat-comment />
+
+    <style name="grid_card">
+        <item name="android:paddingLeft">@dimen/grid_card_padding_left</item>
+        <item name="android:paddingRight">@dimen/grid_card_padding_right</item>
+        <item name="android:paddingBottom">@dimen/grid_card_padding_bottom</item>
+        <item name="android:paddingTop">@dimen/grid_card_padding_top</item>
+    </style>
+
+    <style name="list_card">
+        <item name="android:paddingLeft">@dimen/list_card_padding_left</item>
+        <item name="android:paddingRight">@dimen/list_card_padding_right</item>
+        <item name="android:paddingBottom">@dimen/list_card_padding_bottom</item>
+        <item name="android:paddingTop">@dimen/list_card_padding_top</item>
+    </style>
+
+    <style name="list_card.base" />
+
+    <style name="list_card.thumbnail" />
+
+    <style name="list_card_UndoBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/undobar</item>
+        <item name="android:clickable">true</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:divider">@drawable/undobar_divider</item>
+        <item name="android:dividerPadding">10dp</item>
+    </style>
+
+    <style name="list_card_UndoBarButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:background">@drawable/card_undo</item>
+        <item name="android:drawableLeft">@drawable/ic_undobar_undo</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:text">@string/list_card_undo_title</item>
+    </style>
+
+    <style name="list_card_UndoBarButton_material">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">right</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/card_undobar_material_text_color</item>
+        <item name="android:text">@string/list_card_undo_title</item>
+    </style>
+
+    <style name="list_card_UndoBarButton_materialmobile">
+        <item name="android:layout_gravity">center_vertical|right</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:layout_marginBottom">18dp</item>
+        <item name="android:layout_marginTop">18dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/card_undobar_material_text_color</item>
+        <item name="android:text">@string/list_card_undo_title</item>
+    </style>
+
+    <style name="list_card_UndoBarMessage">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="list_card_UndoBarMessage_material">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="list_card_UndoBarMessage_materialmobile">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginBottom">18dp</item>
+        <item name="android:layout_marginTop">18dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="list_card_UndoBar_material">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_marginLeft">32dp</item>
+        <item name="android:layout_marginRight">32dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:paddingBottom">18dp</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/card_undobar_material_background_color</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="list_card_UndoBar_materialmobile">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:maxHeight">80dp</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/card_undobar_material_background_color</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <!-- From: file:/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/raj_MobileVideoInvitations/facebook/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <style name="tooltip_bubble_text">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:shadowDy">-1</item>
+        <item name="android:shadowRadius">0.25</item>
+        <item name="android:shadowColor">#40000000</item>
+    </style>
+
+</resources>

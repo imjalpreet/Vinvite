@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+import com.parse.ParseFacebookUtils;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
@@ -35,6 +36,7 @@ public class ShareScreen extends Activity {
 
     ParseFile mVideo;
     private File file;
+    private String User;
     private String s;
     private VideoView videoView;
     private String videoFileName;
@@ -58,7 +60,10 @@ public class ShareScreen extends Activity {
 
         Bundle extras = getIntent().getExtras();
         videoFileName = extras.getString(BackgroundScore.VIDEOFILENAME);
-        s = Environment.getExternalStorageDirectory() + "/" + videoFileName + ".mp4";
+
+        ParseUser currentUser = ParseUser.getCurrentUser();
+         User=currentUser.getObjectId();
+        s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/UnSaved/"+ videoFileName + ".mp4";
         file = new File(s);
         videoView.setVideoPath(s); // setting the video path
         videoView.seekTo(100);     // setting the video thumbnail
@@ -144,6 +149,12 @@ public class ShareScreen extends Activity {
                     e.printStackTrace();
                 }
 
+                File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/UnSaved/" + videoFileName + ".mp4");
+                File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/Saved/" + videoFileName + ".mp4");
+                from.renameTo(to);
+                s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
+                videoView.setVideoPath(s);
+                videoView.seekTo(100);
                 byte[] videoBytes = baos.toByteArray(); //this is the video in bytes.
                 mVideo = new ParseFile(videoFileName, videoBytes);
                 mVideo.saveInBackground();
