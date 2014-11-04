@@ -165,6 +165,10 @@ public class ShareScreen extends Activity {
                 videoUpload.put("VideoFile", mVideo);
                 videoUpload.saveInBackground();
                 startActivity(shareIntent);
+
+
+
+
             }
         });
     }
