@@ -27,6 +27,7 @@ import java.util.List;
  */
 
 public class PreviousInvitesFragment extends Fragment {
+    public int vid_num=0;
 
 
     @Override
@@ -41,7 +42,7 @@ public class PreviousInvitesFragment extends Fragment {
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> scoreList, ParseException e) {
                 if (e == null) {
-
+                    vid_num=scoreList.size();
                     Log.d("score", "Retrieved " + scoreList.size() + " scores");
                 } else {
                     Log.d("score", "Error: " + e.getMessage());
@@ -72,6 +73,12 @@ public class PreviousInvitesFragment extends Fragment {
         if(!direct3.exists()) {
             if(direct3.mkdir()); //directory is created;
         }
+        File a=new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Saved/");
+        if(a.length() ==0&& vid_num!= 0){
+            ParseObject videodownload = new ParseObject("Videos");
+            videodownload.get("VideoFile");
+        }
+
 
 //ONly one video is shown at present
         Log.d("User:",User);
@@ -79,7 +86,7 @@ public class PreviousInvitesFragment extends Fragment {
         Log.d("n:",n);
         RelativeLayout rl=(RelativeLayout)rootView.findViewById(R.id.layout);
 
-        File a=new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Saved/");
+       // File a=new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Saved/");
         for (File f : a.listFiles()) {
                String h=n + f.getName();
             Log.d("score",h);
