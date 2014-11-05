@@ -60,6 +60,7 @@
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
+        android:editable="false"
         android:id="@+id/etDate"
         android:layout_below="@+id/etVenue"
         android:layout_alignParentLeft="true"
@@ -79,6 +80,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:hint="@string/event_details_time"
+        android:editable="false"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:textColor="#64000000" />
