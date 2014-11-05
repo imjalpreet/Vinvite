@@ -7,6 +7,8 @@ package com.yourevent.mobilevideoinvitation;
 import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import android.R.string;
 import android.app.ActionBar;
@@ -32,13 +34,11 @@ public class AndroidVideoCapture extends Activity{
     private Camera myCamera;
     private MyCameraSurfaceView myCameraSurfaceView;
     private MediaRecorder mediaRecorder;
-    TextView rec;
-    boolean visible = true;
-    Button myButton;
-    SurfaceHolder surfaceHolder;
-    boolean recording;
-
-
+    private Button myButton;
+    private boolean recording;
+    private Timer t;
+    private int TimeCounter = 30;
+    private TextView timer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,8 +68,12 @@ public class AndroidVideoCapture extends Activity{
             // TODO Auto-generated method stub
             TextView rec=(TextView)findViewById(R.id.RecButton);
             rec.setVisibility(View.VISIBLE);
-
-
+            timer = (TextView) findViewById(R.id.Timer);
+            timer.setVisibility(View.VISIBLE);
+            if(TimeCounter != 30 && TimeCounter != 0)
+            {
+                t.cancel();
+            }
 
             if(recording){
                 // stop recording and release camera
@@ -91,7 +95,29 @@ public class AndroidVideoCapture extends Activity{
                 recording = true;
                 myButton.setText("STOP");
                 myButton.setBackgroundResource(R.drawable.round_button_stop);
+                t = new Timer();
+                t.scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                timer.setText(String.valueOf(TimeCounter));
+                                TimeCounter--;
+                                if(TimeCounter == 0 && recording){
+                                    t.cancel();
+                                    mediaRecorder.stop();
+                                    releaseMediaRecorder();
+                                    Intent NextScreen = new Intent("android.intent.action.BACKGROUNDSCORE");
+                                    NextScreen.putExtra(FILENAME, filename);
+                                    startActivity(NextScreen);
+                                }
+                            }
+                        });
+                    }
+                }, 1000, 1000);
             }
+
         }};
 
     private Camera getCameraInstance(){
