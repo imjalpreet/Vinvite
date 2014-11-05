@@ -6,10 +6,14 @@ package com.yourevent.mobilevideoinvitation;
 
 
 import android.content.pm.Signature;
+
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
 import java.security.MessageDigest;
+
+import android.os.Environment;
 import android.util.Base64;
 import android.app.Activity;
 import android.content.Context;
@@ -48,8 +52,14 @@ public class LoginPage extends Activity {
         Parse.initialize(this, "asO83QNQyAB3hYyJuphIWLfKjqYNrhHct9q4H28f",
                 "KwrM3iFmVFgIsBwaq1HEC7MTwNCJX5hWjkszmQ94");
 
+
+
         // Set your Facebook App Id in strings.xml
         ParseFacebookUtils.initialize(getString(R.string.facebook_app_id));
+
+
+
+
 
         loginButton = (LoginButton) findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -75,11 +85,37 @@ public class LoginPage extends Activity {
 
         }
 
-
+        ParseUser currentUser = ParseUser.getCurrentUser();
         // Check if there is a currently logged in user
         // and they are linked to a Facebook account.
-        ParseUser currentUser = ParseUser.getCurrentUser();
+
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
+
+            String User=currentUser.getObjectId();
+
+            File direct = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" );
+
+            if(!direct.exists()) {
+                if(direct.mkdir()); //directory is created;
+            }
+
+            File direct1 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User);
+
+            if(!direct1.exists()) {
+                if(direct1.mkdir()); //directory is created;
+            }
+            File direct2 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Saved");
+
+            if(!direct2.exists()) {
+                if(direct2.mkdir()); //directory is created;
+            }
+            File direct3 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/UnSaved");
+
+            if(!direct3.exists()) {
+                if(direct3.mkdir()); //directory is created;
+            }
+
+
 //             Go to the user info activity
             showUserDetailsActivity();
         }

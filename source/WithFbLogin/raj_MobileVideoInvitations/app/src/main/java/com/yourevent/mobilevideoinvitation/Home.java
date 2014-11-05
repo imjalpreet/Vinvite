@@ -1,6 +1,7 @@
 package com.yourevent.mobilevideoinvitation;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.app.FragmentTransaction;
@@ -25,6 +26,8 @@ import com.yourevent.mobilevideoinvitation.adapter.TabsPagerAdapter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+
 
 public class Home extends FragmentActivity implements ActionBar.TabListener {
 
@@ -37,6 +40,31 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        String User=currentUser.getObjectId();
+
+        File direct = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" );
+
+        if(!direct.exists()) {
+            if(direct.mkdir()); //directory is created;
+        }
+
+        File direct1 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User);
+
+        if(!direct1.exists()) {
+            if(direct1.mkdir()); //directory is created;
+        }
+        File direct2 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Saved");
+
+        if(!direct2.exists()) {
+            if(direct2.mkdir()); //directory is created;
+        }
+        File direct3 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/UnSaved");
+
+        if(!direct3.exists()) {
+            if(direct3.mkdir()); //directory is created;
+        }
+
         //Initialization
         actionBar = getActionBar();
         viewPager = (ViewPager) findViewById(R.id.pager);

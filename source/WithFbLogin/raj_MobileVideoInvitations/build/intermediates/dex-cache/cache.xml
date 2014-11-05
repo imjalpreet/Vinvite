@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/pre-dexed/debug/Parse-1.7.1-1c54e92ca8c0f98752f3da689bfb674106963b23.jar"
+        jar="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/libs/Parse-1.7.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="87c45f9f66da531a65f065ee32f603c7e6db1528"/>
+    <item
+        dex="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/pre-dexed/debug/android-support-v4-18e01c4fcf777275e43a1d4a8a54b5d63975e028.jar"
+        jar="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/libs/android-support-v4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="4a6be13368bb64c5a0b0460632d228a1a915f58f"/>
+    <item
+        dex="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-fb80e46981a4d3759eb39b3518360f9105fcf21e.jar"
+        jar="/Users/vikram/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.2/91c20388c9a45f62b5ed8fe0502bb76ff6251fc7/bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7"/>
+    <item
+        dex="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/pre-dexed/debug/classes-60bfe86b064dd853e57cafc0900a7771b31b501c.jar"
+        jar="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.github.gabrielemariotti.cards/library/1.9.1/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="a64671bd87b29748d87865871cc95147b89a2192"/>
+    <item
+        dex="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/pre-dexed/debug/classes-8ebc2aacecb0d6cd02881389a59250404ae8cc74.jar"
+        jar="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/com.etsy.android.grid/library/1.0.5/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8218789edb56bdcfff7da48e892b37460fc707e2"/>
+    <item
+        dex="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/pre-dexed/debug/classes-07244106ff4c5030702c3ac9f236ce216b3e89db.jar"
+        jar="/Users/vikram/IIIT/ssad/project/ssad24/source/WithFbLogin/raj_MobileVideoInvitations/app/build/intermediates/exploded-aar/raj_MobileVideoInvitations/facebook/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9ae6bdf69f2d1efd3225d46e6aec1a2280898e07"/>
+
+</pre-dex-items>
