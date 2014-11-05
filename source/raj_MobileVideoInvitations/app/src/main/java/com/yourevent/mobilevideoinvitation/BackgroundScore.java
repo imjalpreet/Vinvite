@@ -4,7 +4,6 @@ package com.yourevent.mobilevideoinvitation;
  * Created by raj on 10/10/14.
  */
 import java.util.ArrayList;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
@@ -17,6 +16,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Toast;
 import com.etsy.android.grid.StaggeredGridView;
+
 public class BackgroundScore extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener {
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";

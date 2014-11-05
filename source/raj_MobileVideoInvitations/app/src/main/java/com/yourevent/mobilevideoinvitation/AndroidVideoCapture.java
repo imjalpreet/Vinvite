@@ -4,13 +4,10 @@ package com.yourevent.mobilevideoinvitation;
  * Created by raj on 14/10/14.
  */
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import android.R.string;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
@@ -31,6 +28,7 @@ import android.widget.Toast;
 public class AndroidVideoCapture extends Activity{
     public String filename;
     public static String FILENAME = "";
+    private int scriptSpeed = 3;
     private Camera myCamera;
     private MyCameraSurfaceView myCameraSurfaceView;
     private MediaRecorder mediaRecorder;
@@ -39,6 +37,9 @@ public class AndroidVideoCapture extends Activity{
     private Timer t;
     private int TimeCounter = 30;
     private TextView timer;
+    private String[] line;
+    private int iterator = 0;
+    private TextView scriptheader;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,12 +47,13 @@ public class AndroidVideoCapture extends Activity{
         ActionBar actionBar = getActionBar();
         actionBar.hide();
         recording = false;
-
+        Bundle b = this.getIntent().getExtras();
+        line=b.getStringArray("EXTRA_SCRIPT");
         setContentView(R.layout.main);
-        TextView rec=(TextView)findViewById(R.id.RecButton);
 
+        scriptheader = (TextView) findViewById(R.id.dynamicScript);
+        scriptheader.setText(line[iterator]);
         myCamera = getCameraInstance();
-
         myCameraSurfaceView = new MyCameraSurfaceView(this, myCamera);
         FrameLayout myCameraPreview = (FrameLayout)findViewById(R.id.videoview);
         myCameraPreview.addView(myCameraSurfaceView);
@@ -104,6 +106,11 @@ public class AndroidVideoCapture extends Activity{
                             public void run() {
                                 timer.setText(String.valueOf(TimeCounter));
                                 TimeCounter--;
+                                if(TimeCounter%scriptSpeed==0){
+                                    if(iterator<line.length)
+                                        scriptheader.setText(line[iterator]);
+                                    iterator++;
+                                }
                                 if(TimeCounter == 0 && recording){
                                     t.cancel();
                                     mediaRecorder.stop();
