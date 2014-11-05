@@ -18,7 +18,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import java.util.Calendar;
 
 public class EnterEventDetails extends Activity implements View.OnClickListener{
@@ -26,7 +25,7 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
     private Button contButton;
     public String event;
     public final static String EXTRA = "";
-    private EditText name, description, venue, date, time;
+    private EditText name, venue, date, time;
     private int mYear, mMonth, mDay, mHour, mMinute;
     private ImageButton btnTime, btnDate;
     @Override
@@ -42,9 +41,9 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
         event = intent.getStringExtra(SelectEventFragment.EXTRA_MESSAGE);
         TextView t = (TextView)findViewById(R.id.eventName);
         t.setText(events[Integer.parseInt(message)]);
+
         contButton = (Button)findViewById(R.id.continueEventDetails);
         name = (EditText) findViewById(R.id.etName);
-        description = (EditText) findViewById(R.id.etDescription);
         venue = (EditText) findViewById(R.id.etVenue);
         date = (EditText) findViewById(R.id.etDate);
         time = (EditText) findViewById(R.id.etTime);
@@ -79,7 +78,7 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
                 Toast.makeText(EnterEventDetails.this, "Invalid Time", Toast.LENGTH_SHORT).show();
             }
             else {
-                i.putExtra(EXTRA, events[Integer.parseInt(event)] + "_" + name.getText() + "_" + description.getText() + "_" + venue.getText() + "_" + date.getText() + "_" + time.getText());
+                i.putExtra(EXTRA, events[Integer.parseInt(event)] + "_" + name.getText()  + "_" + venue.getText() + "_" + date.getText() + "_" + time.getText());
                 startActivity(i);
             }
             }

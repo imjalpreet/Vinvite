@@ -1,7 +1,6 @@
 package com.yourevent.mobilevideoinvitation;
 
 import android.content.Context;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.Gravity;

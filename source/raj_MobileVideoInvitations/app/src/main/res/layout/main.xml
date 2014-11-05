@@ -14,14 +14,14 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/dynamicScript"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="#99000000"
-        android:text="Hello there, I happily invite you to my birthday!"
+        android:text="Script"
         android:textSize="28dp"
         android:gravity="center"
         android:textColor="#FFFFFF"
