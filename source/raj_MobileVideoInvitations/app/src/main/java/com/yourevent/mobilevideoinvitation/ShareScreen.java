@@ -4,17 +4,29 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.hardware.Camera;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.MediaController;
+import android.widget.PopupWindow;
 import android.widget.VideoView;
+
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
+
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,12 +40,14 @@ import java.io.IOException;
 public class ShareScreen extends Activity {
 
     ParseFile mVideo;
+    PopupWindow popupWindow;
+    View popUpView;
     private File file;
     private String s;
     private VideoView videoView;
     private String videoFileName;
     private int count;
-    private ImageButton img1, img2, img3, img4, img5, img6, img7;
+    private ImageButton img1, img2, img3, img4, img5, img6, img7, img8, img9;
     private String[] apps = {"com.facebook.katana", "com.whatsapp", "com.google.android.gm", "com.twitter.android","com.google.android.apps.plus", "com.instagram.android", "com.viber.voip", "com.dropbox.android", "com.google.android.youtube"};
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,7 +99,7 @@ public class ShareScreen extends Activity {
                 case 3: tmpimgbut=img4;
                     tmpid=R.id.imageButton4;
                     break;
-                case 4: tmpimgbut=img5;
+                /*case 4: tmpimgbut=img5;
                     tmpid=R.id.imageButton5;
                     break;
                 case 5: tmpimgbut=img6;
@@ -93,19 +107,75 @@ public class ShareScreen extends Activity {
                     break;
                 case 6: tmpimgbut=img7;
                     tmpid=R.id.imageButton7;
-                    break;
+                    break;*/
                 default:
                     break;
             }
             if(appInstalledOrNot(apps[i])){
                 count++;
-                setShareActivity(tmpimgbut, tmpid, apps[i]);
+                if(count>4)
+                    continue;
+                setShareActivity(tmpimgbut, tmpid, apps[i], 0);
             }
-            if(count==7)
-                break;
-        }    }
-    private void setShareActivity(ImageButton imgb, int imgbutid, final String uri){
-        imgb = (ImageButton)findViewById(imgbutid);
+        }
+        if(count > 4){
+            final ImageButton plus = (ImageButton) findViewById(R.id.ibPlus);
+            plus.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                    popUpView = layoutInflater.inflate(R.layout.more, null);
+                    popupWindow = new PopupWindow(popUpView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    ImageButton back = (ImageButton)popUpView.findViewById(R.id.ibBack);
+                    back.setOnClickListener(new Button.OnClickListener(){
+                        @Override
+                        public void onClick(View v) {
+                            popupWindow.dismiss();
+                        }
+                    });
+
+                    count = 4;
+                    ImageButton temp = null;
+                    int id = 0;
+                    for (int i=4; i < apps.length; i++){
+                        switch (count){
+                            case 4: temp=img5;
+                                    id = R.id.imageButton5;
+                            break;
+                            case 5: temp=img6;
+                                    id=R.id.imageButton6;
+                            break;
+                            case 6: temp = img7;
+                                    id = R.id.imageButton7;
+                            break;
+                            case 7: temp = img8;
+                                    id = R.id.imageButton8;
+                            break;
+                            case 8: temp = img9;
+                                    id = R.id.imageButton9;
+                            break;
+                            default:
+                                break;
+                        }
+                        if(appInstalledOrNot(apps[i])){
+                            count++;
+                            setShareActivity(temp, id, apps[i], 1);
+                        }
+                    }
+                    popupWindow.showAsDropDown(plus, 20, 5);
+                }
+            });
+
+        }
+    }
+
+    private void setShareActivity(ImageButton imgb, int imgbutid, final String uri, int choose){
+        if(choose == 0) {
+            imgb = (ImageButton) findViewById(imgbutid);
+        }
+        if (choose == 1){
+            imgb = (ImageButton)popUpView.findViewById(imgbutid);
+        }
         PackageManager pm = getPackageManager();
         try {
             imgb.setImageDrawable(pm.getApplicationIcon(uri));
@@ -141,8 +211,10 @@ public class ShareScreen extends Activity {
                 mVideo = new ParseFile(videoFileName, videoBytes);
                 mVideo.saveInBackground();
                 ParseObject videoUpload = new ParseObject("Videos");
+                ParseUser currentUser = ParseUser.getCurrentUser();
                 videoUpload.put("VideoName", videoFileName);
                 videoUpload.put("VideoFile", mVideo);
+                videoUpload.put("created_by", currentUser);
                 videoUpload.saveInBackground();
                 startActivity(shareIntent);
             }
