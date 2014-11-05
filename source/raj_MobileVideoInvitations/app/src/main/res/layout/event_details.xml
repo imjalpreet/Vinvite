@@ -23,23 +23,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:textColor="#64000000"
-         />
-
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="@string/event_details_desc"
-        android:ems="10"
-        android:id="@+id/etDescription"
-        android:layout_below="@+id/etName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:textColor="#64000000" />
+        />
 
     <EditText
         android:layout_width="300dp"
@@ -48,12 +34,12 @@
         android:ems="10"
         android:id="@+id/etVenue"
         android:hint="@string/event_details_venue"
-        android:layout_below="@+id/etDescription"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
-        android:textColor="#64000000" />
+        android:textColor="#64000000"
+        android:layout_below="@+id/etName" />
 
     <EditText
         android:layout_width="300dp"

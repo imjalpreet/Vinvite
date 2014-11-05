@@ -4,9 +4,7 @@ package com.yourevent.mobilevideoinvitation;
  * Created by imjalpreet on 09-10-2014.
  */
 import java.util.ArrayList;
-import java.util.Random;
 import android.content.Context;
-import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

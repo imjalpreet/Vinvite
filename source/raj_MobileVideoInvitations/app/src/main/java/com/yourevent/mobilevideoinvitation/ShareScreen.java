@@ -10,14 +10,11 @@ import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
-
 import com.parse.ParseFile;
 import com.parse.ParseObject;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;

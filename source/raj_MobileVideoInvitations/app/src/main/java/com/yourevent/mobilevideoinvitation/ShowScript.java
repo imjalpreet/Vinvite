@@ -12,9 +12,11 @@ import android.widget.TextView;
 /**
  * Created by imjalpreet on 13-10-2014.
  */
+
 public class ShowScript extends Activity {
     TextView ScriptType;
     EditText Script;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_script);
@@ -25,24 +27,23 @@ public class ShowScript extends Activity {
         setTitle(Data[1]);
         ActionBar actionBar = getActionBar();
         assert actionBar != null;
-        //actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.hide();
         ScriptType.setText(Data[0]);
         Script = (EditText) findViewById(R.id.tvFinalScript);
-        String script = "Come and join us for some Birthday fun. \n" +
-                "Our (Nickname) is turning (Age)!\n" +
-                "\n" +
-                "It’s "+Data[2]+"’s (Age)(th) Birthday!\n" +
-                "\n" +
-                "We Will be waiting for you at "+Data[4]+" on "+Data[5]+" and "+Data[6]+". \n" +
-                "\n" +
-                "Do Join us for some family time!!";
+        String script="";
+        final String[] line={"Come and join us for some Birthday fun. \n", "It’s "+Data[2].split(" ")[0]+"’s Birthday!\n", "We will be waiting for you at "+Data[3]+" on "+Data[4]+" and "+Data[5]+". \n", "Do Join us for some family time!!"};
+        for (String tmpline: line){
+            script+=tmpline+"\n";
+        }
         Script.setText(script);
         Button contBut = (Button)findViewById(R.id.continueFinalScript);
         contBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent("android.intent.action.ANDROIDVIDEOCAPTURE");
+                Bundle b=new Bundle();
+                b.putStringArray("EXTRA_SCRIPT", line);
+                i.putExtras(b);
                 startActivity(i);
             }
         });
