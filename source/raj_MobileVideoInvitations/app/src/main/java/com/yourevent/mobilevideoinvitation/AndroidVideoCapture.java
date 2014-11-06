@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 public class AndroidVideoCapture extends Activity{
     public String filename;
-    public static String FILENAME = "";
+    public static final String FILENAME = "";
     private int scriptSpeed = 3;
     private Camera myCamera;
     private MyCameraSurfaceView myCameraSurfaceView;

@@ -13,8 +13,7 @@ import java.util.ArrayList;
 
 public class SelectEventFragment extends Fragment implements
             AbsListView.OnItemClickListener {
-        private StaggeredGridView mGridView;
-        public final static String EXTRA_MESSAGE = "";
+    public final static String EXTRA_MESSAGE = "";
         private SampleAdapter mAdapter;
         private ArrayList<String> mData;
         @Override
@@ -29,7 +28,7 @@ public class SelectEventFragment extends Fragment implements
         @Override
         public void onActivityCreated(final Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-            mGridView = (StaggeredGridView) getView().findViewById(R.id.grid_view);
+            StaggeredGridView mGridView = (StaggeredGridView) getView().findViewById(R.id.grid_view);
             if (savedInstanceState == null) {
             }
             if (mAdapter == null) {
