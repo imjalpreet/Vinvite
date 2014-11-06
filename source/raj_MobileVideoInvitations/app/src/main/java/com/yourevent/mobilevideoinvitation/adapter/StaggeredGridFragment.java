@@ -19,7 +19,6 @@ import java.util.ArrayList;
  */
 class StaggeredGridFragment extends Fragment implements
          AbsListView.OnItemClickListener {
-    private StaggeredGridView mGridView;
     private SampleAdapter mAdapter;
     private ArrayList<String> mData;
     @Override
@@ -34,7 +33,7 @@ class StaggeredGridFragment extends Fragment implements
     @Override
     public void onActivityCreated(final Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mGridView = (StaggeredGridView) getView().findViewById(R.id.grid_view);
+        StaggeredGridView mGridView = (StaggeredGridView) getView().findViewById(R.id.grid_view);
         if (mAdapter == null) {
             mAdapter = new SampleAdapter(getActivity(), R.id.txt_line1);
         }

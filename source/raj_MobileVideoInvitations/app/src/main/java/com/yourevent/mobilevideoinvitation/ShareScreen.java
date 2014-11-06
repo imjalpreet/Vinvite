@@ -4,12 +4,9 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.hardware.Camera;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,8 +21,6 @@ import android.widget.VideoView;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
-
-import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -43,11 +38,18 @@ public class ShareScreen extends Activity {
     PopupWindow popupWindow;
     View popUpView;
     private File file;
-    private String s;
     private VideoView videoView;
     private String videoFileName;
     private int count;
-    private ImageButton img1, img2, img3, img4, img5, img6, img7, img8, img9;
+    private ImageButton img1;
+    private ImageButton img2;
+    private ImageButton img3;
+    private ImageButton img4;
+    private ImageButton img5;
+    private ImageButton img6;
+    private ImageButton img7;
+    private ImageButton img8;
+    private ImageButton img9;
     private String[] apps = {"com.facebook.katana", "com.whatsapp", "com.google.android.gm", "com.twitter.android","com.google.android.apps.plus", "com.instagram.android", "com.viber.voip", "com.dropbox.android", "com.google.android.youtube"};
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,7 +67,7 @@ public class ShareScreen extends Activity {
 
         Bundle extras = getIntent().getExtras();
         videoFileName = extras.getString(BackgroundScore.VIDEOFILENAME);
-        s = Environment.getExternalStorageDirectory() + "/" + videoFileName + ".mp4";
+        String s = Environment.getExternalStorageDirectory() + "/" + videoFileName + ".mp4";
         file = new File(s);
         videoView.setVideoPath(s); // setting the video path
         videoView.seekTo(100);     // setting the video thumbnail

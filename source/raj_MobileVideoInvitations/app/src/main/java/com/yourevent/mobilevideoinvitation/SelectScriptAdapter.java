@@ -17,18 +17,16 @@ import java.util.Random;
  * Created by imjalpreet on 11-10-2014.
  */
 public class SelectScriptAdapter extends ArrayAdapter<String> {
-    private static final String TAG = "SelectScriptAdapter";
     static class ViewHolder {
         DynamicHeightTextView txtLineOne;
     }
     private final LayoutInflater mLayoutInflater;
-    private final Random mRandom;
     private final ArrayList<Integer> mBackgroundColors;
-    private static final SparseArray<Double> sPositionHeightRatios = new SparseArray<Double>();
+
     public SelectScriptAdapter(final Context context, final int textViewResourceId) {
         super(context, textViewResourceId);
         mLayoutInflater = LayoutInflater.from(context);
-        mRandom = new Random();
+        Random mRandom = new Random();
         mBackgroundColors = new ArrayList<Integer>();
         mBackgroundColors.add(R.color.red);
         mBackgroundColors.add(R.color.green);

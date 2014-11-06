@@ -22,12 +22,14 @@ import java.util.Calendar;
 
 public class EnterEventDetails extends Activity implements View.OnClickListener{
     private String[] events = {"Birthday", "Wedding", "Engagement", "Reception", "House Warming", "Anniversary"};
-    private Button contButton;
     public String event;
     public final static String EXTRA = "";
-    private EditText name, venue, date, time;
-    private int mYear, mMonth, mDay, mHour, mMinute;
-    private ImageButton btnTime, btnDate;
+    private EditText name;
+    private EditText venue;
+    private EditText date;
+    private EditText time;
+    private ImageButton btnTime;
+    private ImageButton btnDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +44,7 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
         TextView t = (TextView)findViewById(R.id.eventName);
         t.setText(events[Integer.parseInt(message)]);
 
-        contButton = (Button)findViewById(R.id.continueEventDetails);
+        Button contButton = (Button) findViewById(R.id.continueEventDetails);
         name = (EditText) findViewById(R.id.etName);
         venue = (EditText) findViewById(R.id.etVenue);
         date = (EditText) findViewById(R.id.etDate);
@@ -54,33 +56,27 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
         contButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent i = new Intent("android.intent.action.STAGGEREDGRIDACTIVITY");
-            if (name.getText().toString().trim().length() == 0) {
-                name.setHintTextColor(getResources().getColor(R.color.red));
-                Toast.makeText(EnterEventDetails.this, "Name Field cannot be Empty", Toast.LENGTH_SHORT).show();
-            }
-            else if (venue.getText().toString().trim().length() == 0) {
-                venue.setHintTextColor(getResources().getColor(R.color.red));
-                Toast.makeText(EnterEventDetails.this, "Venue Field cannot be Empty", Toast.LENGTH_SHORT).show();
-            }
-            else if (date.getText().toString().trim().length() == 0) {
-                date.setHintTextColor(getResources().getColor(R.color.red));
-                Toast.makeText(EnterEventDetails.this, "Date Field cannot be Empty", Toast.LENGTH_SHORT).show();
-            }
-            else if (date.getText().toString().trim().length() != 10) {
-                Toast.makeText(EnterEventDetails.this, "Invalid Date", Toast.LENGTH_SHORT).show();
-            }
-            else if (time.getText().toString().trim().length() == 0) {
-                time.setHintTextColor(getResources().getColor(R.color.red));
-                Toast.makeText(EnterEventDetails.this, "Time Field cannot be Empty", Toast.LENGTH_SHORT).show();
-            }
-            else if (time.getText().toString().trim().length() != 5) {
-                Toast.makeText(EnterEventDetails.this, "Invalid Time", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                i.putExtra(EXTRA, events[Integer.parseInt(event)] + "_" + name.getText()  + "_" + venue.getText() + "_" + date.getText() + "_" + time.getText());
-                startActivity(i);
-            }
+                Intent i = new Intent("android.intent.action.STAGGEREDGRIDACTIVITY");
+                if (name.getText().toString().trim().length() == 0) {
+                    name.setHintTextColor(getResources().getColor(R.color.red));
+                    Toast.makeText(EnterEventDetails.this, "Name Field cannot be Empty", Toast.LENGTH_SHORT).show();
+                } else if (venue.getText().toString().trim().length() == 0) {
+                    venue.setHintTextColor(getResources().getColor(R.color.red));
+                    Toast.makeText(EnterEventDetails.this, "Venue Field cannot be Empty", Toast.LENGTH_SHORT).show();
+                } else if (date.getText().toString().trim().length() == 0) {
+                    date.setHintTextColor(getResources().getColor(R.color.red));
+                    Toast.makeText(EnterEventDetails.this, "Date Field cannot be Empty", Toast.LENGTH_SHORT).show();
+                } else if (date.getText().toString().trim().length() != 10) {
+                    Toast.makeText(EnterEventDetails.this, "Invalid Date", Toast.LENGTH_SHORT).show();
+                } else if (time.getText().toString().trim().length() == 0) {
+                    time.setHintTextColor(getResources().getColor(R.color.red));
+                    Toast.makeText(EnterEventDetails.this, "Time Field cannot be Empty", Toast.LENGTH_SHORT).show();
+                } else if (time.getText().toString().trim().length() != 5) {
+                    Toast.makeText(EnterEventDetails.this, "Invalid Time", Toast.LENGTH_SHORT).show();
+                } else {
+                    i.putExtra(EXTRA, events[Integer.parseInt(event)] + "_" + name.getText() + "_" + venue.getText() + "_" + date.getText() + "_" + time.getText());
+                    startActivity(i);
+                }
             }
         });
     }
@@ -90,8 +86,8 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
         if (v == btnTime){
             // Process to get Current Time
             final Calendar c = Calendar.getInstance();
-            mHour = c.get(Calendar.HOUR_OF_DAY);
-            mMinute = c.get(Calendar.MINUTE);
+            int mHour = c.get(Calendar.HOUR_OF_DAY);
+            int mMinute = c.get(Calendar.MINUTE);
 
             // Launch Time Picker Dialog
             TimePickerDialog tpd = new TimePickerDialog(this,
@@ -109,9 +105,9 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
         else if (v == btnDate){
             // Process to get Current Date
             final Calendar c = Calendar.getInstance();
-            mYear = c.get(Calendar.YEAR);
-            mMonth = c.get(Calendar.MONTH);
-            mDay = c.get(Calendar.DAY_OF_MONTH);
+            int mYear = c.get(Calendar.YEAR);
+            int mMonth = c.get(Calendar.MONTH);
+            int mDay = c.get(Calendar.DAY_OF_MONTH);
 
             // Launch Date Picker Dialog
             DatePickerDialog dpd = new DatePickerDialog(this,

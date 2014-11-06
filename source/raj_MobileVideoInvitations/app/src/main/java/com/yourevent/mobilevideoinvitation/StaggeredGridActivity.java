@@ -20,11 +20,9 @@ import java.util.ArrayList;
 public class StaggeredGridActivity extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener {
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
-    private StaggeredGridView mGridView;
-    private SelectScriptAdapter mAdapter;
     private ArrayList<String> mData;
     public String eventName;
-    public final static String EXTRA_MESSAGE = "";
+    // --Commented out by Inspection (06-11-2014 17:00):public final static String EXTRA_MESSAGE = "";
     public final static String EVENT_NAME = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +32,8 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         assert actionBar != null;
         //actionBar.setDisplayHomeAsUpEnabled(true);
         setTitle("Select Your Script");
-        mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
-        mAdapter = new SelectScriptAdapter(this, R.id.txt_line1);
+        StaggeredGridView mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
+        SelectScriptAdapter mAdapter = new SelectScriptAdapter(this, R.id.txt_line1);
 // do we have saved data?
         if (savedInstanceState != null) {
             mData = savedInstanceState.getStringArrayList(SAVED_DATA_KEY);

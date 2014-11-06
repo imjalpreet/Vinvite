@@ -16,7 +16,7 @@ import android.graphics.Color;
  * ADAPTER
  */
 public class SampleAdapter extends ArrayAdapter<String> {
-    private static final String TAG = "SampleAdapter";
+    // --Commented out by Inspection (06-11-2014 16:59):private static final String TAG = "SampleAdapter";
 
     static class ViewHolder {
         DynamicHeightTextView txtLineOne;

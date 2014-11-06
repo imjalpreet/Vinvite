@@ -20,11 +20,9 @@ import com.etsy.android.grid.StaggeredGridView;
 public class BackgroundScore extends Activity implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener {
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
-    private StaggeredGridView mGridView;
-    private BackgroundAdapter mAdapter;
     private ArrayList<String> mData;
     private String videoFileName;
-    public static String VIDEOFILENAME="";
+    public static final String VIDEOFILENAME="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +34,8 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
         Bundle extras = getIntent().getExtras();
         videoFileName = extras.getString(AndroidVideoCapture.FILENAME);
         setTitle("Background Score");
-        mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
-        mAdapter = new BackgroundAdapter(this, R.id.txt_line1);
+        StaggeredGridView mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
+        BackgroundAdapter mAdapter = new BackgroundAdapter(this, R.id.txt_line1);
 //  do we have saved data?
         if (savedInstanceState != null) {
             mData = savedInstanceState.getStringArrayList(SAVED_DATA_KEY);
