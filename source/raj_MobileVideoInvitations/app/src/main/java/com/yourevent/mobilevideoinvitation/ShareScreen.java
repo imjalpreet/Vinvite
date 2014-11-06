@@ -65,7 +65,7 @@ public class ShareScreen extends Activity {
 
         Bundle extras = getIntent().getExtras();
         videoFileName = extras.getString(BackgroundScore.VIDEOFILENAME);
-        s = Environment.getExternalStorageDirectory() + "/" + videoFileName + ".mp4";
+        s = Environment.getExternalStorageDirectory() + "/invitube/" + videoFileName + ".mp4";
         file = new File(s);
         videoView.setVideoPath(s); // setting the video path
         videoView.seekTo(100);     // setting the video thumbnail

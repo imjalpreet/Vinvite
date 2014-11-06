@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +17,9 @@ import android.widget.TextView;
 public class ShowScript extends Activity {
     TextView ScriptType;
     EditText Script;
+    private int i;
+    private int tmpi=0;
+    String script="";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,21 +34,32 @@ public class ShowScript extends Activity {
         actionBar.hide();
         ScriptType.setText(Data[0]);
         Script = (EditText) findViewById(R.id.tvFinalScript);
-        String script="";
-        final String[] line={"Come and join us for some Birthday fun. \n", "It’s "+Data[2].split(" ")[0]+"’s Birthday!\n", "We will be waiting for you at "+Data[3]+" on "+Data[4]+" and "+Data[5]+". \n", "Do Join us for some family time!!"};
+        final String[] line={"Come and join us for some Birthday fun. ", "It’s "+Data[2].split(" ")[0]+"’s Birthday!", "We will be waiting for you at "+Data[3]+" on "+Data[4]+" and "+Data[5]+". ", "Do Join us for some family time!!"};
+        final String[] templine={"","","","","","","","","","","","",""};
         for (String tmpline: line){
-            script+=tmpline+"\n";
+            script+=tmpline+" \n\n ";
         }
         Script.setText(script);
         Button contBut = (Button)findViewById(R.id.continueFinalScript);
         contBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent("android.intent.action.ANDROIDVIDEOCAPTURE");
+                Intent intent = new Intent("android.intent.action.ANDROIDVIDEOCAPTURE");
+                script= String.valueOf(Script.getText());
+                Log.d("script",script);
+                final String[] words=script.split("\\s+");
                 Bundle b=new Bundle();
-                b.putStringArray("EXTRA_SCRIPT", line);
-                i.putExtras(b);
-                startActivity(i);
+                for(i = 0; i<words.length;i++){
+                    if((i+1)%6==0){
+                        tmpi++;
+                        templine[tmpi]="";
+                    }
+                    templine[tmpi] += words[i] + " ";
+                }
+
+                b.putStringArray("EXTRA_SCRIPT", templine);
+                intent.putExtras(b);
+                startActivity(intent);
             }
         });
     }
