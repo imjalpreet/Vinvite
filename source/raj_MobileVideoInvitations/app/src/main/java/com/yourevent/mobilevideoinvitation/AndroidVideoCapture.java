@@ -4,6 +4,7 @@ package com.yourevent.mobilevideoinvitation;
  * Created by raj on 14/10/14.
  */
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Timer;
@@ -155,8 +156,10 @@ public class AndroidVideoCapture extends Activity{
         mediaRecorder.setProfile(CamcorderProfile.get(1,CamcorderProfile.QUALITY_HIGH));
         String s;
         Calendar c = Calendar.getInstance();
+        File wallpaperDirectory = new File("/sdcard/invitube/");
+        wallpaperDirectory.mkdirs();
         filename = getAppropriateString(c.get(Calendar.YEAR))+getAppropriateString(c.get(Calendar.MONTH)+1)+getAppropriateString(c.get(Calendar.DATE))+"_"+getAppropriateString(c.get(Calendar.HOUR))+getAppropriateString(c.get(Calendar.MINUTE))+getAppropriateString(c.get(Calendar.SECOND));//Integer.toString(c.get(Calendar.YEAR))+Integer.toString(c.get(Calendar.MONTH)+1)+Integer.toString(c.get(Calendar.DATE))+Integer.toString(c.get(Calendar.HOUR))+Integer.toString(c.get(Calendar.MINUTE))+Integer.toString(c.get(Calendar.SECOND));
-        s=Environment.getExternalStorageDirectory() + "/" + filename + ".mp4" ;
+        s=Environment.getExternalStorageDirectory() + "/invitube/" + filename + ".mp4" ;
         mediaRecorder.setOutputFile(s);
         mediaRecorder.setMaxDuration(30000); // Set max duration 30 sec.
         mediaRecorder.setMaxFileSize(16000000); // Set max file size 16M
