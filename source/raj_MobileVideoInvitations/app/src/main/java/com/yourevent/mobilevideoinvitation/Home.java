@@ -14,7 +14,6 @@ import com.yourevent.mobilevideoinvitation.adapter.TabsPagerAdapter;
 public class Home extends FragmentActivity implements ActionBar.TabListener {
 
     private ViewPager viewPager;
-    private TabsPagerAdapter mAdapter;
     private ActionBar actionBar;
     private String[] tabs = {"Select Event", "Previous Invitations"};
 
@@ -28,7 +27,7 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayShowHomeEnabled(false);
         viewPager = (ViewPager) findViewById(R.id.pager);
-        mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
+        TabsPagerAdapter mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
 
         viewPager.setAdapter(mAdapter);
         actionBar.setHomeButtonEnabled(false);
