@@ -21,7 +21,7 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
     private ArrayList<String> mData;
-    private String videoFileName;
+    private static String videoFileName;
     public static final String VIDEOFILENAME="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +31,11 @@ public class BackgroundScore extends Activity implements AbsListView.OnScrollLis
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Next 3 lines will be used
+
         Bundle extras = getIntent().getExtras();
-        videoFileName = extras.getString(AndroidVideoCapture.FILENAME);
+        if(extras != null)
+            videoFileName = extras.getString(AndroidVideoCapture.FILENAME);
+        Log.d("VideoFile: ", videoFileName);
         setTitle("Background Score");
         StaggeredGridView mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
         BackgroundAdapter mAdapter = new BackgroundAdapter(this, R.id.txt_line1);

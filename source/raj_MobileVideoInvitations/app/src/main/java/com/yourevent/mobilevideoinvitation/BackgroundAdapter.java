@@ -24,11 +24,11 @@ public class BackgroundAdapter extends ArrayAdapter<String> {
         super(context, textViewResourceId);
         mLayoutInflater = LayoutInflater.from(context);
         mBackgroundColors = new ArrayList<Integer>();
-        mBackgroundColors.add(R.color.red);
-        mBackgroundColors.add(R.color.green);
+        mBackgroundColors.add(R.drawable.screen6);
+        /*mBackgroundColors.add(R.color.green);
         mBackgroundColors.add(R.color.blue);
         mBackgroundColors.add(R.color.yellow);
-        mBackgroundColors.add(R.color.grey);
+        mBackgroundColors.add(R.color.grey)*/;
     }
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
