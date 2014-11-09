@@ -5,6 +5,7 @@ package com.yourevent.mobilevideoinvitation;
  */
 import java.util.ArrayList;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,11 +30,11 @@ public class SampleAdapter extends ArrayAdapter<String> {
         super(context, textViewResourceId);
         mLayoutInflater = LayoutInflater.from(context);
         mBackgroundColors = new ArrayList<Integer>();
-        mBackgroundColors.add(R.color.orange);
-        mBackgroundColors.add(R.color.green);
+        mBackgroundColors.add(R.drawable.screen2_tiles);
+        /*mBackgroundColors.add(R.color.green);
         mBackgroundColors.add(R.color.blue);
         mBackgroundColors.add(R.color.yellow);
-        mBackgroundColors.add(R.color.grey);
+        mBackgroundColors.add(R.color.grey);*/
     }
 
     @Override
@@ -50,10 +51,10 @@ public class SampleAdapter extends ArrayAdapter<String> {
         int backgroundIndex = position >= mBackgroundColors.size() ?
                 position % mBackgroundColors.size() : position;
         convertView.setBackgroundResource(mBackgroundColors.get(backgroundIndex));
-        vh.txtLineOne.setHeightRatio(1.05);
-        vh.txtLineOne.setTextSize(22);
-        vh.txtLineOne.setTextColor(Color.parseColor("#FFFFFF"));
-        vh.txtLineOne.setText(getItem(position));
+        //vh.txtLineOne.setHeightRatio(0.47);
+        //vh.txtLineOne.setTextSize(22);
+        //vh.txtLineOne.setTextColor(Color.parseColor("#FFFFFF"));
+        //vh.txtLineOne.setText(getItem(position));
         return convertView;
     }
 }

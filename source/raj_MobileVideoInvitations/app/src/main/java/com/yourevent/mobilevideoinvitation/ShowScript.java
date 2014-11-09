@@ -20,19 +20,24 @@ public class ShowScript extends Activity {
     private int i;
     private int tmpi=0;
     String script="";
-
+    private static String[] Data;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_script);
-        ScriptType = (TextView) findViewById(R.id.ScriptType);
+        //ScriptType = (TextView) findViewById(R.id.ScriptType);
+        String eventName=null;
         Bundle extras = getIntent().getExtras();
-        String eventName = extras.getString(StaggeredGridActivity.EVENT_NAME);
-        String[] Data = eventName.split("_");
+        if(extras!=null)
+            eventName = extras.getString(StaggeredGridActivity.EVENT_NAME);
+        assert eventName != null;
+        Data = eventName.split("_");
+        Log.d("Data Length: ", Data[4]);
         setTitle(Data[1]);
         ActionBar actionBar = getActionBar();
         assert actionBar != null;
-        actionBar.hide();
-        ScriptType.setText(Data[0]);
+        actionBar.setTitle("Edit Script");
+        //actionBar.hide();
+        //ScriptType.setText(Data[0]);
         Script = (EditText) findViewById(R.id.tvFinalScript);
         final String[] line={"Come and join us for some Birthday fun. ", "It’s "+Data[2].split(" ")[0]+"’s Birthday!", "We will be waiting for you at "+Data[3]+" on "+Data[4]+" and "+Data[5]+". ", "Do Join us for some family time!!"};
         final String[] templine={"","","","","","","","","","","","",""};
@@ -63,4 +68,5 @@ public class ShowScript extends Activity {
             }
         });
     }
+
 }

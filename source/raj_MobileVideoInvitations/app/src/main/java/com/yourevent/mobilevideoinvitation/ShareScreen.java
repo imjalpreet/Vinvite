@@ -67,7 +67,7 @@ public class ShareScreen extends Activity {
 
         Bundle extras = getIntent().getExtras();
         videoFileName = extras.getString(BackgroundScore.VIDEOFILENAME);
-        s = Environment.getExternalStorageDirectory() + "/invitube/" + videoFileName + ".mp4";
+        String s = Environment.getExternalStorageDirectory() + "/invitube/" + videoFileName + ".mp4";
         file = new File(s);
         videoView.setVideoPath(s); // setting the video path
         videoView.seekTo(100);     // setting the video thumbnail
@@ -101,15 +101,6 @@ public class ShareScreen extends Activity {
                 case 3: tmpimgbut=img4;
                     tmpid=R.id.imageButton4;
                     break;
-                /*case 4: tmpimgbut=img5;
-                    tmpid=R.id.imageButton5;
-                    break;
-                case 5: tmpimgbut=img6;
-                    tmpid=R.id.imageButton6;
-                    break;
-                case 6: tmpimgbut=img7;
-                    tmpid=R.id.imageButton7;
-                    break;*/
                 default:
                     break;
             }
@@ -125,6 +116,7 @@ public class ShareScreen extends Activity {
             plus.setOnClickListener(new Button.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    plus.setVisibility(View.INVISIBLE);
                     LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
                     popUpView = layoutInflater.inflate(R.layout.more, null);
                     popupWindow = new PopupWindow(popUpView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -133,6 +125,7 @@ public class ShareScreen extends Activity {
                         @Override
                         public void onClick(View v) {
                             popupWindow.dismiss();
+                            plus.setVisibility(View.VISIBLE);
                         }
                     });
 

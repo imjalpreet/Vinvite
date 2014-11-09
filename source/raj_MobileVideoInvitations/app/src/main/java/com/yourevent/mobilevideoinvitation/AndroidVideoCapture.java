@@ -27,7 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AndroidVideoCapture extends Activity{
-    public String filename;
+    public static String filename;
     public static final String FILENAME = "";
     private int scriptSpeed = 3;
     private Camera myCamera;
@@ -36,9 +36,9 @@ public class AndroidVideoCapture extends Activity{
     private Button myButton;
     private boolean recording;
     private Timer t;
-    private int TimeCounter = 30;
+    private int TimeCounter = 29;
     private TextView timer;
-    private String[] line;
+    private static String[] line;
     private int iterator = 0;
     private TextView scriptheader;
 
@@ -49,7 +49,8 @@ public class AndroidVideoCapture extends Activity{
         actionBar.hide();
         recording = false;
         Bundle b = this.getIntent().getExtras();
-        line=b.getStringArray("EXTRA_SCRIPT");
+        if(b!=null)
+            line=b.getStringArray("EXTRA_SCRIPT");
         setContentView(R.layout.main);
 
         scriptheader = (TextView) findViewById(R.id.dynamicScript);
@@ -73,7 +74,7 @@ public class AndroidVideoCapture extends Activity{
             rec.setVisibility(View.VISIBLE);
             timer = (TextView) findViewById(R.id.Timer);
             timer.setVisibility(View.VISIBLE);
-            if(TimeCounter != 30 && TimeCounter != 0)
+            if(TimeCounter != 29 && TimeCounter != 0)
             {
                 t.cancel();
             }
@@ -162,7 +163,7 @@ public class AndroidVideoCapture extends Activity{
         s=Environment.getExternalStorageDirectory() + "/invitube/" + filename + ".mp4" ;
         mediaRecorder.setOutputFile(s);
         mediaRecorder.setMaxDuration(30000); // Set max duration 30 sec.
-        mediaRecorder.setMaxFileSize(16000000); // Set max file size 16M
+        mediaRecorder.setMaxFileSize(10000000); // Set max file size 10M
 
         try {
             mediaRecorder.setPreviewDisplay(myCameraSurfaceView.getHolder().getSurface());
