@@ -1,0 +1,11 @@
+Sixteenth Meeting
+Topic: Adding images and discussing exact size of images required
+Date: 09/11/14
+Time: 21:30 - 22:30
+Place: CIE, IIIT-H
+Attendees: Raj, Jalpreet
+
+Important Points of Discussion:
+1. Client gave demo images to test and review was given by us.
+2. Exact sizes were given back to client so that he can give us corresponding images
+3. Further refinements discussed
