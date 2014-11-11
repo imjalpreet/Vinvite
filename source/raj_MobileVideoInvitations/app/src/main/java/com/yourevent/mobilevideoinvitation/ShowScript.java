@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -20,6 +21,7 @@ public class ShowScript extends Activity {
     private int i;
     private int tmpi=0;
     String script="";
+    private ImageView Event;
     private static String[] Data;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,14 @@ public class ShowScript extends Activity {
         actionBar.setTitle("Edit Script");
         //actionBar.hide();
         //ScriptType.setText(Data[0]);
+        Event = (ImageView) findViewById(R.id.imageView1);
+        if(Data[0].equalsIgnoreCase("formal"))
+            Event.setImageResource(R.drawable.screen45_formal);
+        else if(Data[0].equalsIgnoreCase("friends"))
+            Event.setImageResource(R.drawable.screen45_friends);
+        else
+            Event.setImageResource(R.drawable.screen45_family);
+
         Script = (EditText) findViewById(R.id.tvFinalScript);
         final String[] line={"Come and join us for some Birthday fun. ", "It’s "+Data[2].split(" ")[0]+"’s Birthday!", "We will be waiting for you at "+Data[3]+" on "+Data[4]+" and "+Data[5]+". ", "Do Join us for some family time!!"};
         final String[] templine={"","","","","","","","","","","","",""};
