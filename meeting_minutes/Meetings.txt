@@ -146,3 +146,35 @@ Topic: Assigning work to everybody
 
 1. Enhancements in some activities
 2. Discussion on who is doing what as per the changes mentioned by client
+
+16/10/14
+*******************************************************************************
+Time: 12:45 - 13:30
+Attendees: Raj, Jalpreet, Manas, Vikram
+Topic: Discussion regarding R1 presentations.
+
+1. We discussed on what each team member will do in the presentation.
+2. We did a small practice on how the things will go in the presentations.
+
+29/10/14
+*******************************************************************************
+Time: 20:00 - 21:00
+Attendees: Raj, Jalpreet
+Topic: Further plans.
+
+1. We decided on how we have to move forward from here.
+2. We split the work and starting working on it.
+
+9/11/14
+*******************************************************************************
+Time: 17:30 - 18:30
+Attendees: Raj, Jalpreet
+Topic: Related to images
+
+1. We tried getting the exact dimensions of the images that we have to use in our app.
+2. We tried those images in different handsets to check whether it is fine or not.
+
+
+
+
+

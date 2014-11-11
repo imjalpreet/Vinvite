@@ -41,8 +41,8 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
         Intent intent = getIntent();
         String message = intent.getStringExtra(SelectEventFragment.EXTRA_MESSAGE);
         event = intent.getStringExtra(SelectEventFragment.EXTRA_MESSAGE);
-        TextView t = (TextView)findViewById(R.id.eventName);
-        t.setText(events[Integer.parseInt(message)]);
+        //TextView t = (TextView)findViewById(R.id.eventName);
+        //t.setText(events[Integer.parseInt(message)]);
 
         Button contButton = (Button) findViewById(R.id.continueEventDetails);
         name = (EditText) findViewById(R.id.etName);

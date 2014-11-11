@@ -24,7 +24,7 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         //Initialization
         actionBar = getActionBar();
         assert actionBar != null;
-        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setDisplayShowHomeEnabled(false);
         viewPager = (ViewPager) findViewById(R.id.pager);
         TabsPagerAdapter mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
