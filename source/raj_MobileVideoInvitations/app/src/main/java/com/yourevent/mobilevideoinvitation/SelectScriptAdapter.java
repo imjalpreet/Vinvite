@@ -28,11 +28,10 @@ public class SelectScriptAdapter extends ArrayAdapter<String> {
         mLayoutInflater = LayoutInflater.from(context);
         Random mRandom = new Random();
         mBackgroundColors = new ArrayList<Integer>();
-        mBackgroundColors.add(R.drawable.screen45);
-        /*mBackgroundColors.add(R.color.green);
-        mBackgroundColors.add(R.color.blue);
-        mBackgroundColors.add(R.color.yellow);
-        mBackgroundColors.add(R.color.grey);*/
+        mBackgroundColors.add(R.drawable.screen45_formal);
+        mBackgroundColors.add(R.drawable.screen45_friends);
+        mBackgroundColors.add(R.drawable.screen45_family);
+
     }
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
