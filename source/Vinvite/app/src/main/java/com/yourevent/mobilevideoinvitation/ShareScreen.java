@@ -7,15 +7,18 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.parse.ParseFile;
@@ -50,6 +53,7 @@ public class ShareScreen extends Activity {
     private ImageButton img7;
     private ImageButton img8;
     private ImageButton img9;
+    private ImageButton playVideo;
     private String[] apps = {"com.facebook.katana", "com.whatsapp", "com.google.android.gm", "com.twitter.android","com.google.android.apps.plus", "com.instagram.android", "com.viber.voip", "com.dropbox.android", "com.google.android.youtube"};
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,18 +76,30 @@ public class ShareScreen extends Activity {
         videoView.setVideoPath(s); // setting the video path
         videoView.seekTo(100);     // setting the video thumbnail
         videoView.requestFocus();
-        videoView.setOnClickListener(new View.OnClickListener() {
+        playVideo = (ImageButton)findViewById(R.id.playVideoButton);
+
+        playVideo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 if (!videoView.isPlaying()) {
                     videoView.seekTo(0);
                     videoView.start();
+                    playVideo.setVisibility(View.INVISIBLE);
+                    videoView.setOnTouchListener(new View.OnTouchListener(){
+
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                                videoView.pause();
+                                playVideo.setVisibility(View.VISIBLE);
+                            return true;
+                        }
+                    });
                 } else {
                     videoView.pause();
+                    playVideo.setVisibility(View.VISIBLE);
                 }
             }
         });
-
         count=0;
         ImageButton tmpimgbut=null;
         int tmpid=0;
@@ -157,7 +173,7 @@ public class ShareScreen extends Activity {
                             setShareActivity(temp, id, apps[i], 1);
                         }
                     }
-                    popupWindow.showAsDropDown(plus, 20, 5);
+                    popupWindow.showAsDropDown(plus,600,5);
                 }
             });
 

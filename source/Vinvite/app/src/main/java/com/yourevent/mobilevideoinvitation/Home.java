@@ -1,13 +1,22 @@
 package com.yourevent.mobilevideoinvitation;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.app.FragmentTransaction;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.yourevent.mobilevideoinvitation.adapter.TabsPagerAdapter;
@@ -16,7 +25,7 @@ import com.yourevent.mobilevideoinvitation.adapter.TabsPagerAdapter;
 public class Home extends FragmentActivity implements ActionBar.TabListener {
 
     private ViewPager viewPager;
-    private ActionBar actionBar;
+    //private ActionBar actionBar;
     private String[] tabs = {"Select Event", "Previous Invitations"};
     SlidingMenu menu;
 
@@ -24,17 +33,23 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        //Initialization
-        actionBar = getActionBar();
-        assert actionBar != null;
-        //actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setTitle("Vinvite");
+
+        final ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
+        LayoutInflater mInflater = LayoutInflater.from(this);
+
+        View mCustomView = mInflater.inflate(R.layout.actionbar, null);
+
+        actionBar.setCustomView(mCustomView);
+        actionBar.setDisplayShowCustomEnabled(true);
+
         viewPager = (ViewPager) findViewById(R.id.pager);
         TabsPagerAdapter mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(mAdapter);
         actionBar.setHomeButtonEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
         menu = new SlidingMenu(this);
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         menu.setShadowWidthRes(R.dimen.shadow_width);
@@ -44,6 +59,7 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         menu.setFadeDegree(0.35f);
         menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
         menu.setMenu(R.layout.menu);
+
         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new UserMenu()).commit();
         //Adding tabs
         for (String tab_name: tabs){
