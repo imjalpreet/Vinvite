@@ -3,14 +3,9 @@
     tools:context="com.example.ssadtestapp.MainActivity">
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        android:showAsAction="never"/>
-
-    <item
         android:id="@+id/Save"
         android:title="Save"
+        android:icon="@drawable/save_video"
         android:showAsAction="ifRoom"
         ></item>
 
