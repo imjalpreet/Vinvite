@@ -1,5 +1,6 @@
 package com.yourevent.mobilevideoinvitation;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -40,10 +41,11 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         LayoutInflater mInflater = LayoutInflater.from(this);
 
         View mCustomView = mInflater.inflate(R.layout.actionbar, null);
+        ImageButton sliding_menu;
+        sliding_menu = (ImageButton) mCustomView.findViewById(R.id.nav_icon);
 
         actionBar.setCustomView(mCustomView);
         actionBar.setDisplayShowCustomEnabled(true);
-
         viewPager = (ViewPager) findViewById(R.id.pager);
         TabsPagerAdapter mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(mAdapter);
@@ -59,8 +61,14 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         menu.setFadeDegree(0.35f);
         menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
         menu.setMenu(R.layout.menu);
-
+        final Activity activity = this;
         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new UserMenu()).commit();
+        /*sliding_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });*/
         //Adding tabs
         for (String tab_name: tabs){
             actionBar.addTab(actionBar.newTab().setText(tab_name).setTabListener(this));
