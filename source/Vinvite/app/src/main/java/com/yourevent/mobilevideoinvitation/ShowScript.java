@@ -28,6 +28,7 @@ public class ShowScript extends Activity {
         setContentView(R.layout.show_script);
         //ScriptType = (TextView) findViewById(R.id.ScriptType);
         String eventName=null;
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle extras = getIntent().getExtras();
         if(extras!=null)
             eventName = extras.getString(StaggeredGridActivity.EVENT_NAME);

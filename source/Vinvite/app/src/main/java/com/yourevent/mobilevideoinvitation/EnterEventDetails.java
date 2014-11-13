@@ -23,7 +23,8 @@ import java.util.Calendar;
 
 public class EnterEventDetails extends Activity implements View.OnClickListener{
     private String[] events = {"Birthday", "Wedding", "Engagement", "Reception", "House Warming", "Anniversary"};
-    public String event;
+    public static String event;
+    public static String message;
     public final static String EXTRA = "";
     private EditText name;
     private EditText venue;
@@ -41,8 +42,11 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
         actionBar.setDisplayHomeAsUpEnabled(true);
         setTitle("Event Details");
         Intent intent = getIntent();
-        String message = intent.getStringExtra(SelectEventFragment.EXTRA_MESSAGE);
-        event = intent.getStringExtra(SelectEventFragment.EXTRA_MESSAGE);
+        assert intent.getExtras()!=null;
+        if(intent.getExtras()!=null) {
+            message = intent.getStringExtra(SelectEventFragment.EXTRA_MESSAGE);
+            event = intent.getStringExtra(SelectEventFragment.EXTRA_MESSAGE);
+        }
         //TextView t = (TextView)findViewById(R.id.eventName);
         //t.setText(events[Integer.parseInt(message)]);
         Event = (ImageView) findViewById(R.id.whatsApp);

@@ -21,7 +21,7 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
     private static final String TAG = "StaggeredGridActivity";
     public static final String SAVED_DATA_KEY = "SAVED_DATA";
     private ArrayList<String> mData;
-    public String eventName;
+    public static String eventName;
     // --Commented out by Inspection (06-11-2014 17:00):public final static String EXTRA_MESSAGE = "";
     public final static String EVENT_NAME = "";
     @Override
@@ -30,7 +30,8 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         setContentView(R.layout.activity_select_script);
         ActionBar actionBar = getActionBar();
         assert actionBar != null;
-        //actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         setTitle("Select Your Script");
         StaggeredGridView mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
         SelectScriptAdapter mAdapter = new SelectScriptAdapter(this, R.id.txt_line1);
@@ -54,7 +55,12 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return true;
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
     @Override
     protected void onSaveInstanceState(final Bundle outState) {
@@ -77,7 +83,9 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         final ArrayList<String> sampleData = SelectScriptData.generateSampleData();
         mData.addAll(sampleData);
         Intent intent = getIntent();
-        eventName = intent.getStringExtra(EnterEventDetails.EXTRA);
+        assert intent.getExtras()!=null;
+        if(intent.getExtras()!=null)
+            eventName = intent.getStringExtra(EnterEventDetails.EXTRA);
         Log.d(TAG, mData.get(position)+" "+eventName);
         Bundle extras = new Bundle();
         //extras.putString(EXTRA_MESSAGE, mData.get(position));
