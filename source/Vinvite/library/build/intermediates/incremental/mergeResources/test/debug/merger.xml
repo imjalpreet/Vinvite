@@ -2,14 +2,14 @@
 <merger version="2" >
 
     <dataSet config="debug" >
-        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\raj_MobileVideoInvitations\library\build\intermediates\bundles\debug\res" >
+        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\build\intermediates\bundles\debug\res" >
             <file
                 name="slidingmenumain"
-                path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\raj_MobileVideoInvitations\library\build\intermediates\bundles\debug\res\layout\slidingmenumain.xml"
+                path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\build\intermediates\bundles\debug\res\layout\slidingmenumain.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\raj_MobileVideoInvitations\library\build\intermediates\bundles\debug\res\values\values.xml"
+                path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\build\intermediates\bundles\debug\res\values\values.xml"
                 qualifiers="" >
                 <item
                     name="selected_view"
@@ -84,9 +84,9 @@
         </source>
     </dataSet>
     <dataSet config="main" >
-        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\raj_MobileVideoInvitations\library\src\androidTest\res" />
-        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\raj_MobileVideoInvitations\library\build\generated\res\rs\test\debug" />
-        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\raj_MobileVideoInvitations\library\build\generated\res\generated\test\debug" />
+        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\src\androidTest\res" />
+        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\build\generated\res\rs\test\debug" />
+        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\build\generated\res\generated\test\debug" />
     </dataSet>
 
 </merger>

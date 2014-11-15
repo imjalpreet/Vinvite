@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="orange">#ffffdc7e</color>
+    <color name="orange">#D0D0D0</color>
     <color name="grey">#ff545454</color>
     <color name="green">#ff8dd304</color>
     <color name="blue">#ff82e0ff</color>
     <color name="yellow">#fffffbae</color>
     <color name="red">#fff10800</color>
+    <color name="transparent">#00ffffff</color>
     <color name="list_item_pressed">#1A000000</color>
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#545454</color>
+    <color name="list_background_pressed">#eb460f</color>
+    <color name="list_divider">#992416</color>
+    <color name="counter_text_bg">#828282</color>
+    <color name="counter_text_color">#c5c4c4</color>
 </resources>

@@ -2,16 +2,14 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/raj/development/ssad24/source/Vinvite/library/res" >
+        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\res" >
             <file
-                path="/home/raj/development/ssad24/source/Vinvite/library/res/values/ids.xml"
-                qualifiers="" >
-                <item
-                    name="selected_view"
-                    type="id"/>
-            </file>
+                name="slidingmenumain"
+                path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\res\layout\slidingmenumain.xml"
+                qualifiers=""
+                type="layout" />
             <file
-                path="/home/raj/development/ssad24/source/Vinvite/library/res/values/attrs.xml"
+                path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\res\values\attrs.xml"
                 qualifiers="" >
                 <declare-styleable name="SlidingMenu" >
                     <attr name="mode" >
@@ -80,16 +78,18 @@
                 </declare-styleable>
             </file>
             <file
-                name="slidingmenumain"
-                path="/home/raj/development/ssad24/source/Vinvite/library/res/layout/slidingmenumain.xml"
-                qualifiers=""
-                type="layout" />
+                path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\res\values\ids.xml"
+                qualifiers="" >
+                <item
+                    name="selected_view"
+                    type="id"/>
+            </file>
         </source>
-        <source path="/home/raj/development/ssad24/source/Vinvite/library/build/generated/res/rs/debug" />
-        <source path="/home/raj/development/ssad24/source/Vinvite/library/build/generated/res/generated/debug" />
+        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\build\generated\res\rs\debug" />
+        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\build\generated\res\generated\debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/home/raj/development/ssad24/source/Vinvite/library/src/debug/res" />
+        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\src\debug\res" />
     </dataSet>
 
 </merger>
