@@ -72,6 +72,16 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         //Recieving the Date Of Birth of the User
         if(intent.getExtras()!=null) {
             DOB = intent.getStringExtra("DOB");
+            Log.d("TAG", DOB);
+            /*if(DOB!="") {
+                Date = DOB.split("/")[1];
+                Month = DOB.split("/")[0];
+                Year = DOB.split("/")[2];
+                DOB = Year.concat("-").concat(Month).concat("-").concat(Date);
+                Log.d("DOB", DOB);
+            }
+            */
+            DOB = "11/17/2014";
             Date = DOB.split("/")[1];
             Month = DOB.split("/")[0];
             Year = DOB.split("/")[2];
@@ -163,8 +173,8 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         final ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowHomeEnabled(false);
         actionBar.setLogo(R.color.transparent);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(false);
+        getActionBar().setHomeButtonEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
 
         LayoutInflater mInflater = LayoutInflater.from(this);
