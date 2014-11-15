@@ -6,6 +6,7 @@ package com.yourevent.mobilevideoinvitation;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -18,6 +19,7 @@ import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
+import android.renderscript.Script;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -25,6 +27,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.yourevent.mobilevideoinvitation.ScriptView;
 
 public class AndroidVideoCapture extends Activity{
     public static String filename;
@@ -41,16 +44,28 @@ public class AndroidVideoCapture extends Activity{
     private static String[] line;
     private int iterator = 0;
     private TextView scriptheader;
-
+    private View highlightedScriptView;
+    private String script;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActionBar actionBar = getActionBar();
-        actionBar.hide();
-        recording = false;
         Bundle b = this.getIntent().getExtras();
         if(b!=null)
             line=b.getStringArray("EXTRA_SCRIPT");
+
+        script = "";
+        /*for (String tmpline: line){
+            script+=tmpline+" ";
+        }
+        highlightedScriptView = new ScriptView(getApplicationContext(), script);
+        View container = findViewById(R.id.dynamicScript);
+        ArrayList<View> ar = new ArrayList<View>();
+        ar.add(0, highlightedScriptView);
+        container.addChildrenForAccessibility(ar);
+        */
+        ActionBar actionBar = getActionBar();
+        actionBar.hide();
+        recording = false;
         setContentView(R.layout.main);
 
         scriptheader = (TextView) findViewById(R.id.dynamicScript);
@@ -110,7 +125,8 @@ public class AndroidVideoCapture extends Activity{
                                 TimeCounter--;
                                 if(TimeCounter%scriptSpeed==0){
                                     if(iterator<line.length)
-                                        scriptheader.setText(line[iterator]);
+                                        ;
+                                        //scriptheader.setText(line[iterator]);
                                     iterator++;
                                 }
                                 if(TimeCounter == 0 && recording){

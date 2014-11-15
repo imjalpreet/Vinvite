@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -55,6 +56,8 @@ public class ShareScreen extends Activity {
     private ImageButton img9;
     private ImageButton playVideo;
     private String[] apps = {"com.facebook.katana", "com.whatsapp", "com.google.android.gm", "com.twitter.android","com.google.android.apps.plus", "com.instagram.android", "com.viber.voip", "com.dropbox.android", "com.google.android.youtube"};
+    public static int flag;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,28 +79,43 @@ public class ShareScreen extends Activity {
         videoView.setVideoPath(s); // setting the video path
         videoView.seekTo(100);     // setting the video thumbnail
         videoView.requestFocus();
+        flag=0;
         playVideo = (ImageButton)findViewById(R.id.playVideoButton);
-
         playVideo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 if (!videoView.isPlaying()) {
-                    videoView.seekTo(0);
+                    if(flag==0){
+                        videoView.seekTo(0);
+                    }
                     videoView.start();
                     playVideo.setVisibility(View.INVISIBLE);
                     videoView.setOnTouchListener(new View.OnTouchListener(){
 
                         @Override
                         public boolean onTouch(View v, MotionEvent event) {
-                                videoView.pause();
-                                playVideo.setVisibility(View.VISIBLE);
-                            return true;
+                            videoView.pause();
+                            flag=1;
+                            playVideo.setImageResource(R.drawable.pause_video);
+                            playVideo.setVisibility(View.VISIBLE);
+                        return true;
                         }
                     });
+
                 } else {
+                    flag=1;
                     videoView.pause();
                     playVideo.setVisibility(View.VISIBLE);
+                    playVideo.setImageResource(R.drawable.pause_video);
                 }
+            }
+        });
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                playVideo.setVisibility(View.VISIBLE);
+                playVideo.setImageResource(R.drawable.play_video);
+                flag=0;
             }
         });
         count=0;
