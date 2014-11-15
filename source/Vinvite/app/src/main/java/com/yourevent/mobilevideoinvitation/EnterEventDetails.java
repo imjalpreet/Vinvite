@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.drawable.ClipDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +41,7 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
         setContentView(R.layout.event_details);
         ActionBar actionBar = getActionBar();
         assert actionBar != null;
+        //actionBar.setBackgroundDrawable(new ColorDrawable(R.color.orange));
         actionBar.setDisplayHomeAsUpEnabled(true);
         setTitle("Event Details");
         Intent intent = getIntent();

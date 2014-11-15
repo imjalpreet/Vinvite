@@ -2,10 +2,10 @@
 <merger version="2" >
 
     <dataSet config="debug" >
-        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\raj_MobileVideoInvitations\library\build\intermediates\bundles\debug\assets" />
+        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\build\intermediates\bundles\debug\assets" />
     </dataSet>
     <dataSet config="main" >
-        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\raj_MobileVideoInvitations\library\src\androidTest\assets" />
+        <source path="C:\Users\jalpr_000\Documents\SSAD_PROJECT\Vinvite\library\src\androidTest\assets" />
     </dataSet>
 
 </merger>
