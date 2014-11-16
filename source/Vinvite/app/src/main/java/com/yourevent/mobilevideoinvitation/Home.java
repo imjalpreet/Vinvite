@@ -1,6 +1,7 @@
 package com.yourevent.mobilevideoinvitation;
 
 import android.app.ActionBar;
+import android.net.Uri;
 import android.app.ActionBar.Tab;
 import android.app.AlarmManager;
 import android.app.FragmentTransaction;
@@ -162,9 +163,9 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
 
         // adding nav drawer items to array
         // Home
-        navDrawerItems.add(new NavDrawerItem("Previous Events", navMenuIcons.getResourceId(0, -1)));
+        //navDrawerItems.add(new NavDrawerItem("Previous Events", navMenuIcons.getResourceId(0, -1)));
         // My Profile
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+        //navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
         // About Us
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
         // Terms and Policies
@@ -265,9 +266,21 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
             // display view for selected nav drawer item
             switch (position){
                 case 0:
-                    getActionBar().setSelectedNavigationItem(1);
-                    viewPager.setCurrentItem(1);
+                    
+                    Intent i = new Intent("android.intent.action.VIEW", Uri.parse("http://www.yourevent.co/about#about"));
                     mDrawerLayout.closeDrawer(mDrawerList);
+                    startActivity(i);
+                break;
+                case 1:
+                    i = new Intent("android.intent.action.VIEW", Uri.parse("http://www.yourevent.co/privacy"));
+                    mDrawerLayout.closeDrawer(mDrawerList);
+                    startActivity(i);
+                break;
+                case 2:
+                    ParseUser.logOut();
+                    i = new Intent(Home.this, LoginPage.class);
+                    mDrawerLayout.closeDrawer(mDrawerList);
+                    startActivity(i);
                 break;
             }
         }
