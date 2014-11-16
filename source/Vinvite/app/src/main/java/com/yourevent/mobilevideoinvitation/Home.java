@@ -105,7 +105,14 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
             {
                 Log.d("Date", "Your birthday is far away");
             }*/
-            createNotification(diff);
+            
+            if(diff-604800000 > 0)
+                createNotification(diff-604800000);
+            if(diff-172800000 > 0)
+                createNotification(diff-172800000);
+            else
+                createNotification(diff);
+                
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -271,6 +278,7 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
                     i = new Intent(Home.this, LoginPage.class);
                     mDrawerLayout.closeDrawer(mDrawerList);
                     startActivity(i);
+                    Home.this.finish();
                 break;
             }
         }
