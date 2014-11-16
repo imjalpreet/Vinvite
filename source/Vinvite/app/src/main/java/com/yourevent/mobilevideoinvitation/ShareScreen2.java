@@ -40,11 +40,12 @@ import java.io.IOException;
  * Created by raj on 29/10/14.
  */
 
-public class ShareScreen extends Activity {
+public class ShareScreen2 extends Activity {
 
     ParseFile mVideo;
     String User;
     String s;
+    String name;
     PopupWindow popupWindow;
     View popUpView;
     private File file;
@@ -81,14 +82,18 @@ public class ShareScreen extends Activity {
         Bundle extras = getIntent().getExtras();
         videoFileName = extras.getString(BackgroundScore.VIDEOFILENAME);
 
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(PreviousInvitesFragment.EXTRA_MESSAGE);
+        name = intent.getStringExtra(PreviousInvitesFragment.EXTRA_MESSAGE);
+        Log.d("score", "Name :" + name + " s");
 
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         User=currentUser.getObjectId();
-        s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/UnSaved/"+ videoFileName + ".mp4";
+        s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ name;
 
         // s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/UnSaved/"+ videoFileName + ".mp4";
-        String pathss = s;
+       /* String pathss = s;
         Bitmap thumb = ThumbnailUtils.createVideoThumbnail(pathss,
                 MediaStore.Images.Thumbnails.MINI_KIND);
 
@@ -114,10 +119,10 @@ public class ShareScreen extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+*/
 
 
-
-    //    String s = Environment.getExternalStorageDirectory() + "/invitube/" + videoFileName + ".mp4";
+        //    String s = Environment.getExternalStorageDirectory() + "/invitube/" + videoFileName + ".mp4";
         file = new File(s);
         videoView.setVideoPath(s); // setting the video path
         videoView.seekTo(100);     // setting the video thumbnail
@@ -141,7 +146,7 @@ public class ShareScreen extends Activity {
                             flag=1;
                             playVideo.setImageResource(R.drawable.pause_video);
                             playVideo.setVisibility(View.VISIBLE);
-                        return true;
+                            return true;
                         }
                     });
 
@@ -167,13 +172,13 @@ public class ShareScreen extends Activity {
         for(int i=0; i<apps.length ; ++i){
             switch(count){
                 case 0: tmpimgbut=img1;
-                        tmpid=R.id.imageButton1;
+                    tmpid=R.id.imageButton1;
                     break;
                 case 1: tmpimgbut=img2;
-                        tmpid=R.id.imageButton2;
+                    tmpid=R.id.imageButton2;
                     break;
                 case 2: tmpimgbut=img3;
-                        tmpid=R.id.imageButton3;
+                    tmpid=R.id.imageButton3;
                     break;
                 case 3: tmpimgbut=img4;
                     tmpid=R.id.imageButton4;
@@ -212,20 +217,20 @@ public class ShareScreen extends Activity {
                     for (int i=4; i < apps.length; i++){
                         switch (count){
                             case 4: temp=img5;
-                                    id = R.id.imageButton5;
-                            break;
+                                id = R.id.imageButton5;
+                                break;
                             case 5: temp=img6;
-                                    id=R.id.imageButton6;
-                            break;
+                                id=R.id.imageButton6;
+                                break;
                             case 6: temp = img7;
-                                    id = R.id.imageButton7;
-                            break;
+                                id = R.id.imageButton7;
+                                break;
                             case 7: temp = img8;
-                                    id = R.id.imageButton8;
-                            break;
+                                id = R.id.imageButton8;
+                                break;
                             case 8: temp = img9;
-                                    id = R.id.imageButton9;
-                            break;
+                                id = R.id.imageButton9;
+                                break;
                             default:
                                 break;
                         }
@@ -262,7 +267,7 @@ public class ShareScreen extends Activity {
                 shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
                 shareIntent.setType("video/mp4");
                 shareIntent.setPackage(uri);
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+              /*  ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 FileInputStream fis = null;
                 try {
                     fis = new FileInputStream(file);
@@ -295,7 +300,7 @@ public class ShareScreen extends Activity {
                 videoUpload.put("VideoName", videoFileName);
                 videoUpload.put("VideoFile", mVideo);
                 videoUpload.put("created_by", currentUser);
-                videoUpload.saveInBackground();
+                videoUpload.saveInBackground();*/
                 startActivity(shareIntent);
             }
         });
@@ -341,7 +346,7 @@ public class ShareScreen extends Activity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/UnSaved/" + videoFileName + ".mp4");
+           /* File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/UnSaved/" + videoFileName + ".mp4");
             File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/Saved/" + videoFileName + ".mp4");
             from.renameTo(to);
             s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
@@ -353,7 +358,7 @@ public class ShareScreen extends Activity {
             ParseObject videoUpload = new ParseObject("Videos");
             videoUpload.put("VideoName", videoFileName);
             videoUpload.put("VideoFile", mVideo);
-            videoUpload.saveInBackground();
+            videoUpload.saveInBackground();*/
         }
         return super.onOptionsItemSelected(item);
     }

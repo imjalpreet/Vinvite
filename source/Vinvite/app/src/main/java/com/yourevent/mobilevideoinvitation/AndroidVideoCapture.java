@@ -27,10 +27,13 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.parse.ParseUser;
 import com.yourevent.mobilevideoinvitation.ScriptView;
 
 public class AndroidVideoCapture extends Activity{
     public static String filename;
+    String User;
     public static final String FILENAME = "";
     private int scriptSpeed = 3;
     private Camera myCamera;
@@ -49,6 +52,8 @@ public class AndroidVideoCapture extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ParseUser currentUser = ParseUser.getCurrentUser();
+         User=currentUser.getObjectId();
         Bundle b = this.getIntent().getExtras();
         if(b!=null)
             line=b.getStringArray("EXTRA_SCRIPT");
@@ -173,10 +178,11 @@ public class AndroidVideoCapture extends Activity{
         mediaRecorder.setProfile(CamcorderProfile.get(1,CamcorderProfile.QUALITY_HIGH));
         String s;
         Calendar c = Calendar.getInstance();
-        File wallpaperDirectory = new File("/sdcard/invitube/");
-        wallpaperDirectory.mkdirs();
+  //      File wallpaperDirectory = new File("/sdcard/invitube/");
+  //      wallpaperDirectory.mkdirs();
         filename = getAppropriateString(c.get(Calendar.YEAR))+getAppropriateString(c.get(Calendar.MONTH)+1)+getAppropriateString(c.get(Calendar.DATE))+"_"+getAppropriateString(c.get(Calendar.HOUR))+getAppropriateString(c.get(Calendar.MINUTE))+getAppropriateString(c.get(Calendar.SECOND));//Integer.toString(c.get(Calendar.YEAR))+Integer.toString(c.get(Calendar.MONTH)+1)+Integer.toString(c.get(Calendar.DATE))+Integer.toString(c.get(Calendar.HOUR))+Integer.toString(c.get(Calendar.MINUTE))+Integer.toString(c.get(Calendar.SECOND));
-        s=Environment.getExternalStorageDirectory() + "/invitube/" + filename + ".mp4" ;
+      //  s=Environment.getExternalStorageDirectory() + "/invitube/" + filename + ".mp4" ;
+        s=Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/UnSaved/"+ filename + ".mp4" ;
         mediaRecorder.setOutputFile(s);
         mediaRecorder.setMaxDuration(30000); // Set max duration 30 sec.
         mediaRecorder.setMaxFileSize(10000000); // Set max file size 10M
