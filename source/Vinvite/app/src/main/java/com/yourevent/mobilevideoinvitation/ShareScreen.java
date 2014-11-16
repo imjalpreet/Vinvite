@@ -362,6 +362,8 @@ public class ShareScreen extends Activity {
             s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
             videoView.setVideoPath(s);
             videoView.seekTo(100);
+            Intent i = new Intent("android.intent.action.HOME");
+            startActivity(i);
           //  boolean showMenu=0;
       //     showOverflowMenu(false);
 

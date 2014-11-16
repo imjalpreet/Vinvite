@@ -76,21 +76,11 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         //Recieving the Date Of Birth of the User
         if(intent.getExtras()!=null) {
             DOB = intent.getStringExtra("DOB");
-            Log.d("TAG", DOB);
-            /*if(DOB!="") {
-                Date = DOB.split("/")[1];
-                Month = DOB.split("/")[0];
-                Year = DOB.split("/")[2];
-                DOB = Year.concat("-").concat(Month).concat("-").concat(Date);
-                Log.d("DOB", DOB);
-            }
-            */
-            DOB = "11/17/2014";
             Date = DOB.split("/")[1];
             Month = DOB.split("/")[0];
             Year = DOB.split("/")[2];
             DOB = Year.concat("-").concat(Month).concat("-").concat(Date);
-            Log.d("DOB", DOB);
+
         }
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String currentDateandTime = sdf.format(new Date());
@@ -301,9 +291,9 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
             return true;
         }
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        /*if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
         return super.onOptionsItemSelected(item);
     }
 
@@ -324,8 +314,8 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // if nav drawer is opened, hide the action items
-        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+        //boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+        //menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
     @Override
