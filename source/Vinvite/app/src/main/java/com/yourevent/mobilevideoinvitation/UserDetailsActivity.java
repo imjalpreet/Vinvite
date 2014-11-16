@@ -51,6 +51,7 @@ public class UserDetailsActivity extends Activity {
                 //sending the user's Birth date to the Home class
                 i.putExtra("DOB", DOB);
                 startActivity(i);
+                UserDetailsActivity.this.finish();
             }
         });
         logoutButton.setOnClickListener(new View.OnClickListener() {
@@ -181,5 +182,6 @@ public class UserDetailsActivity extends Activity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        UserDetailsActivity.this.finish();
     }
 }
