@@ -2,16 +2,14 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/raj/development/ssad24/source/Vinvite/library/res" >
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/Vinvite/library/res" >
             <file
-                path="/home/raj/development/ssad24/source/Vinvite/library/res/values/ids.xml"
-                qualifiers="" >
-                <item
-                    name="selected_view"
-                    type="id"/>
-            </file>
+                name="slidingmenumain"
+                path="/Users/vikram/IIIT/ssad/project/ssad24/source/Vinvite/library/res/layout/slidingmenumain.xml"
+                qualifiers=""
+                type="layout" />
             <file
-                path="/home/raj/development/ssad24/source/Vinvite/library/res/values/attrs.xml"
+                path="/Users/vikram/IIIT/ssad/project/ssad24/source/Vinvite/library/res/values/attrs.xml"
                 qualifiers="" >
                 <declare-styleable name="SlidingMenu" >
                     <attr name="mode" >
@@ -80,16 +78,18 @@
                 </declare-styleable>
             </file>
             <file
-                name="slidingmenumain"
-                path="/home/raj/development/ssad24/source/Vinvite/library/res/layout/slidingmenumain.xml"
-                qualifiers=""
-                type="layout" />
+                path="/Users/vikram/IIIT/ssad/project/ssad24/source/Vinvite/library/res/values/ids.xml"
+                qualifiers="" >
+                <item
+                    name="selected_view"
+                    type="id"/>
+            </file>
         </source>
-        <source path="/home/raj/development/ssad24/source/Vinvite/library/build/generated/res/rs/release" />
-        <source path="/home/raj/development/ssad24/source/Vinvite/library/build/generated/res/generated/release" />
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/Vinvite/library/build/generated/res/rs/release" />
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/Vinvite/library/build/generated/res/generated/release" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/home/raj/development/ssad24/source/Vinvite/library/src/release/res" />
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/Vinvite/library/src/release/res" />
     </dataSet>
 
 </merger>

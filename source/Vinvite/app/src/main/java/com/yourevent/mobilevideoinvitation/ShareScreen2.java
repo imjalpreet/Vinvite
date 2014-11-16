@@ -267,40 +267,7 @@ public class ShareScreen2 extends Activity {
                 shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
                 shareIntent.setType("video/mp4");
                 shareIntent.setPackage(uri);
-              /*  ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                FileInputStream fis = null;
-                try {
-                    fis = new FileInputStream(file);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                byte[] buf = new byte[1024];
-                int n;
-                assert fis != null;
-                try {
-                    while (-1 != (n = fis.read(buf)))
-                        baos.write(buf, 0, n);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
 
-                File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/UnSaved/" + videoFileName + ".mp4");
-                File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/Saved/" + videoFileName + ".mp4");
-                from.renameTo(to);
-                s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
-                videoView.setVideoPath(s);
-                videoView.seekTo(100);
-
-
-                byte[] videoBytes = baos.toByteArray(); //this is the video in bytes.
-                mVideo = new ParseFile(videoFileName, videoBytes);
-                mVideo.saveInBackground();
-                ParseObject videoUpload = new ParseObject("Videos");
-                ParseUser currentUser = ParseUser.getCurrentUser();
-                videoUpload.put("VideoName", videoFileName);
-                videoUpload.put("VideoFile", mVideo);
-                videoUpload.put("created_by", currentUser);
-                videoUpload.saveInBackground();*/
                 startActivity(shareIntent);
             }
         });
@@ -321,45 +288,5 @@ public class ShareScreen2 extends Activity {
         return app_installed ;
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.share, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if(id == R.id.Save) {
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            FileInputStream fis = null;
-            try {
-                fis = new FileInputStream(file);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            byte[] buf = new byte[1024];
-            int n;
-            assert fis != null;
-            try {
-                while (-1 != (n = fis.read(buf)))
-                    baos.write(buf, 0, n);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-           /* File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/UnSaved/" + videoFileName + ".mp4");
-            File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/Saved/" + videoFileName + ".mp4");
-            from.renameTo(to);
-            s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
-            videoView.setVideoPath(s);
-            videoView.seekTo(100);
-            byte[] videoBytes = baos.toByteArray(); //this is the video in bytes.
-            mVideo = new ParseFile(videoFileName, videoBytes);
-            mVideo.saveInBackground();
-            ParseObject videoUpload = new ParseObject("Videos");
-            videoUpload.put("VideoName", videoFileName);
-            videoUpload.put("VideoFile", mVideo);
-            videoUpload.saveInBackground();*/
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 }
