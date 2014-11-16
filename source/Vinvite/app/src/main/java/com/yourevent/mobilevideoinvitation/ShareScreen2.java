@@ -74,10 +74,6 @@ public class ShareScreen2 extends Activity {
         actionBar.setTitle("Send Invitation");
         setContentView(R.layout.share_video);
         videoView = (VideoView) this.findViewById(R.id.showInvitation);
-        MediaController mc = new MediaController(this);
-        mc.setAnchorView(videoView);
-        mc.setMediaPlayer(videoView);
-        videoView.setMediaController(mc);
 
         Bundle extras = getIntent().getExtras();
         videoFileName = extras.getString(BackgroundScore.VIDEOFILENAME);
