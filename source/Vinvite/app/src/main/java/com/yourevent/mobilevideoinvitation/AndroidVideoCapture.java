@@ -129,9 +129,8 @@ public class AndroidVideoCapture extends Activity{
                                 timer.setText(String.valueOf(TimeCounter));
                                 TimeCounter--;
                                 if(TimeCounter%scriptSpeed==0){
-                                    if(iterator<line.length)
-                                        ;
-                                        //scriptheader.setText(line[iterator]);
+                                    if(iterator+1<line.length)
+                                        scriptheader.setText(line[iterator+1]);
                                     iterator++;
                                 }
                                 if(TimeCounter == 0 && recording){
