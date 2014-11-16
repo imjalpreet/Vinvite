@@ -2,6 +2,7 @@ package com.yourevent.mobilevideoinvitation;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -45,6 +46,7 @@ public class ShareScreen extends Activity {
     ParseFile mVideo;
     String User;
     String s;
+    Menu menu;
     PopupWindow popupWindow;
     View popUpView;
     private File file;
@@ -279,12 +281,7 @@ public class ShareScreen extends Activity {
                     e.printStackTrace();
                 }
 
-                File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/UnSaved/" + videoFileName + ".mp4");
-                File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/Saved/" + videoFileName + ".mp4");
-                from.renameTo(to);
-                s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
-                videoView.setVideoPath(s);
-                videoView.seekTo(100);
+
 
 
                 byte[] videoBytes = baos.toByteArray(); //this is the video in bytes.
@@ -297,6 +294,12 @@ public class ShareScreen extends Activity {
                 videoUpload.put("created_by", currentUser);
                 videoUpload.saveInBackground();
                 startActivity(shareIntent);
+                File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/UnSaved/" + videoFileName + ".mp4");
+                File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/Saved/" + videoFileName + ".mp4");
+                from.renameTo(to);
+                s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
+                videoView.setVideoPath(s);
+                videoView.seekTo(100);
             }
         });
     }
@@ -325,6 +328,7 @@ public class ShareScreen extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.Save) {
+
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             FileInputStream fis = null;
             try {
@@ -341,20 +345,28 @@ public class ShareScreen extends Activity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            byte[] videoBytes = baos.toByteArray(); //this is the video in bytes.
+            mVideo = new ParseFile(videoFileName, videoBytes);
+            mVideo.saveInBackground();
+            ParseObject videoUpload = new ParseObject("Videos");
+          //  ParseObject videoUpload = new ParseObject("Videos");
+            ParseUser currentUser = ParseUser.getCurrentUser();
+            videoUpload.put("VideoName", videoFileName);
+            videoUpload.put("VideoFile", mVideo);
+            videoUpload.put("created_by", currentUser);
+            videoUpload.saveInBackground();
             File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/UnSaved/" + videoFileName + ".mp4");
             File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/Saved/" + videoFileName + ".mp4");
             from.renameTo(to);
             s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
             videoView.setVideoPath(s);
             videoView.seekTo(100);
-            byte[] videoBytes = baos.toByteArray(); //this is the video in bytes.
-            mVideo = new ParseFile(videoFileName, videoBytes);
-            mVideo.saveInBackground();
-            ParseObject videoUpload = new ParseObject("Videos");
-            videoUpload.put("VideoName", videoFileName);
-            videoUpload.put("VideoFile", mVideo);
-            videoUpload.saveInBackground();
+          //  boolean showMenu=0;
+      //     showOverflowMenu(false);
+
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
