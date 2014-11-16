@@ -66,6 +66,9 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_home);
         Intent intent = getIntent();
         assert intent!=null;
@@ -140,7 +143,11 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         if(!direct3.exists()) {
             if(direct3.mkdir()); //directory is created;
         }
+        File direct4 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Thumbnails");
 
+        if(!direct4.exists()) {
+            if(direct4.mkdir()); //directory is created;
+        }
         // load slide menu items
         navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
 

@@ -2,10 +2,10 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/raj/development/ssad24/source/Vinvite/library/assets" />
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/Vinvite/library/assets" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/home/raj/development/ssad24/source/Vinvite/library/src/release/assets" />
+        <source path="/Users/vikram/IIIT/ssad/project/ssad24/source/Vinvite/library/src/release/assets" />
     </dataSet>
 
 </merger>

@@ -4,12 +4,17 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.parse.ParseUser;
+
+import java.io.File;
 
 /**
  * Created by imjalpreet on 13-10-2014.
@@ -56,6 +61,39 @@ public class ShowScript extends Activity {
             script+=tmpline+" \n\n ";
         }
         Script.setText(script);
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        final String User=currentUser.getObjectId();
+
+        File direct = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" );
+
+        if(!direct.exists()) {
+            if(direct.mkdir()); //directory is created;
+        }
+
+        File direct1 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User);
+
+        if(!direct1.exists()) {
+            if(direct1.mkdir()); //directory is created;
+        }
+        File direct2 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Saved");
+
+        if(!direct2.exists()) {
+            if(direct2.mkdir()); //directory is created;
+        }
+        File direct3 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/UnSaved");
+
+        if(!direct3.exists()) {
+            if(direct3.mkdir()); //directory is created;
+        }
+
+        File direct4 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/UnSaved");
+
+        if(!direct4.exists()) {
+            if(direct4.mkdir()); //directory is created;
+        }
+
+
+
         Button contBut = (Button)findViewById(R.id.continueFinalScript);
         contBut.setOnClickListener(new View.OnClickListener() {
             @Override
