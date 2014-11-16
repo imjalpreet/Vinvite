@@ -4,9 +4,13 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.media.MediaPlayer;
+import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -29,6 +33,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
@@ -38,6 +43,8 @@ import java.io.IOException;
 public class ShareScreen extends Activity {
 
     ParseFile mVideo;
+    String User;
+    String s;
     PopupWindow popupWindow;
     View popUpView;
     private File file;
@@ -55,6 +62,8 @@ public class ShareScreen extends Activity {
     private ImageButton img9;
     private ImageButton playVideo;
     private String[] apps = {"com.facebook.katana", "com.whatsapp", "com.google.android.gm", "com.twitter.android","com.google.android.apps.plus", "com.instagram.android", "com.viber.voip", "com.dropbox.android", "com.google.android.youtube"};
+    public static int flag;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,33 +80,85 @@ public class ShareScreen extends Activity {
 
         Bundle extras = getIntent().getExtras();
         videoFileName = extras.getString(BackgroundScore.VIDEOFILENAME);
-        String s = Environment.getExternalStorageDirectory() + "/invitube/" + videoFileName + ".mp4";
+
+
+
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        User=currentUser.getObjectId();
+        s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/UnSaved/"+ videoFileName + ".mp4";
+
+        // s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/UnSaved/"+ videoFileName + ".mp4";
+        String pathss = s;
+        Bitmap thumb = ThumbnailUtils.createVideoThumbnail(pathss,
+                MediaStore.Images.Thumbnails.MINI_KIND);
+
+
+        String rootss = Environment.getExternalStorageDirectory().toString();
+        File myDirss = new File(rootss + "/YourEvents/" + User + "/Thumbnails/");
+        if (!myDirss.exists()) {
+            myDirss.mkdirs();
+        }
+        //  myDir.mkdirs();
+        //  Random generator = new Random();
+        //  int n = 10000;
+        //  n = generator.nextInt(n);
+        String fname = videoFileName +".jpg";
+        File files = new File (myDirss, fname);
+        if (files.exists ()) files.delete ();
+        try {
+            FileOutputStream outs = new FileOutputStream(files);
+            thumb.compress(Bitmap.CompressFormat.JPEG, 90, outs);
+            outs.flush();
+            outs.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+    //    String s = Environment.getExternalStorageDirectory() + "/invitube/" + videoFileName + ".mp4";
         file = new File(s);
         videoView.setVideoPath(s); // setting the video path
         videoView.seekTo(100);     // setting the video thumbnail
         videoView.requestFocus();
+        flag=0;
         playVideo = (ImageButton)findViewById(R.id.playVideoButton);
-
         playVideo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 if (!videoView.isPlaying()) {
-                    videoView.seekTo(0);
+                    if(flag==0){
+                        videoView.seekTo(0);
+                    }
                     videoView.start();
                     playVideo.setVisibility(View.INVISIBLE);
                     videoView.setOnTouchListener(new View.OnTouchListener(){
 
                         @Override
                         public boolean onTouch(View v, MotionEvent event) {
-                                videoView.pause();
-                                playVideo.setVisibility(View.VISIBLE);
-                            return true;
+                            videoView.pause();
+                            flag=1;
+                            playVideo.setImageResource(R.drawable.pause_video);
+                            playVideo.setVisibility(View.VISIBLE);
+                        return true;
                         }
                     });
+
                 } else {
+                    flag=1;
                     videoView.pause();
                     playVideo.setVisibility(View.VISIBLE);
+                    playVideo.setImageResource(R.drawable.pause_video);
                 }
+            }
+        });
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                playVideo.setVisibility(View.VISIBLE);
+                playVideo.setImageResource(R.drawable.play_video);
+                flag=0;
             }
         });
         count=0;
@@ -218,6 +279,14 @@ public class ShareScreen extends Activity {
                     e.printStackTrace();
                 }
 
+                File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/UnSaved/" + videoFileName + ".mp4");
+                File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/Saved/" + videoFileName + ".mp4");
+                from.renameTo(to);
+                s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
+                videoView.setVideoPath(s);
+                videoView.seekTo(100);
+
+
                 byte[] videoBytes = baos.toByteArray(); //this is the video in bytes.
                 mVideo = new ParseFile(videoFileName, videoBytes);
                 mVideo.saveInBackground();
@@ -272,7 +341,12 @@ public class ShareScreen extends Activity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/UnSaved/" + videoFileName + ".mp4");
+            File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/YourEvents/" + User+ "/Saved/" + videoFileName + ".mp4");
+            from.renameTo(to);
+            s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
+            videoView.setVideoPath(s);
+            videoView.seekTo(100);
             byte[] videoBytes = baos.toByteArray(); //this is the video in bytes.
             mVideo = new ParseFile(videoFileName, videoBytes);
             mVideo.saveInBackground();

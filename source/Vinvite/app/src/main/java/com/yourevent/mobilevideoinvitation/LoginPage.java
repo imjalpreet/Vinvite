@@ -114,6 +114,11 @@ public class LoginPage extends Activity {
             if(!direct3.exists()) {
                 if(direct3.mkdir()); //directory is created;
             }
+            File direct4 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Thumbnails");
+
+            if(!direct4.exists()) {
+                if(direct4.mkdir()); //directory is created;
+            }
 
 
 //             Go to the user info activity

@@ -159,6 +159,7 @@ public class UserDetailsActivity extends Activity {
                     DOB = userProfile.getString("birthday");
                 } else {
                     userDOB.setText("");
+                    DOB="";
                 }
 
             } catch (JSONException e) {

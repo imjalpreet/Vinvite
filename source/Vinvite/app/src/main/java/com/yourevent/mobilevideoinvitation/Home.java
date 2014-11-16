@@ -66,12 +66,25 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_home);
         Intent intent = getIntent();
         assert intent!=null;
         //Recieving the Date Of Birth of the User
         if(intent.getExtras()!=null) {
             DOB = intent.getStringExtra("DOB");
+            Log.d("TAG", DOB);
+            /*if(DOB!="") {
+                Date = DOB.split("/")[1];
+                Month = DOB.split("/")[0];
+                Year = DOB.split("/")[2];
+                DOB = Year.concat("-").concat(Month).concat("-").concat(Date);
+                Log.d("DOB", DOB);
+            }
+            */
+            DOB = "11/17/2014";
             Date = DOB.split("/")[1];
             Month = DOB.split("/")[0];
             Year = DOB.split("/")[2];
@@ -130,7 +143,11 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         if(!direct3.exists()) {
             if(direct3.mkdir()); //directory is created;
         }
+        File direct4 = new File(Environment.getExternalStorageDirectory()+"/YourEvents/" + User + "/Thumbnails");
 
+        if(!direct4.exists()) {
+            if(direct4.mkdir()); //directory is created;
+        }
         // load slide menu items
         navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
 
@@ -163,8 +180,8 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         final ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowHomeEnabled(false);
         actionBar.setLogo(R.color.transparent);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(false);
+        getActionBar().setHomeButtonEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
 
         LayoutInflater mInflater = LayoutInflater.from(this);
