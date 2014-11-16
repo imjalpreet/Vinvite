@@ -33,7 +33,7 @@ public class PreviousInvitesFragment extends Fragment implements
         AbsListView.OnItemClickListener {
     private StaggeredGridView mGridView;
     public final static String EXTRA_MESSAGE = "";
-    private SampleAdapter mAdapter;
+    private PreviousAdapter mAdapter;
     private ArrayList<String> mData;
     int vid_num;
     public String[] events=new String[100];
@@ -69,7 +69,7 @@ public class PreviousInvitesFragment extends Fragment implements
     }
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_select_script, container, false);
+        return inflater.inflate(R.layout.fragment_previous_invitation, container, false);
     }
     @Override
     public void onActivityCreated(final Bundle savedInstanceState) {
@@ -78,7 +78,7 @@ public class PreviousInvitesFragment extends Fragment implements
         if (savedInstanceState == null) {
         }
         if (mAdapter == null) {
-            mAdapter = new SampleAdapter(getActivity(), R.id.txt_line1);
+            mAdapter = new PreviousAdapter(getActivity(), R.id.txt_line1);
 
 
         }
