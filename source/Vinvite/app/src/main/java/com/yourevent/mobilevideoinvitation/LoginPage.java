@@ -169,6 +169,7 @@ public class LoginPage extends Activity {
     private void showUserDetailsActivity() {
         Intent intent = new Intent(this, UserDetailsActivity.class);
         startActivity(intent);
+        this.finish();
     }
     @Override
     protected void onResume() {
