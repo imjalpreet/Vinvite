@@ -259,7 +259,19 @@ public class ShareScreen extends Activity {
                     popupWindow.showAsDropDown(plus,600,5);
                 }
             });
-
+        }
+        else{
+            final ImageButton plus = (ImageButton) findViewById(R.id.ibPlus);
+            plus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                        Intent shareIntent = new Intent();
+                        shareIntent.setAction(Intent.ACTION_SEND);
+                        shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+                        shareIntent.setType("video/mp4");
+                        startActivity(Intent.createChooser(shareIntent, "Send Invitation"));
+                }
+            });
         }
     }
 
@@ -352,6 +364,9 @@ public class ShareScreen extends Activity {
             s = Environment.getExternalStorageDirectory() + "/YourEvents/" + User+ "/Saved/"+ videoFileName + ".mp4";
             videoView.setVideoPath(s);
             videoView.seekTo(100);
+            Intent i = new Intent("android.intent.action.HOME");
+            startActivity(i);
+
             //  boolean showMenu=0;
             //     showOverflowMenu(false);
 
