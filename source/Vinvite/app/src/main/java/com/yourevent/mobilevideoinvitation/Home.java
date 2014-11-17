@@ -1,6 +1,7 @@
 package com.yourevent.mobilevideoinvitation;
 
 import android.app.ActionBar;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.app.ActionBar.Tab;
 import android.app.AlarmManager;
@@ -19,18 +20,23 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.parse.ParseUser;
 import com.yourevent.mobilevideoinvitation.adapter.NavDrawerListAdapter;
 import com.yourevent.mobilevideoinvitation.adapter.TabsPagerAdapter;
 import com.yourevent.mobilevideoinvitation.model.NavDrawerItem;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.text.ParseException;
@@ -162,7 +168,12 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
         // Home
         //navDrawerItems.add(new NavDrawerItem("Previous Events", navMenuIcons.getResourceId(0, -1)));
         // My Profile
-        //navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+        JSONObject userProfile = currentUser.getJSONObject("profile");
+        try {
+            navDrawerItems.add(new NavDrawerItem("Hi, "+userProfile.getString("name"), navMenuIcons.getResourceId(1, -1)));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         // About Us
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
         // Terms and Policies
@@ -176,6 +187,24 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
                 navDrawerItems);
         mDrawerList.setAdapter(adapter);
         final ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setLogo(R.color.transparent);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setBackgroundDrawable(new ColorDrawable(0xFFE4E4E4));
+        ImageView imageView = new ImageView(actionBar.getThemedContext());
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.vinvite);
+        ActionBar.LayoutParams layoutParams = new ActionBar.LayoutParams(
+                ActionBar.LayoutParams.WRAP_CONTENT,
+                ActionBar.LayoutParams.WRAP_CONTENT, Gravity.CENTER
+                | Gravity.CENTER_VERTICAL);
+        //layoutParams.rightMargin = 40;
+
+        imageView.setLayoutParams(layoutParams);
+        actionBar.setCustomView(imageView);
+        /*final ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowHomeEnabled(false);
         actionBar.setLogo(R.color.transparent);
         getActionBar().setDisplayHomeAsUpEnabled(false);
@@ -196,7 +225,7 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
                     mDrawerLayout.closeDrawer(mDrawerList);
                 }
             }
-        });
+        });*/
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.drawable.ic_drawer, //nav menu toggle icon
                 R.string.app_name, // nav drawer open - description for accessibility
@@ -219,7 +248,7 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
             // on first time display view for first nav item
             //displayView(0);
         }
-        actionBar.setCustomView(mCustomView);
+        //actionBar.setCustomView(mCustomView);
         actionBar.setDisplayShowCustomEnabled(true);
         viewPager = (ViewPager) findViewById(R.id.pager);
         TabsPagerAdapter mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
@@ -262,18 +291,18 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
                                 long id) {
             // display view for selected nav drawer item
             switch (position){
-                case 0:
+                case 1:
                     
                     Intent i = new Intent("android.intent.action.VIEW", Uri.parse("http://www.yourevent.co/about#about"));
                     mDrawerLayout.closeDrawer(mDrawerList);
                     startActivity(i);
                 break;
-                case 1:
+                case 2:
                     i = new Intent("android.intent.action.VIEW", Uri.parse("http://www.yourevent.co/privacy"));
                     mDrawerLayout.closeDrawer(mDrawerList);
                     startActivity(i);
                 break;
-                case 2:
+                case 3:
                     ParseUser.logOut();
                     i = new Intent(Home.this, LoginPage.class);
                     mDrawerLayout.closeDrawer(mDrawerList);
