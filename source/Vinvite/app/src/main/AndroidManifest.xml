@@ -121,7 +121,7 @@
         <activity
             android:name=".ShareScreen"
             android:screenOrientation="portrait"
-            android:parentActivityName=".BackgroundScore"
+            android:parentActivityName=".AndroidVideoCapture"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.SHARESCREEN" />
@@ -168,16 +168,6 @@
             </intent-filter>
         </receiver>
         <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/push_icon"/>
-        <!--activity
-            android:name=".CreateNotificationActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity-->
         <receiver android:name=".NotificationPublisher" />
     </application>
 </manifest>
