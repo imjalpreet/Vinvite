@@ -62,7 +62,7 @@ public class ShareScreen2 extends Activity {
     private ImageButton img8;
     private ImageButton img9;
     private ImageButton playVideo;
-    private String[] apps = {"com.facebook.katana", "com.whatsapp", "com.google.android.gm", "com.twitter.android","com.google.android.apps.plus", "com.instagram.android", "com.viber.voip", "com.dropbox.android", "com.google.android.youtube"};
+    private String[] apps = {"com.facebook.katana", "com.whatsapp", "com.google.android.gm", "com.google.android.apps.plus", "com.instagram.android", "com.viber.voip", "com.dropbox.android", "com.google.android.youtube"};
     public static int flag;
 
     @Override
