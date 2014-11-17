@@ -29,6 +29,8 @@ import android.widget.Button;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.widget.ImageButton;
+
 import java.security.NoSuchAlgorithmException;
 
 import com.facebook.AppEventsLogger;
@@ -41,13 +43,13 @@ import com.parse.ParseUser;
 
 public class LoginPage extends Activity {
 
-    private Button loginButton;
+    private ImageButton loginButton;
     private Dialog progressDialog;
     private static int login = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getActionBar().hide();
         setContentView(R.layout.login);
         Parse.initialize(this, "asO83QNQyAB3hYyJuphIWLfKjqYNrhHct9q4H28f",
                 "KwrM3iFmVFgIsBwaq1HEC7MTwNCJX5hWjkszmQ94");
@@ -61,7 +63,7 @@ public class LoginPage extends Activity {
 
 
 
-        loginButton = (Button) findViewById(R.id.loginButton);
+        loginButton = (ImageButton) findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
