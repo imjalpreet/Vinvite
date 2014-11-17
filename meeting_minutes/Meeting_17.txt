@@ -1,0 +1,10 @@
+Seventeenth Meeting
+Topic: Push notifications and background score
+Date: 12/11/14
+Time: 22:00 - 23:30
+Place: CIE, IIIT-H
+Attendees: Raj, Jalpreet, Manas, Vikram
+
+Important Points of Discussion:
+1. Push notification plan discussed
+2. Problems discussed while implementing background score

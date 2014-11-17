@@ -77,7 +77,8 @@ public class ShareScreen extends Activity {
         videoView = (VideoView) this.findViewById(R.id.showInvitation);
 
         Bundle extras = getIntent().getExtras();
-        videoFileName = extras.getString(BackgroundScore.VIDEOFILENAME);
+        if(extras != null)
+            videoFileName = extras.getString(AndroidVideoCapture.FILENAME);
 
 
 

@@ -174,7 +174,22 @@ Topic: Related to images
 1. We tried getting the exact dimensions of the images that we have to use in our app.
 2. We tried those images in different handsets to check whether it is fine or not.
 
+12/11/14
+*******************************************************************************
+Time: 20:05 - 22:30
+Attendees: Raj, Jalpreet
+Topic: fixing bugs and UI changes
+1. Fixing the back button crashes
+2. UI enhancements according to client
 
+17/11/14
+*******************************************************************************
+Time: 21:35 - 03:30
+Attendees: Raj, Jalpreet, Vikram, Manas
+Topic: Finaliziing
+1. Adding image for login
+2. Previous invitation thumbnails added
+3. Fixed actionbar
 
 
 

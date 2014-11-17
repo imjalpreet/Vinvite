@@ -103,7 +103,7 @@ public class AndroidVideoCapture extends Activity{
                 // stop recording and release camera
                 mediaRecorder.stop();  // stop the recording
                 releaseMediaRecorder(); // release the MediaRecorder object
-                Intent openinvite = new Intent("android.intent.action.BACKGROUNDSCORE");
+                Intent openinvite = new Intent("android.intent.action.SHARESCREEN");
                 openinvite.putExtra(FILENAME,filename);
                 startActivity(openinvite);
             }else{
@@ -137,7 +137,7 @@ public class AndroidVideoCapture extends Activity{
                                     t.cancel();
                                     mediaRecorder.stop();
                                     releaseMediaRecorder();
-                                    Intent NextScreen = new Intent("android.intent.action.BACKGROUNDSCORE");
+                                    Intent NextScreen = new Intent("android.intent.action.SHARESCREEN");
                                     NextScreen.putExtra(FILENAME, filename);
                                     startActivity(NextScreen);
                                 }
