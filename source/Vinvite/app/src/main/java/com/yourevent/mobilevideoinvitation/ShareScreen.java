@@ -63,7 +63,7 @@ public class ShareScreen extends Activity {
     private ImageButton img8;
     private ImageButton img9;
     private ImageButton playVideo;
-    private String[] apps = {"com.facebook.katana", "com.whatsapp", "com.google.android.gm", "com.twitter.android","com.google.android.apps.plus", "com.instagram.android", "com.viber.voip", "com.dropbox.android", "com.google.android.youtube"};
+    private String[] apps = {"com.facebook.katana", "com.whatsapp", "com.google.android.gm", "com.google.android.apps.plus", "com.instagram.android", "com.viber.voip", "com.dropbox.android", "com.google.android.youtube"};
     public static int flag;
 
     @Override
@@ -75,10 +75,6 @@ public class ShareScreen extends Activity {
         actionBar.setTitle("Send Invitation");
         setContentView(R.layout.share_video);
         videoView = (VideoView) this.findViewById(R.id.showInvitation);
-        MediaController mc = new MediaController(this);
-        mc.setAnchorView(videoView);
-        mc.setMediaPlayer(videoView);
-        videoView.setMediaController(mc);
 
         Bundle extras = getIntent().getExtras();
         videoFileName = extras.getString(BackgroundScore.VIDEOFILENAME);
