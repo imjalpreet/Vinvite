@@ -28,7 +28,7 @@
         <item>@drawable/ic_home</item>
         <item>@drawable/ic_profile</item>
         <item>@drawable/ic_about</item>
-        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_action_warning</item>
         <item>@drawable/ic_logout</item>
     </array>
 
