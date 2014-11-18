@@ -43,7 +43,7 @@ public class EnterEventDetails extends Activity implements View.OnClickListener{
         assert actionBar != null;
         //actionBar.setBackgroundDrawable(new ColorDrawable(R.color.orange));
         actionBar.setDisplayHomeAsUpEnabled(true);
-        setTitle("Event Details");
+        setTitle("Enter Event Details");
         Intent intent = getIntent();
         assert intent.getExtras()!=null;
         if(intent.getExtras()!=null) {

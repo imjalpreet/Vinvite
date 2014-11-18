@@ -72,7 +72,7 @@ public class ShareScreen extends Activity {
         ActionBar actionBar = getActionBar();
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("Send Invitation");
+        actionBar.setTitle("Send Invitation ");
         setContentView(R.layout.share_video);
         videoView = (VideoView) this.findViewById(R.id.showInvitation);
 
