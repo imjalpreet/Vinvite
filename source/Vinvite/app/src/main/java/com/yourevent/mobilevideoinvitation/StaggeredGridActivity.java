@@ -32,7 +32,7 @@ public class StaggeredGridActivity extends Activity implements AbsListView.OnScr
         assert actionBar != null;
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-        setTitle("Select Your Script");
+        setTitle("Select Your Audience");
         StaggeredGridView mGridView = (StaggeredGridView) findViewById(R.id.grid_view);
         SelectScriptAdapter mAdapter = new SelectScriptAdapter(this, R.id.txt_line1);
 // do we have saved data?

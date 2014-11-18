@@ -52,7 +52,7 @@ public class Home extends FragmentActivity implements ActionBar.TabListener {
     private long diff;
     private ViewPager viewPager;
     //private ActionBar actionBar;
-    private String[] tabs = {"Select Event", "Previous Invitations"};
+    private String[] tabs = {"Create Invite", "Past Invites"};
     //SlidingMenu menu;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;

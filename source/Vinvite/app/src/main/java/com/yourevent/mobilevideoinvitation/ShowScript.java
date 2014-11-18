@@ -43,7 +43,7 @@ public class ShowScript extends Activity {
         setTitle(Data[1]);
         ActionBar actionBar = getActionBar();
         assert actionBar != null;
-        actionBar.setTitle("Edit Script");
+        actionBar.setTitle("Invitation Script");
         //actionBar.hide();
         //ScriptType.setText(Data[0]);
         Event = (ImageView) findViewById(R.id.imageView1);
